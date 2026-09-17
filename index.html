@@ -1,9 +1,8 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>KRM Digital Solutions — Concept Mockups</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,72 +17,66 @@
   --muted:#5b6672;
   --line:#e3e8ea;
   --photo:#0c2138;
-
   --container:1200px;
   --content:760px;
   --narrow:600px;
 }
 
-/* =========================================================
-   RESET / GLOBAL
-   ========================================================= */
-
-/* =========================================================
-   RESPONSIVE CONTAINER OVERRIDE
-   IMPORTANT:
-   - Does not change content
-   - Does not change wording
-   - Does not change concept structure
-   - Only controls responsive sizing/layout
-   ========================================================= */
-
-/* ---------- GLOBAL CONTAINER BEHAVIOUR ---------- */
-
-.container,
-.content-container,
-.narrow-container,
-.site-header,
-.page-nav,
-.site-footer,
-.site-footer-inner,
-.section,
-.hero,
-.band,
-.process-section,
-.spec-section,
-.work-section,
-.faq-section,
-.promise-band,
-.cta-final,
-.wrap {
-  min-width: 0;
-  max-width: 100%;
+*,
+*::before,
+*::after{
+  box-sizing:border-box;
 }
 
-/* Prevent children from forcing horizontal overflow */
-
-.container *,
-.content-container *,
-.narrow-container *,
-.site-header *,
-.page-nav *,
-.site-footer *,
-.site-footer-inner *,
-.section *,
-.hero *,
-.band *,
-.process-section *,
-.spec-section *,
-.work-section *,
-.faq-section *,
-.promise-band *,
-.cta-final *,
-.wrap * {
-  min-width: 0;
-  max-width: 100%;
+html{
+  scroll-behavior:smooth;
 }
 
-/* Keep text inside its available container */
+html,
+body{
+  margin:0;
+  padding:0;
+  width:100%;
+  max-width:100%;
+}
+
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  color:var(--ink);
+  background:#fff;
+  overflow-x:hidden;
+}
+
+img{
+  display:block;
+  max-width:100%;
+  height:auto;
+}
+
+button,
+a{
+  -webkit-tap-highlight-color:transparent;
+}
+
+button{
+  font-family:inherit;
+}
+
+a{
+  color:inherit;
+}
+
+h1,
+h2,
+h3,
+.serif{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+}
+
+p{
+  margin-top:0;
+}
 
 h1,
 h2,
@@ -92,545 +85,1218 @@ h4,
 p,
 span,
 div,
-a {
-  overflow-wrap: break-word;
+a{
+  overflow-wrap:break-word;
 }
 
 /* =========================================================
-   DESKTOP CONTAINER SYSTEM
+   GLOBAL CONTAINERS
    ========================================================= */
 
-@media (min-width: 1025px) {
-
-  .site-header {
-    width: 100%;
-    padding-left: clamp(32px, 5vw, 72px);
-    padding-right: clamp(32px, 5vw, 72px);
-  }
-
-  .page-nav {
-    width: 100%;
-    padding-left: clamp(32px, 5vw, 72px);
-    padding-right: clamp(32px, 5vw, 72px);
-  }
-
-  .site-footer {
-    width: 100%;
-    padding-left: clamp(32px, 5vw, 72px);
-    padding-right: clamp(32px, 5vw, 72px);
-  }
-
-  .site-footer-inner {
-    width: 100%;
-    max-width: var(--container);
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* ---------- CONCEPT 1 ---------- */
-
-  #c1 .hero {
-    width: min(100%, 1000px);
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-
-  #c1 .row {
-    width: min(100%, 1000px);
-    margin-left: auto;
-    margin-right: auto;
-
-    display: grid;
-    grid-template-columns: 170px minmax(0, 1fr);
-    gap: 32px;
-
-    padding: 24px 40px;
-  }
-
-  #c1 .row .photo-block {
-    width: 170px;
-    max-width: 170px;
-  }
-
-  #c1 .section {
-    width: min(100%, 900px);
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-
-  #c1 .why-section {
-    width: 100%;
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-
-  #c1 .why-list {
-    width: min(100%, 650px);
-  }
-
-  #c1 .promise {
-    width: min(100%, 760px);
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-
-  #c1 .cta-card {
-    width: min(calc(100% - 80px), 760px);
-  }
-
-  /* ---------- CONCEPT 2 ---------- */
-
-  #c2 .band {
-    width: 100%;
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-
-  #c2 .feature {
-    width: min(100%, 700px);
-  }
-
-  #c2 .process-section {
-    width: min(100%, 900px);
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-
-  #c2 .process-section .process-list {
-    width: min(100%, 650px);
-  }
-
-  #c2 .spec-section {
-    width: 100%;
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-
-  #c2 .spec-grid {
-    width: min(100%, 900px);
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  #c2 .work-section {
-    width: min(100%, 900px);
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-
-  #c2 .work-section .work-grid {
-    width: min(100%, 650px);
-  }
-
-  #c2 .faq-section {
-    width: min(100%, 700px);
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-
-  /* ---------- CONCEPT 3 ---------- */
-
-  #c3 .wrap {
-    width: min(100%, 800px);
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-
-  #c3 .diff-pairs {
-    width: 100%;
-  }
-
-  #c3 .work-list {
-    width: 100%;
-  }
-
+.container,
+.content-container,
+.narrow-container{
+  width:100%;
+  margin-left:auto;
+  margin-right:auto;
 }
 
+.container{
+  max-width:var(--container);
+}
+
+.content-container{
+  max-width:var(--content);
+}
+
+.narrow-container{
+  max-width:var(--narrow);
+}
+
+/* =========================================================
+   SWITCHER
+   ========================================================= */
+
+.switcher{
+  position:sticky;
+  top:0;
+  z-index:50;
+  display:flex;
+  width:100%;
+  overflow-x:auto;
+  background:var(--teal-dark);
+  scrollbar-width:none;
+}
+
+.switcher::-webkit-scrollbar,
+.page-nav::-webkit-scrollbar{
+  display:none;
+}
+
+.switcher button{
+  flex:1 1 0;
+  min-width:150px;
+  padding:13px 16px;
+  border:0;
+  border-bottom:3px solid transparent;
+  background:transparent;
+  color:#d3f0f0;
+  font-size:13px;
+  font-weight:600;
+  cursor:pointer;
+  white-space:nowrap;
+}
+
+.switcher button.active{
+  color:#fff;
+  border-bottom-color:#fff;
+}
+
+.concept{
+  display:none;
+  width:100%;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+.concept.active{
+  display:block;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.site-header{
+  width:100%;
+  min-height:70px;
+  padding:14px clamp(20px,4vw,48px);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
+
+.site-header .left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-width:0;
+}
+
+.hamburger{
+  width:22px;
+  height:16px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  flex-shrink:0;
+}
+
+.hamburger span{
+  display:block;
+  width:100%;
+  height:2px;
+  border-radius:1px;
+  background:var(--ink);
+}
+
+.logo-badge,
+.logo-ring{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  font-family:'Cormorant Garamond',serif;
+}
+
+.logo-badge{
+  width:44px;
+  height:44px;
+  border:1.5px solid var(--teal);
+  border-radius:50%;
+  background:#fff;
+  color:var(--teal);
+  font-size:12px;
+  font-weight:700;
+}
+
+.search-dot{
+  width:18px;
+  height:18px;
+  border:2px solid var(--ink);
+  border-radius:50%;
+  flex-shrink:0;
+}
+
+/* =========================================================
+   PAGE NAV
+   ========================================================= */
+
+.page-nav{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:4px 18px;
+  padding:10px clamp(20px,4vw,48px);
+  background:#fcfdfd;
+  border-bottom:1px solid var(--line);
+  color:var(--muted);
+  font-size:12.5px;
+}
+
+.page-nav span{
+  white-space:nowrap;
+}
+
+.page-nav span.current{
+  padding-bottom:2px;
+  border-bottom:2px solid var(--teal-dark);
+  color:var(--teal-dark);
+  font-weight:700;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer{
+  width:100%;
+  padding:34px clamp(20px,4vw,48px) 40px;
+  background:#fff;
+  color:var(--ink);
+  font-size:13.5px;
+  line-height:1.9;
+}
+
+.site-footer-inner{
+  width:100%;
+  max-width:var(--container);
+  margin:0 auto;
+}
+
+.site-footer a{
+  color:var(--teal-dark);
+  text-decoration:underline;
+}
+
+.contacts-label{
+  margin-bottom:4px;
+  font-weight:700;
+}
+
+.copyright{
+  margin-top:16px;
+  color:var(--muted);
+}
+
+.content-required{
+  color:#a63b2c;
+  font-size:.9em;
+  font-style:italic;
+}
+
+/* =========================================================
+   SHARED COMPONENTS
+   ========================================================= */
+
+.btn-primary{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  max-width:100%;
+  padding:12px 26px;
+  border:0;
+  border-radius:6px;
+  background:var(--teal);
+  color:#fff;
+  font-size:14.5px;
+  font-weight:700;
+  line-height:1.3;
+  text-align:center;
+  text-decoration:none;
+}
+
+.eyebrow{
+  display:block;
+  margin-bottom:10px;
+  color:var(--teal-dark);
+  font-size:11.5px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.section-note{
+  color:var(--muted);
+  font-size:11.5px;
+  font-style:italic;
+  font-weight:400;
+}
+
+.photo-block{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:150px;
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--photo),#1b3a5c);
+  color:rgba(255,255,255,.55);
+  font-size:12px;
+  letter-spacing:.3px;
+}
+
+/* =========================================================
+   PROCESS
+   ========================================================= */
+
+.process-list{
+  display:grid;
+  gap:18px;
+  width:100%;
+  padding:4px 0;
+}
+
+.process-step{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  width:100%;
+}
+
+.process-step .num,
+#c1 .row .num{
+  flex:0 0 auto;
+  color:var(--teal-dark);
+  font-weight:700;
+}
+
+.process-step .num{
+  width:30px;
+  height:30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1.5px solid var(--teal);
+  border-radius:50%;
+  font-size:12.5px;
+}
+
+.process-step h4{
+  margin:0 0 4px;
+  color:var(--ink);
+  font-size:14.5px;
+  font-weight:700;
+}
+
+.process-step p{
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.55;
+}
+
+/* =========================================================
+   SPEC GRID
+   ========================================================= */
+
+.spec-grid{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  width:100%;
+}
+
+.spec-item{
+  flex:0 1 auto;
+  min-width:110px;
+  padding:12px 18px;
+  border-radius:8px;
+  background:var(--teal-tint);
+  text-align:center;
+}
+
+.spec-item b{
+  display:block;
+  margin-bottom:2px;
+  color:var(--teal-dark);
+  font-size:14px;
+}
+
+.spec-item span{
+  color:var(--muted);
+  font-size:11.5px;
+}
+
+/* =========================================================
+   RECENT WORK
+   ========================================================= */
+
+.work-grid,
+.work-list{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+  width:100%;
+}
+
+.work-tile{
+  width:100%;
+  aspect-ratio:1/1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:6px;
+  border:1px dashed #bcdada;
+  border-radius:10px;
+  background:var(--teal-tint);
+  color:var(--muted);
+  font-size:11px;
+  text-align:center;
+}
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+.faq-item{
+  padding:14px 0;
+  border-top:1px solid var(--line);
+}
+
+.faq-item:last-child{
+  border-bottom:1px solid var(--line);
+}
+
+.faq-item summary{
+  color:var(--ink);
+  font-size:14px;
+  font-weight:600;
+  line-height:1.5;
+  cursor:pointer;
+}
+
+.faq-item summary::marker{
+  color:var(--teal);
+}
+
+.faq-item p{
+  margin:8px 0 0;
+  color:var(--muted);
+  font-size:13.5px;
+  line-height:1.6;
+}
+
+/* =========================================================
+   CONCEPT 1
+   ========================================================= */
+
+#c1 .hero{
+  width:100%;
+  max-width:1000px;
+  margin:0 auto;
+  padding:clamp(44px,7vw,72px) 40px 30px;
+}
+
+#c1 .hero h1{
+  max-width:760px;
+  margin:0 0 12px;
+  font-size:clamp(28px,4vw,42px);
+  line-height:1.2;
+}
+
+#c1 .hero p{
+  max-width:700px;
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.6;
+}
+
+#c1 .row{
+  width:100%;
+  max-width:1000px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:170px minmax(0,1fr);
+  gap:32px;
+  padding:24px 40px;
+  border-top:1px solid var(--line);
+}
+
+#c1 .row:last-of-type{
+  border-bottom:1px solid var(--line);
+}
+
+#c1 .row .photo-block{
+  width:170px;
+  aspect-ratio:1/1;
+  min-height:0;
+  border-radius:10px;
+}
+
+#c1 .row h3{
+  margin:0 0 6px;
+  color:var(--ink);
+  font-family:'Inter',sans-serif;
+  font-size:16px;
+  font-weight:700;
+}
+
+#c1 .row p{
+  max-width:700px;
+  margin:0;
+  color:var(--muted);
+  font-size:13.5px;
+  line-height:1.55;
+}
+
+#c1 .section{
+  width:100%;
+  max-width:900px;
+  margin:0 auto;
+  padding:36px 40px 6px;
+}
+
+#c1 .section h2{
+  margin:0 0 16px;
+  color:var(--teal-dark);
+  font-size:clamp(24px,3vw,30px);
+}
+
+#c1 .section.center{
+  text-align:center;
+}
+
+#c1 .section.center .spec-grid{
+  max-width:700px;
+  margin:0 auto;
+}
+
+#c1 .why-section{
+  width:100%;
+  margin-top:16px;
+  padding:44px 20px;
+  background:var(--teal-tint);
+  text-align:center;
+}
+
+#c1 .why-section h2{
+  margin:0 0 22px;
+  color:var(--teal-dark);
+  font-size:clamp(26px,3vw,32px);
+}
+
+#c1 .why-list{
+  width:100%;
+  max-width:650px;
+  margin:0 auto;
+  display:grid;
+  gap:12px;
+  font-size:14px;
+}
+
+#c1 .promise{
+  width:100%;
+  max-width:760px;
+  margin:0 auto;
+  padding:40px;
+  color:var(--muted);
+  font-size:14.5px;
+  line-height:1.8;
+  text-align:center;
+}
+
+#c1 .promise h2{
+  margin:0 0 14px;
+  color:var(--teal-dark);
+  font-size:24px;
+}
+
+#c1 .cta-card{
+  width:calc(100% - 80px);
+  max-width:760px;
+  margin:16px auto 44px;
+  padding:34px 26px;
+  border-radius:16px;
+  background:var(--teal-tint);
+  text-align:center;
+}
+
+#c1 .cta-card h2{
+  margin:0 0 14px;
+  color:var(--teal-dark);
+  font-size:clamp(26px,3vw,32px);
+}
+
+#c1 .cta-card p{
+  max-width:520px;
+  margin:0 auto 20px;
+  color:var(--muted);
+  font-size:13.5px;
+  line-height:1.6;
+}
+
+/* =========================================================
+   CONCEPT 2
+   ========================================================= */
+
+#c2 .hero{
+  width:100%;
+  padding:clamp(56px,8vw,90px) 24px 48px;
+  background:linear-gradient(160deg,var(--photo),#163654 60%,#0c2138);
+  color:#fff;
+  text-align:center;
+}
+
+#c2 .hero .logo-ring{
+  width:92px;
+  height:92px;
+  margin:0 auto 18px;
+  border:2px solid rgba(255,255,255,.5);
+  border-radius:50%;
+  font-size:20px;
+}
+
+#c2 .hero h1{
+  margin:0 0 8px;
+  font-size:clamp(30px,5vw,46px);
+  line-height:1.15;
+}
+
+#c2 .hero .sub{
+  color:#bfe9ea;
+  font-size:13.5px;
+  letter-spacing:.4px;
+}
+
+#c2 .band{
+  width:100%;
+  padding:clamp(46px,6vw,70px) 30px;
+  text-align:center;
+}
+
+#c2 .band.tint{
+  background:var(--teal-tint);
+}
+
+#c2 .band.teal{
+  background:var(--teal);
+  color:#fff;
+}
+
+#c2 .band h2{
+  margin:0 0 20px;
+  opacity:.85;
+  font-family:'Inter',sans-serif;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+
+#c2 .band.teal h2{
+  opacity:1;
+}
+
+#c2 .feature{
+  width:100%;
+  max-width:700px;
+  margin:0 auto;
+}
+
+#c2 .feature p{
+  margin:0;
+  font-size:14px;
+  line-height:1.7;
+}
+
+#c2 .process-section{
+  width:100%;
+  max-width:900px;
+  margin:0 auto;
+  padding:46px 40px;
+  background:#fff;
+}
+
+#c2 .process-section h2{
+  margin:0 0 24px;
+  color:var(--teal-dark);
+  font-size:clamp(24px,3vw,30px);
+  text-align:center;
+}
+
+#c2 .process-section .process-list{
+  width:100%;
+  max-width:650px;
+  margin:0 auto;
+}
+
+#c2 .spec-section{
+  width:100%;
+  padding:40px 30px;
+  background:var(--teal-tint);
+}
+
+#c2 .spec-section h2{
+  margin:0 0 18px;
+  color:var(--teal-dark);
+  font-size:22px;
+  text-align:center;
+}
+
+#c2 .spec-grid{
+  width:100%;
+  max-width:900px;
+  margin:0 auto;
+}
+
+#c2 .work-section{
+  width:100%;
+  max-width:900px;
+  margin:0 auto;
+  padding:44px 40px;
+}
+
+#c2 .work-section h2{
+  margin:0 0 20px;
+  color:var(--teal-dark);
+  font-size:24px;
+  text-align:center;
+}
+
+#c2 .work-section .work-grid{
+  width:100%;
+  max-width:650px;
+  margin:0 auto;
+}
+
+#c2 .faq-section{
+  width:100%;
+  max-width:700px;
+  margin:0 auto;
+  padding:10px 40px 44px;
+}
+
+#c2 .faq-section h2{
+  margin:0 0 18px;
+  color:var(--teal-dark);
+  font-size:24px;
+  text-align:center;
+}
+
+#c2 .promise-band{
+  width:100%;
+  padding:10px 24px 48px;
+  background:#fff;
+  text-align:center;
+}
+
+#c2 .promise-band p{
+  width:100%;
+  max-width:560px;
+  margin:0 auto;
+  color:var(--muted);
+  font-family:'Cormorant Garamond',serif;
+  font-size:16px;
+  font-weight:500;
+  line-height:1.8;
+}
+
+#c2 .cta-final{
+  width:100%;
+  padding:0 24px 56px;
+  text-align:center;
+}
+
+#c2 .cta-final h2{
+  margin:0 0 14px;
+  color:var(--teal-dark);
+  font-size:clamp(28px,4vw,36px);
+}
+
+#c2 .cta-final p{
+  max-width:440px;
+  margin:0 auto 20px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.6;
+}
+
+/* =========================================================
+   CONCEPT 3
+   ========================================================= */
+
+#c3{
+  background:#fff;
+}
+
+#c3 .wrap{
+  width:100%;
+  max-width:720px;
+  margin:0 auto;
+  padding:0 32px;
+}
+
+#c3 .hero{
+  padding:clamp(64px,8vw,90px) 0 40px;
+}
+
+#c3 .hero h1{
+  margin:0 0 18px;
+  color:var(--ink);
+  font-size:clamp(34px,6vw,52px);
+  font-weight:400;
+  line-height:1.15;
+}
+
+#c3 .hero p{
+  max-width:520px;
+  margin:0;
+  color:var(--muted);
+  font-size:14.5px;
+  line-height:1.75;
+}
+
+#c3 .quote{
+  margin:0;
+  padding:0 0 40px;
+  color:var(--teal-dark);
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(20px,3vw,25px);
+  font-weight:500;
+  line-height:1.6;
+}
+
+#c3 .section-label{
+  margin:44px 0 18px;
+  color:var(--teal-dark);
+  font-size:11.5px;
+  font-weight:700;
+  letter-spacing:2px;
+  line-height:1.5;
+  text-transform:uppercase;
+}
+
+#c3 .service-entry{
+  width:100%;
+  padding:0 0 24px;
+}
+
+#c3 .service-entry h3{
+  margin:0 0 8px;
+  color:var(--ink);
+  font-family:'Inter',sans-serif;
+  font-size:19px;
+  font-weight:600;
+}
+
+#c3 .service-entry p{
+  margin:0;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.7;
+}
+
+#c3 .divider{
+  margin:0 0 24px;
+  border:0;
+  border-top:1px solid var(--line);
+}
+
+#c3 .diff-pairs{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px 26px;
+  width:100%;
+  padding-bottom:6px;
+}
+
+#c3 .diff-pairs div{
+  min-width:0;
+  padding-left:12px;
+  border-left:2px solid var(--teal);
+  color:var(--teal-dark);
+  font-size:13.5px;
+  font-weight:600;
+  line-height:1.5;
+}
+
+#c3 .spec-grid{
+  justify-content:flex-start;
+}
+
+#c3 .cta-final{
+  padding:44px 0 64px;
+}
+
+#c3 .cta-final h2{
+  margin:0 0 14px;
+  color:var(--ink);
+  font-size:clamp(26px,4vw,34px);
+  font-weight:400;
+  line-height:1.2;
+}
+
+#c3 .cta-final p{
+  max-width:480px;
+  margin:0 0 20px;
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.7;
+}
 
 /* =========================================================
    TABLET
    ========================================================= */
 
-@media (min-width: 601px) and (max-width: 1024px) {
+@media (min-width:601px) and (max-width:1024px){
 
-  .site-header {
-    padding-left: 28px;
-    padding-right: 28px;
+  .site-header,
+  .page-nav,
+  .site-footer{
+    padding-left:28px;
+    padding-right:28px;
   }
 
-  .page-nav {
-    padding-left: 28px;
-    padding-right: 28px;
+  .page-nav{
+    justify-content:flex-start;
   }
 
-  .site-footer {
-    padding-left: 28px;
-    padding-right: 28px;
+  #c1 .hero{
+    max-width:820px;
+    padding-left:32px;
+    padding-right:32px;
   }
 
-  /* ---------- CONCEPT 1 ---------- */
-
-  #c1 .hero {
-    width: min(100%, 820px);
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 32px;
-    padding-right: 32px;
+  #c1 .row{
+    max-width:820px;
+    grid-template-columns:125px minmax(0,1fr);
+    gap:24px;
+    padding-left:32px;
+    padding-right:32px;
   }
 
-  #c1 .row {
-    width: min(100%, 820px);
-    margin-left: auto;
-    margin-right: auto;
-
-    grid-template-columns: 125px minmax(0, 1fr);
-    gap: 24px;
-
-    padding-left: 32px;
-    padding-right: 32px;
+  #c1 .row .photo-block{
+    width:125px;
   }
 
-  #c1 .row .photo-block {
-    width: 125px;
-    max-width: 125px;
+  #c1 .section{
+    max-width:820px;
+    padding-left:32px;
+    padding-right:32px;
   }
 
-  #c1 .section {
-    width: min(100%, 820px);
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 32px;
-    padding-right: 32px;
+  #c1 .promise{
+    max-width:700px;
   }
 
-  #c1 .promise {
-    width: min(100%, 700px);
+  #c1 .cta-card{
+    width:calc(100% - 64px);
+    max-width:700px;
   }
 
-  #c1 .cta-card {
-    width: min(calc(100% - 64px), 700px);
-  }
-
-  /* ---------- CONCEPT 2 ---------- */
-
-  #c2 .feature {
-    width: min(100%, 650px);
+  #c2 .feature{
+    max-width:650px;
   }
 
   #c2 .process-section,
-  #c2 .work-section {
-    width: min(100%, 820px);
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 32px;
-    padding-right: 32px;
+  #c2 .work-section{
+    max-width:820px;
+    padding-left:32px;
+    padding-right:32px;
   }
 
-  #c2 .spec-section {
-    padding-left: 32px;
-    padding-right: 32px;
+  #c2 .faq-section{
+    max-width:680px;
   }
 
-  #c2 .faq-section {
-    width: min(100%, 680px);
+  #c3 .wrap{
+    max-width:720px;
+    padding-left:32px;
+    padding-right:32px;
   }
-
-  /* ---------- CONCEPT 3 ---------- */
-
-  #c3 .wrap {
-    width: min(100%, 720px);
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-
 }
-
 
 /* =========================================================
    MOBILE
    ========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width:600px){
 
-  html,
-  body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
+  .switcher{
+    width:100%;
   }
 
-  .concept {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
+  .switcher button{
+    flex:0 0 auto;
+    min-width:145px;
+    padding:12px 14px;
   }
 
-  .site-header {
-    width: 100%;
-    padding-left: 18px;
-    padding-right: 18px;
+  .site-header{
+    min-height:64px;
+    padding:12px 18px;
   }
 
-  .page-nav {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 18px;
-    padding-right: 18px;
+  .page-nav{
+    justify-content:flex-start;
+    flex-wrap:nowrap;
+    width:100%;
+    overflow-x:auto;
+    padding:10px 18px;
+    white-space:nowrap;
+    scrollbar-width:none;
   }
 
-  .site-footer {
-    width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+  .site-footer{
+    padding:30px 20px 36px;
   }
 
-  /* =======================================================
-     CONCEPT 1
-     ======================================================= */
-
-  #c1 .hero {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+  .photo-block{
+    min-height:100px;
   }
 
-  /*
-     Service rows remain side-by-side on mobile,
-     but the image column is deliberately small.
-  */
-
-  #c1 .row {
-    width: 100%;
-    max-width: 100%;
-
-    display: grid;
-    grid-template-columns: 72px minmax(0, 1fr);
-
-    gap: 14px;
-
-    padding-left: 20px;
-    padding-right: 20px;
+  .spec-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
   }
 
-  #c1 .row .photo-block {
-    width: 72px;
-    max-width: 72px;
-    aspect-ratio: 1 / 1;
+  .spec-item{
+    width:100%;
+    min-width:0;
+    padding:12px 8px;
   }
 
-  #c1 .row > div:last-child {
-    min-width: 0;
+  .spec-item b{
+    font-size:13px;
   }
 
-  #c1 .section {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+  .spec-item span{
+    font-size:10.5px;
   }
 
-  #c1 .why-section {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+  .work-grid,
+  .work-list{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:7px;
   }
 
-  #c1 .why-list {
-    width: 100%;
-    max-width: 500px;
+  .work-tile{
+    padding:4px;
+    font-size:9px;
+    line-height:1.25;
   }
 
-  #c1 .promise {
-    width: 100%;
-    max-width: 600px;
-    padding-left: 20px;
-    padding-right: 20px;
+  .btn-primary{
+    width:100%;
+    max-width:100%;
   }
 
-  #c1 .cta-card {
-    width: calc(100% - 32px);
-    max-width: 600px;
+  /* ---------- CONCEPT 1 ---------- */
+
+  #c1 .hero{
+    width:100%;
+    padding:42px 20px 28px;
   }
 
-  /* =======================================================
-     CONCEPT 2
-     ======================================================= */
-
-  #c2 .hero {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+  #c1 .hero h1{
+    font-size:28px;
   }
 
-  #c2 .band {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+  #c1 .hero p{
+    font-size:13.5px;
   }
 
-  #c2 .feature {
-    width: 100%;
-    max-width: 560px;
+  #c1 .row{
+    width:100%;
+    grid-template-columns:72px minmax(0,1fr);
+    gap:14px;
+    padding:18px 20px;
   }
 
-  #c2 .process-section {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+  #c1 .row .photo-block{
+    width:72px;
+    max-width:72px;
+    min-height:0;
+    border-radius:8px;
   }
 
-  #c2 .process-section .process-list {
-    width: 100%;
-    max-width: 560px;
+  #c1 .row h3{
+    font-size:14.5px;
+    line-height:1.35;
   }
 
-  #c2 .spec-section {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+  #c1 .row p{
+    font-size:12.8px;
+    line-height:1.55;
   }
 
-  #c2 .spec-grid {
-    width: 100%;
-    max-width: 500px;
+  #c1 .section{
+    width:100%;
+    padding:32px 20px 6px;
   }
 
-  #c2 .work-section {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+  #c1 .section h2{
+    font-size:25px;
   }
 
-  #c2 .work-section .work-grid {
-    width: 100%;
-    max-width: 500px;
+  #c1 .why-section{
+    padding:38px 20px;
   }
 
-  #c2 .faq-section {
-    width: 100%;
-    max-width: 600px;
-    padding-left: 20px;
-    padding-right: 20px;
+  #c1 .promise{
+    padding:36px 20px;
+    font-size:14px;
   }
 
-  #c2 .promise-band {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+  #c1 .cta-card{
+    width:calc(100% - 32px);
+    padding:30px 20px;
+    margin-bottom:36px;
   }
 
-  #c2 .cta-final {
-    width: 100%;
-    max-width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+  #c1 .cta-card h2{
+    font-size:27px;
+    line-height:1.2;
   }
 
-  /* =======================================================
-     CONCEPT 3
-     ======================================================= */
+  /* ---------- CONCEPT 2 ---------- */
 
-  #c3 .wrap {
-    width: 100%;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
+  #c2 .hero{
+    padding:52px 20px 44px;
   }
 
-  #c3 .hero {
-    width: 100%;
-    max-width: 100%;
+  #c2 .hero .logo-ring{
+    width:78px;
+    height:78px;
+    font-size:18px;
   }
 
-  #c3 .quote {
-    width: 100%;
-    max-width: 100%;
+  #c2 .hero h1{
+    font-size:30px;
   }
 
-  #c3 .service-entry {
-    width: 100%;
-    max-width: 100%;
+  #c2 .band{
+    padding:42px 20px;
   }
 
-  #c3 .diff-pairs {
-    width: 100%;
-    max-width: 100%;
-    grid-template-columns: 1fr;
+  #c2 .feature p{
+    font-size:13.5px;
   }
 
-  #c3 .spec-grid {
-    width: 100%;
-    max-width: 100%;
+  #c2 .process-section{
+    width:100%;
+    padding:40px 20px;
   }
 
-  #c3 .work-list {
-    width: 100%;
-    max-width: 100%;
+  #c2 .process-section .process-list{
+    max-width:none;
   }
 
-  #c3 .cta-final {
-    width: 100%;
-    max-width: 100%;
+  #c2 .spec-section{
+    padding:36px 20px;
   }
 
+  #c2 .work-section{
+    padding:38px 20px;
+  }
+
+  #c2 .faq-section{
+    padding:8px 20px 38px;
+  }
+
+  #c2 .promise-band{
+    padding:10px 20px 40px;
+  }
+
+  #c2 .promise-band p{
+    font-size:17px;
+  }
+
+  #c2 .cta-final{
+    padding:0 20px 46px;
+  }
+
+  /* ---------- CONCEPT 3 ---------- */
+
+  #c3 .wrap{
+    width:100%;
+    max-width:none;
+    padding:0 20px;
+  }
+
+  #c3 .hero{
+    padding:52px 0 34px;
+  }
+
+  #c3 .hero h1{
+    font-size:35px;
+  }
+
+  #c3 .hero p{
+    font-size:13.8px;
+  }
+
+  #c3 .quote{
+    padding-bottom:30px;
+    font-size:21px;
+  }
+
+  #c3 .section-label{
+    margin-top:36px;
+  }
+
+  #c3 .diff-pairs{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  #c3 .cta-final{
+    padding:40px 0 52px;
+  }
+
+  #c3 .cta-final h2{
+    font-size:29px;
+  }
 }
-
 
 /* =========================================================
    VERY SMALL PHONES
    ========================================================= */
 
-@media (max-width: 380px) {
+@media (max-width:380px){
 
   .site-header,
   .page-nav,
-  .site-footer {
-    padding-left: 15px;
-    padding-right: 15px;
+  .site-footer{
+    padding-left:15px;
+    padding-right:15px;
   }
 
   #c1 .hero,
   #c1 .section,
   #c1 .why-section,
-  #c1 .promise {
-    padding-left: 15px;
-    padding-right: 15px;
+  #c1 .promise{
+    padding-left:15px;
+    padding-right:15px;
   }
 
-  #c1 .row {
-    grid-template-columns: 64px minmax(0, 1fr);
-    gap: 11px;
-    padding-left: 15px;
-    padding-right: 15px;
+  #c1 .row{
+    grid-template-columns:64px minmax(0,1fr);
+    gap:11px;
+    padding-left:15px;
+    padding-right:15px;
   }
 
-  #c1 .row .photo-block {
-    width: 64px;
-    max-width: 64px;
+  #c1 .row .photo-block{
+    width:64px;
+    max-width:64px;
   }
 
   #c2 .band,
@@ -639,16 +1305,15 @@ a {
   #c2 .work-section,
   #c2 .faq-section,
   #c2 .promise-band,
-  #c2 .cta-final {
-    padding-left: 15px;
-    padding-right: 15px;
+  #c2 .cta-final{
+    padding-left:15px;
+    padding-right:15px;
   }
 
-  #c3 .wrap {
-    padding-left: 15px;
-    padding-right: 15px;
+  #c3 .wrap{
+    padding-left:15px;
+    padding-right:15px;
   }
-
 }
 </style>
 </head>
@@ -656,9 +1321,9 @@ a {
 <body>
 
 <div class="switcher">
-  <button class="active" onclick="show('c1', this)">1 — Catalogue</button>
-  <button onclick="show('c2', this)">2 — Consulting Flow</button>
-  <button onclick="show('c3', this)">3 — Editorial</button>
+  <button class="active" onclick="show('c1',this)">1 — Catalogue</button>
+  <button onclick="show('c2',this)">2 — Consulting Flow</button>
+  <button onclick="show('c3',this)">3 — Editorial</button>
 </div>
 
 <!-- =========================================================
@@ -670,14 +1335,10 @@ a {
   <header class="site-header">
     <div class="left">
       <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </div>
-
       <div class="logo-badge">KRM</div>
     </div>
-
     <div class="search-dot"></div>
   </header>
 
@@ -691,206 +1352,134 @@ a {
 
   <section class="hero">
     <span class="eyebrow">Digital Solutions</span>
-
-    <h1 class="serif">
-      Collaborate with the world's best in design &amp; development.
-    </h1>
-
+    <h1 class="serif">Collaborate with the world's best in design &amp; development.</h1>
     <p>
       Global expertise in Motion Design, Brand Design, Mobile Design, Product Design and UX/UI Design — partnering with you to elevate your digital presence and achieve measurable business results.
     </p>
   </section>
 
   <div>
-
     <div class="row">
       <div class="photo-block"></div>
-
       <div>
         <div class="num">01</div>
-
         <h3>Custom Website Design</h3>
-
-        <p>
-          Tailored websites that reflect your brand identity, built to engage users and convert visitors into customers.
-        </p>
+        <p>Tailored websites that reflect your brand identity, built to engage users and convert visitors into customers.</p>
       </div>
     </div>
 
     <div class="row">
       <div class="photo-block"></div>
-
       <div>
         <div class="num">02</div>
-
         <h3>E-Commerce Website Design</h3>
-
-        <p>
-          Scalable online stores designed for seamless shopping experiences, secure transactions, and optimized conversions.
-        </p>
+        <p>Scalable online stores designed for seamless shopping experiences, secure transactions, and optimized conversions.</p>
       </div>
     </div>
 
     <div class="row">
       <div class="photo-block"></div>
-
       <div>
         <div class="num">03</div>
-
         <h3>Application Design</h3>
-
-        <p>
-          Intuitive, visually refined applications engineered to deliver value and enhance user engagement.
-        </p>
+        <p>Intuitive, visually refined applications engineered to deliver value and enhance user engagement.</p>
       </div>
     </div>
 
     <div class="row">
       <div class="photo-block"></div>
-
       <div>
         <div class="num">04</div>
-
         <h3>Website Support &amp; Maintenance</h3>
-
-        <p>
-          Dedicated post-launch support to keep your site secure, updated, and aligned with your evolving business goals.
-        </p>
+        <p>Dedicated post-launch support to keep your site secure, updated, and aligned with your evolving business goals.</p>
       </div>
     </div>
-
   </div>
 
   <div class="section">
-
     <h2 class="serif">
       Our Process
-      <span class="section-note">
-        — suggested framework, confirm against your real workflow
-      </span>
+      <span class="section-note">— suggested framework, confirm against your real workflow</span>
     </h2>
 
     <div class="process-list">
-
       <div class="process-step">
         <div class="num">1</div>
-
         <div>
           <h4>Discover</h4>
-          <p>
-            Understand your brand, goals and audience before any design work begins.
-          </p>
+          <p>Understand your brand, goals and audience before any design work begins.</p>
         </div>
       </div>
 
       <div class="process-step">
         <div class="num">2</div>
-
         <div>
           <h4>Design</h4>
-          <p>
-            Concepts built around your brand identity and content.
-          </p>
+          <p>Concepts built around your brand identity and content.</p>
         </div>
       </div>
 
       <div class="process-step">
         <div class="num">3</div>
-
         <div>
           <h4>Build</h4>
-          <p>
-            Development on WordPress CMS, with social &amp; email integration where needed.
-          </p>
+          <p>Development on WordPress CMS, with social &amp; email integration where needed.</p>
         </div>
       </div>
 
       <div class="process-step">
         <div class="num">4</div>
-
         <div>
           <h4>Launch</h4>
-          <p>
-            Site goes live within the 7–17 day turnaround window.
-          </p>
+          <p>Site goes live within the 7–17 day turnaround window.</p>
         </div>
       </div>
 
       <div class="process-step">
         <div class="num">5</div>
-
         <div>
           <h4>Support</h4>
-          <p>
-            Ongoing maintenance keeps the site secure, updated and aligned with your goals.
-          </p>
+          <p>Ongoing maintenance keeps the site secure, updated and aligned with your goals.</p>
         </div>
       </div>
-
     </div>
   </div>
 
   <div class="section center">
-
     <h2 class="serif">Launch Your Project</h2>
 
     <div class="spec-grid">
-
-      <div class="spec-item">
-        <b>7–17 Days</b>
-        <span>Turnaround</span>
-      </div>
-
-      <div class="spec-item">
-        <b>WordPress</b>
-        <span>CMS</span>
-      </div>
-
-      <div class="spec-item">
-        <b>Social &amp; Email</b>
-        <span>Integrations</span>
-      </div>
-
-      <div class="spec-item">
-        <b>1–8 Pages</b>
-        <span>Scope</span>
-      </div>
-
+      <div class="spec-item"><b>7–17 Days</b><span>Turnaround</span></div>
+      <div class="spec-item"><b>WordPress</b><span>CMS</span></div>
+      <div class="spec-item"><b>Social &amp; Email</b><span>Integrations</span></div>
+      <div class="spec-item"><b>1–8 Pages</b><span>Scope</span></div>
     </div>
 
     <div style="margin-top:22px;">
       <a class="btn-primary" href="#">Get Started</a>
     </div>
-
   </div>
 
   <section class="why-section">
-
     <h2 class="serif">Why Choose Us</h2>
-
     <div class="why-list">
       <div>Responsive &amp; Mobile-Friendly</div>
       <div>Award-Winning Results*</div>
       <div>User-Centric Approach</div>
       <div>SEO &amp; Performance Optimized</div>
     </div>
-
   </section>
 
   <div class="section center">
-
     <h2 class="serif">Recent Work</h2>
-
     <div class="work-grid">
       <div class="work-tile">[CONTENT<br>REQUIRED]</div>
       <div class="work-tile">[CONTENT<br>REQUIRED]</div>
       <div class="work-tile">[CONTENT<br>REQUIRED]</div>
     </div>
-
   </div>
 
   <div class="section" style="max-width:600px;">
-
     <h2 class="serif" style="text-align:center;">FAQ</h2>
 
     <details class="faq-item">
@@ -905,70 +1494,41 @@ a {
 
     <details class="faq-item">
       <summary>Do you support the site after launch?</summary>
-      <p>
-        Yes — dedicated post-launch support keeps your site secure, updated, and aligned with your evolving business goals.
-      </p>
+      <p>Yes — dedicated post-launch support keeps your site secure, updated, and aligned with your evolving business goals.</p>
     </details>
 
     <details class="faq-item">
       <summary>Can you integrate social media and email?</summary>
-      <p>
-        Yes — social media &amp; email integration is included.
-      </p>
+      <p>Yes — social media &amp; email integration is included.</p>
     </details>
-
   </div>
 
   <div class="promise">
-
     <h2 class="serif">Our Promise</h2>
-
     We don't just build websites—we craft digital experiences that inspire confidence, strengthen your brand, and drive business growth. Every project is a collaboration, ensuring your vision is transformed into a powerful online presence.
-
   </div>
 
   <div class="cta-card">
-
-    <h2 class="serif">
-      Let's Build Something Great Together
-    </h2>
-
+    <h2 class="serif">Let's Build Something Great Together</h2>
     <p>
       From your first idea to a website that works as hard as you do — we're ready to collaborate. Reach out and let's talk about your business goals, your timeline, and how we can help you get there.
     </p>
-
-    <a class="btn-primary" href="#">
-      Get in touch for a free consultation
-    </a>
-
+    <a class="btn-primary" href="#">Get in touch for a free consultation</a>
   </div>
 
   <footer class="site-footer">
-
     <div class="site-footer-inner">
-
       <div class="contacts-label">CONTACTS</div>
-
-      <a href="mailto:info@krmhcs.co.za">
-        info@krmhcs.co.za
-      </a>
-
-      <div class="content-required">
-        [Phone Number] · [Social Media Handles]
-      </div>
-
+      <a href="mailto:info@krmhcs.co.za">info@krmhcs.co.za</a>
+      <div class="content-required">[Phone Number] · [Social Media Handles]</div>
       <div class="copyright">
         © Copyright Reserved<br>
         KRM Human Capital Solutions (Pty) Ltd<br>
         REG: 2022/835367/07
       </div>
-
     </div>
-
   </footer>
-
 </div>
-
 
 <!-- =========================================================
      CONCEPT 2 — CONSULTING FLOW
@@ -978,17 +1538,11 @@ a {
 
   <header class="site-header">
     <div class="left">
-
       <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </div>
-
       <div class="logo-badge">KRM</div>
-
     </div>
-
     <div class="search-dot"></div>
   </header>
 
@@ -1001,85 +1555,50 @@ a {
   </div>
 
   <section class="hero">
-
     <div class="logo-ring">KRM</div>
-
-    <h1 class="serif">
-      Collaborate with the World's Best
-    </h1>
-
-    <div class="sub">
-      in design &amp; development
-    </div>
-
+    <h1 class="serif">Collaborate with the World's Best</h1>
+    <div class="sub">in design &amp; development</div>
   </section>
 
   <section class="band tint">
-
     <h2>Custom Website Design</h2>
-
     <div class="feature">
-
-      <p style="color:var(--ink); font-family:'Cormorant Garamond',serif; font-size:19px;">
+      <p style="color:var(--ink);font-family:'Cormorant Garamond',serif;font-size:19px;">
         Tailored websites that reflect your brand identity, built to engage users and convert visitors into customers.
       </p>
-
     </div>
-
   </section>
 
   <section class="band teal">
-
     <h2>E-Commerce Website Design</h2>
-
     <div class="feature">
-
-      <p>
-        Scalable online stores designed for seamless shopping experiences, secure transactions, and optimized conversions.
-      </p>
-
+      <p>Scalable online stores designed for seamless shopping experiences, secure transactions, and optimized conversions.</p>
     </div>
-
   </section>
 
   <section class="band tint">
-
     <h2>Application Design</h2>
-
     <div class="feature">
-
-      <p style="color:var(--ink); font-family:'Cormorant Garamond',serif; font-size:19px;">
+      <p style="color:var(--ink);font-family:'Cormorant Garamond',serif;font-size:19px;">
         Intuitive, visually refined applications engineered to deliver value and enhance user engagement.
       </p>
-
     </div>
-
   </section>
 
   <section class="band teal">
-
     <h2>Website Support &amp; Maintenance</h2>
-
     <div class="feature">
-
-      <p>
-        Dedicated post-launch support to keep your site secure, updated, and aligned with your evolving business goals.
-      </p>
-
+      <p>Dedicated post-launch support to keep your site secure, updated, and aligned with your evolving business goals.</p>
     </div>
-
   </section>
 
   <section class="process-section">
-
     <h2 class="serif">Our Process</h2>
-
-    <p style="text-align:center; margin-top:-14px; margin-bottom:24px;" class="section-note">
+    <p class="section-note" style="text-align:center;margin-top:-14px;margin-bottom:24px;">
       Suggested framework — confirm against your real workflow
     </p>
 
     <div class="process-list">
-
       <div class="process-step">
         <div class="num">1</div>
         <div>
@@ -1119,57 +1638,31 @@ a {
           <p>Ongoing maintenance keeps the site current.</p>
         </div>
       </div>
-
     </div>
-
   </section>
 
   <section class="spec-section">
-
     <h2 class="serif">Launch Your Project</h2>
 
     <div class="spec-grid">
-
-      <div class="spec-item">
-        <b>7–17 Days</b>
-        <span>Turnaround</span>
-      </div>
-
-      <div class="spec-item">
-        <b>WordPress</b>
-        <span>CMS</span>
-      </div>
-
-      <div class="spec-item">
-        <b>Social &amp; Email</b>
-        <span>Integrations</span>
-      </div>
-
-      <div class="spec-item">
-        <b>1–8 Pages</b>
-        <span>Scope</span>
-      </div>
-
+      <div class="spec-item"><b>7–17 Days</b><span>Turnaround</span></div>
+      <div class="spec-item"><b>WordPress</b><span>CMS</span></div>
+      <div class="spec-item"><b>Social &amp; Email</b><span>Integrations</span></div>
+      <div class="spec-item"><b>1–8 Pages</b><span>Scope</span></div>
     </div>
-
   </section>
 
   <section class="work-section">
-
     <h2 class="serif">Recent Work</h2>
 
     <div class="work-grid">
-
       <div class="work-tile">[CONTENT<br>REQUIRED]</div>
       <div class="work-tile">[CONTENT<br>REQUIRED]</div>
       <div class="work-tile">[CONTENT<br>REQUIRED]</div>
-
     </div>
-
   </section>
 
   <section class="faq-section">
-
     <h2 class="serif">FAQ</h2>
 
     <details class="faq-item">
@@ -1184,70 +1677,38 @@ a {
 
     <details class="faq-item">
       <summary>Do you support the site after launch?</summary>
-      <p>
-        Yes — dedicated post-launch support keeps your site secure, updated, and aligned with your evolving business goals.
-      </p>
+      <p>Yes — dedicated post-launch support keeps your site secure, updated, and aligned with your evolving business goals.</p>
     </details>
 
     <details class="faq-item">
       <summary>Can you integrate social media and email?</summary>
-      <p>
-        Yes — social media &amp; email integration is included.
-      </p>
+      <p>Yes — social media &amp; email integration is included.</p>
     </details>
-
   </section>
 
   <section class="promise-band">
-
-    <p>
-      "We don't just build websites — we craft digital experiences that inspire confidence, strengthen your brand, and drive business growth."
-    </p>
-
+    <p>"We don't just build websites — we craft digital experiences that inspire confidence, strengthen your brand, and drive business growth."</p>
   </section>
 
   <section class="cta-final">
-
-    <h2 class="serif">
-      Let's Build Something Great Together
-    </h2>
-
-    <p>
-      Reach out and let's talk about your business goals, your timeline, and how we can help you get there.
-    </p>
-
-    <a class="btn-primary" href="#">
-      Get in touch for a free consultation
-    </a>
-
+    <h2 class="serif">Let's Build Something Great Together</h2>
+    <p>Reach out and let's talk about your business goals, your timeline, and how we can help you get there.</p>
+    <a class="btn-primary" href="#">Get in touch for a free consultation</a>
   </section>
 
   <footer class="site-footer">
-
     <div class="site-footer-inner">
-
       <div class="contacts-label">CONTACTS</div>
-
-      <a href="mailto:info@krmhcs.co.za">
-        info@krmhcs.co.za
-      </a>
-
-      <div class="content-required">
-        [Phone Number] · [Social Media Handles]
-      </div>
-
+      <a href="mailto:info@krmhcs.co.za">info@krmhcs.co.za</a>
+      <div class="content-required">[Phone Number] · [Social Media Handles]</div>
       <div class="copyright">
         © Copyright Reserved<br>
         KRM Human Capital Solutions (Pty) Ltd<br>
         REG: 2022/835367/07
       </div>
-
     </div>
-
   </footer>
-
 </div>
-
 
 <!-- =========================================================
      CONCEPT 3 — EDITORIAL
@@ -1256,21 +1717,13 @@ a {
 <div id="c3" class="concept">
 
   <header class="site-header">
-
     <div class="left">
-
       <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </div>
-
       <div class="logo-badge">KRM</div>
-
     </div>
-
     <div class="search-dot"></div>
-
   </header>
 
   <div class="page-nav">
@@ -1284,15 +1737,10 @@ a {
   <div class="wrap">
 
     <section class="hero">
-
-      <h1 class="serif">
-        Collaborate with the world's best.
-      </h1>
-
+      <h1 class="serif">Collaborate with the world's best.</h1>
       <p>
         Global expertise in motion design, brand design, mobile design, product design and UX/UI design — partnering with you to elevate your digital presence and achieve measurable business results.
       </p>
-
     </section>
 
     <p class="quote">
@@ -1304,7 +1752,6 @@ a {
     </div>
 
     <div class="process-list">
-
       <div class="process-step">
         <div class="num">1</div>
         <div>
@@ -1344,115 +1791,63 @@ a {
           <p>Ongoing maintenance.</p>
         </div>
       </div>
-
     </div>
 
-    <div class="section-label">
-      Services
-    </div>
+    <div class="section-label">Services</div>
 
     <div class="service-entry">
-
       <h3>Custom Website Design</h3>
-
-      <p>
-        Tailored websites that reflect your brand identity, built to engage users and convert visitors into customers.
-      </p>
-
+      <p>Tailored websites that reflect your brand identity, built to engage users and convert visitors into customers.</p>
     </div>
 
     <hr class="divider">
 
     <div class="service-entry">
-
       <h3>E-Commerce Website Design</h3>
-
-      <p>
-        Scalable online stores designed for seamless shopping experiences, secure transactions, and optimized conversions.
-      </p>
-
+      <p>Scalable online stores designed for seamless shopping experiences, secure transactions, and optimized conversions.</p>
     </div>
 
     <hr class="divider">
 
     <div class="service-entry">
-
       <h3>Application Design</h3>
-
-      <p>
-        Intuitive, visually refined applications engineered to deliver value and enhance user engagement.
-      </p>
-
+      <p>Intuitive, visually refined applications engineered to deliver value and enhance user engagement.</p>
     </div>
 
     <hr class="divider">
 
     <div class="service-entry">
-
       <h3>Website Support &amp; Maintenance</h3>
-
-      <p>
-        Dedicated post-launch support to keep your site secure, updated, and aligned with your evolving business goals.
-      </p>
-
+      <p>Dedicated post-launch support to keep your site secure, updated, and aligned with your evolving business goals.</p>
     </div>
 
-    <div class="section-label">
-      Why Choose Us
-    </div>
+    <div class="section-label">Why Choose Us</div>
 
     <div class="diff-pairs">
-
       <div>Responsive &amp; mobile-friendly</div>
       <div>Award-winning results*</div>
       <div>User-centric approach</div>
       <div>SEO &amp; performance optimized</div>
-
     </div>
 
-    <div class="section-label">
-      Launch Your Project
-    </div>
+    <div class="section-label">Launch Your Project</div>
 
     <div class="spec-grid">
-
-      <div class="spec-item">
-        <b>7–17 Days</b>
-        <span>Turnaround</span>
-      </div>
-
-      <div class="spec-item">
-        <b>WordPress</b>
-        <span>CMS</span>
-      </div>
-
-      <div class="spec-item">
-        <b>Social &amp; Email</b>
-        <span>Integrations</span>
-      </div>
-
-      <div class="spec-item">
-        <b>1–8 Pages</b>
-        <span>Scope</span>
-      </div>
-
+      <div class="spec-item"><b>7–17 Days</b><span>Turnaround</span></div>
+      <div class="spec-item"><b>WordPress</b><span>CMS</span></div>
+      <div class="spec-item"><b>Social &amp; Email</b><span>Integrations</span></div>
+      <div class="spec-item"><b>1–8 Pages</b><span>Scope</span></div>
     </div>
 
-    <div class="section-label">
-      Recent Work
-    </div>
+    <div class="section-label">Recent Work</div>
 
     <div class="work-list">
-
       <div class="work-tile">[CONTENT<br>REQUIRED]</div>
       <div class="work-tile">[CONTENT<br>REQUIRED]</div>
       <div class="work-tile">[CONTENT<br>REQUIRED]</div>
-
     </div>
 
-    <div class="section-label">
-      FAQ
-    </div>
+    <div class="section-label">FAQ</div>
 
     <details class="faq-item">
       <summary>How long does a project take?</summary>
@@ -1466,87 +1861,47 @@ a {
 
     <details class="faq-item">
       <summary>Do you support the site after launch?</summary>
-      <p>
-        Yes — dedicated post-launch support keeps your site secure, updated, and aligned with your evolving business goals.
-      </p>
+      <p>Yes — dedicated post-launch support keeps your site secure, updated, and aligned with your evolving business goals.</p>
     </details>
 
     <details class="faq-item">
       <summary>Can you integrate social media and email?</summary>
-      <p>
-        Yes — social media &amp; email integration is included.
-      </p>
+      <p>Yes — social media &amp; email integration is included.</p>
     </details>
 
     <section class="cta-final">
-
-      <h2 class="serif">
-        Let's build something great together.
-      </h2>
-
+      <h2 class="serif">Let's build something great together.</h2>
       <p>
         From your first idea to a website that works as hard as you do — we're ready to collaborate. Reach out and let's talk about your business goals, your timeline, and how we can help you get there.
       </p>
-
-      <a class="btn-primary" href="#">
-        Get in touch for a free consultation
-      </a>
-
+      <a class="btn-primary" href="#">Get in touch for a free consultation</a>
     </section>
 
   </div>
 
   <footer class="site-footer">
-
     <div class="site-footer-inner">
-
       <div class="contacts-label">CONTACTS</div>
-
-      <a href="mailto:info@krmhcs.co.za">
-        info@krmhcs.co.za
-      </a>
-
-      <div class="content-required">
-        [Phone Number] · [Social Media Handles]
-      </div>
-
+      <a href="mailto:info@krmhcs.co.za">info@krmhcs.co.za</a>
+      <div class="content-required">[Phone Number] · [Social Media Handles]</div>
       <div class="copyright">
         © Copyright Reserved<br>
         KRM Human Capital Solutions (Pty) Ltd<br>
         REG: 2022/835367/07
       </div>
-
     </div>
-
   </footer>
-
 </div>
 
-
 <script>
-function show(id, btn){
-
-  document
-    .querySelectorAll('.concept')
-    .forEach(el => el.classList.remove('active'));
-
-  document
-    .querySelectorAll('.switcher button')
-    .forEach(b => b.classList.remove('active'));
-
-  document
-    .getElementById(id)
-    .classList.add('active');
-
+function show(id,btn){
+  document.querySelectorAll('.concept').forEach(el=>el.classList.remove('active'));
+  document.querySelectorAll('.switcher button').forEach(el=>el.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
   btn.classList.add('active');
-
-  window.scrollTo({
-    top:0,
-    behavior:'smooth'
-  });
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 </script>
 
 </body>
 </html>
-```
