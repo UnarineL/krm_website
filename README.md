@@ -1,11 +1,19 @@
+# KRM Human Capital Solutions
 
-Improvements
+KRM website rebuilt as a lightweight React + Vite site.
 
+## Current direction
 
-1. Add HR Templates tab for downloading and pay. Documents not video as on the below link:
-https://ficc.co.za/hr-templates/
+- Concept 2 is the approved visual reference for Digital Solutions.
+- KRM pages use the same visual language while allowing each experience to have its own structure.
+- HR Templates and Workplace Risk Check are included.
+- Chatbot/AI functionality is intentionally deferred.
 
-2. HR Compliance & Workplace Risk Check
-image.png
-Create a chat bot also circled in red
-Check : https://ficc.co.za/
+## Development
+
+```bash
+npm install
+npm run dev
+```
+
+Build for production with `npm run build`.
