@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import SiteLayout from './components/SiteLayout';
+import Vacancies from './Vacancies';
 import {
   Home,
   Legacy,
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/hr-templates" element={<HRTemplates />} />
         <Route path="/workplace-risk-check" element={<WorkplaceRiskCheck />} />
+        <Route path="/vacancies" element={<Vacancies />} />
         <Route path="/digital-solutions" element={<DigitalSolutions />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
