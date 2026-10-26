@@ -1,10 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
 import SiteLayout from './components/SiteLayout';
 import Vacancies from './Vacancies';
+import { KRMHome, KRMServices } from './KRMContent';
 import {
-  Home,
   Legacy,
-  Services,
   HRTemplates,
   WorkplaceRiskCheck,
   DigitalSolutions,
@@ -15,9 +14,9 @@ export default function App() {
   return (
     <SiteLayout>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<KRMHome />} />
         <Route path="/legacy" element={<Legacy />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="/services" element={<KRMServices />} />
         <Route path="/hr-templates" element={<HRTemplates />} />
         <Route path="/workplace-risk-check" element={<WorkplaceRiskCheck />} />
         <Route path="/vacancies" element={<Vacancies />} />
