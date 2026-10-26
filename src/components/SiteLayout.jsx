@@ -7,6 +7,7 @@ const navItems = [
   ['/services', 'Services'],
   ['/hr-templates', 'HR Templates'],
   ['/workplace-risk-check', 'Risk Check'],
+  ['/vacancies', 'Vacancies'],
   ['/digital-solutions', 'Digital Solutions'],
   ['/contact', 'Contact'],
 ];
@@ -57,13 +58,12 @@ export default function SiteLayout({ children }) {
       <footer className="site-footer">
         <div className="footer-inner">
           <div>
-            <div className="footer-label">CONTACTS</div>
+            <div className="footer-label">CONTACT</div>
             <a href="mailto:info@krmhcs.co.za">info@krmhcs.co.za</a>
           </div>
           <div className="footer-meta">
-            <div>© Copyright Reserved</div>
-            <div>KRM Human Capital Solutions (Pty) Ltd</div>
-            <div>REG: 2022/835367/07</div>
+            <div>© {new Date().getFullYear()} KRM Human Capital Solutions (Pty) Ltd</div>
+            <div>Registration: 2022/835367/07</div>
           </div>
         </div>
       </footer>
