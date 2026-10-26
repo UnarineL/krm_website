@@ -124,12 +124,12 @@ export function KRMHome() {
         <SectionTitle eyebrow="How we can help" title="Practical HR support at every stage." text="From bringing the right people into your business to keeping workplace processes clear and compliant, KRM helps you focus on running and growing your team." />
         <div className="krm-service-cards">
           {serviceGroups.map((service) => (
-            <a className="krm-service-card" href="/services" key={service.number}>
+            <Link className="krm-service-card" to="/services" key={service.number}>
               <span>{service.number}</span>
               <h3 className="serif">{service.title}</h3>
               <p>{service.intro}</p>
               <small>Explore services ↗</small>
-            </a>
+            </Link>
           ))}
         </div>
         <div className="krm-inline-cta"><BookingButton>Not sure where to start? Book a free HR check-in →</BookingButton></div>
