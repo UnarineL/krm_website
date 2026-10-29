@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const assessmentHref = 'mailto:info@krmhcs.co.za?subject=Book%20a%20KRM%20Compliance%20Assessment';
 const consultationHref = 'mailto:info@krmhcs.co.za?subject=Request%20a%20Free%20KRM%20Consultation';
@@ -21,7 +21,7 @@ const pillars = [
     name: 'Compliance',
     summary: 'Protect your business with practical employment compliance support.',
     services: ['UIF and COIDA support', 'Labour-law compliance reviews', 'HR and employee-file audits', 'Employment contracts and policies'],
-    href: '/services#compliance',
+    href: '/services/compliance',
     className: 'compliance',
   },
   {
@@ -29,7 +29,7 @@ const pillars = [
     name: 'Capability',
     summary: 'Give your people and managers the structure to perform.',
     services: ['Affordable SME recruitment', 'Performance management', 'KPIs, KPAs and SMART goals', 'Leadership and manager support'],
-    href: '/services#recruitment',
+    href: '/services/recruitment',
     className: 'capability',
   },
   {
@@ -37,7 +37,7 @@ const pillars = [
     name: 'Culture',
     summary: 'Build healthier workplaces and guide teams through change.',
     services: ['Employee and labour relations', 'Organisational design', 'Change management', 'Employee engagement'],
-    href: '/services#employee-relations',
+    href: '/services/employee-relations',
     className: 'culture',
   },
 ];
@@ -205,13 +205,50 @@ export function KRMServices() {
             <p className="krm-service-intro">{service.intro}</p>
             <ul>{service.items.map((item) => <li key={item}>{item}</li>)}</ul>
             <p className="krm-deliverables"><strong>Possible deliverables:</strong> {service.deliverables}</p>
-            <BookingLink href={consultationHref}>Request a Quote</BookingLink>
+            <div className="krm-service-card-actions"><Link className="text-link" to={`/services/${service.id}`}>View service details →</Link><BookingLink href={consultationHref}>Request a Quote</BookingLink></div>
           </div>
         </article>)}
       </div>
     </section>
     <section className="band band-tint">
       <div className="content centered krm-services-close"><span className="eyebrow">Not sure where to start?</span><h2 className="serif">Let's talk through what your business needs.</h2><p>Request a free consultation. We can discuss your situation, identify the relevant service and outline the next steps.</p><BookingLink href={consultationHref}>Request a Free Consultation</BookingLink></div>
+    </section>
+  </>;
+}
+
+
+export function KRMServicePage() {
+  const { slug } = useParams();
+  const service = serviceSections.find((item) => item.id === slug);
+
+  if (!service) {
+    return <section className="content section-pad"><span className="eyebrow">KRM Services</span><h1 className="serif">Service not found</h1><p>This service page may have moved. Explore the full list of KRM services instead.</p><Link className="button" to="/services">View all services</Link></section>;
+  }
+
+  return <>
+    <section className="page-intro">
+      <div className="content">
+        <span className="eyebrow">{service.pillar} · KRM Services</span>
+        <h1 className="serif">{service.title}</h1>
+        <p>{service.intro}</p>
+        <div className="krm-services-intro-cta"><BookingLink href={consultationHref}>Request a Quote</BookingLink><BookingLink href={assessmentHref}>Book a Compliance Assessment</BookingLink></div>
+      </div>
+    </section>
+    <section className="content section-pad krm-service-page-body">
+      <div className="krm-service-page-copy">
+        <span className="eyebrow">How we can help</span>
+        <h2 className="serif">Practical support, shaped around your business.</h2>
+        <p>We start by understanding your organisation, the issue you need to address and the requirements that apply. KRM then discusses an appropriate scope of support and provides a quotation before work begins.</p>
+      </div>
+      <div className="krm-service-page-list">
+        <h2 className="serif">Services may include</h2>
+        <ul>{service.items.map((item) => <li key={item}>{item}</li>)}</ul>
+        <div className="krm-deliverables"><strong>Possible deliverables:</strong> {service.deliverables}</div>
+        <p className="small-note">The exact service scope and deliverables depend on your organisation's needs and the agreed quotation. KRM support is not a guarantee of a particular legal or regulatory outcome.</p>
+      </div>
+    </section>
+    <section className="band band-tint">
+      <div className="content centered krm-services-close"><span className="eyebrow">Next step</span><h2 className="serif">Let's discuss what your business needs.</h2><p>Tell us about your requirements and we will discuss the most appropriate next step.</p><BookingLink href={consultationHref}>Request a Quote or Consultation</BookingLink><p><Link className="text-link" to="/services">← Back to all services</Link></p></div>
     </section>
   </>;
 }
