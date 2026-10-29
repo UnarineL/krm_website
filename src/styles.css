@@ -374,3 +374,61 @@ p { margin-top: 0; }
   .page-intro h1 { font-size: 42px; }
   .main-nav.is-open { grid-template-columns: 1fr; }
 }
+
+
+/* KRM Compliance, Capability and Culture refresh */
+.krm-home-hero .hero-content h1 { max-width: 880px; font-size: clamp(42px, 6.5vw, 72px); line-height: .98; }
+.krm-home-hero .hero-content .eyebrow { max-width: 700px; line-height: 1.6; }
+.krm-home-hero .hero-actions { flex-wrap: wrap; }
+.krm-home-hero .hero-actions .button { min-height: 48px; }
+.krm-pillars-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.krm-pillar-card { display: flex; flex-direction: column; align-items: flex-start; padding: 28px; border: 1px solid var(--line); background: #fff; min-height: 100%; }
+.krm-pillar-card.compliance { border-top: 4px solid var(--teal-dark); }
+.krm-pillar-card.capability { border-top: 4px solid #537b9d; }
+.krm-pillar-card.culture { border-top: 4px solid #b48c61; }
+.krm-pillar-number { color: var(--teal-dark); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; }
+.krm-pillar-card h3 { margin: 22px 0 10px; font-size: 34px; }
+.krm-pillar-card p, .krm-pillar-card li { color: var(--muted); font-size: 13px; line-height: 1.7; }
+.krm-pillar-card ul { padding-left: 18px; margin: 4px 0 22px; }
+.krm-pillar-card .text-link { margin-top: auto; }
+.krm-featured-assessment { align-items: center; }
+.krm-featured-assessment h2 { margin: 0; font-size: clamp(34px, 4.5vw, 48px); line-height: 1.05; }
+.krm-featured-assessment p { margin-bottom: 22px; }
+.krm-featured-assessment .button-light { background: #fff; color: var(--teal-dark); }
+.krm-resource-preview { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 0 0 26px; }
+.krm-resource-preview article { border: 1px solid var(--line); padding: 24px; }
+.krm-resource-preview article > span { color: var(--teal-dark); font-size: 11px; font-weight: 700; }
+.krm-resource-preview h3 { margin: 24px 0 10px; font-size: 27px; line-height: 1.05; }
+.krm-resource-preview p { color: var(--muted); font-size: 12px; line-height: 1.65; margin-bottom: 0; }
+.krm-services-intro-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.krm-pillar-shortcuts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 56px; }
+.krm-pillar-shortcuts a { display: flex; flex-direction: column; gap: 9px; border: 1px solid var(--line); padding: 20px; text-decoration: none; }
+.krm-pillar-shortcuts a span, .krm-pillar-shortcuts a small { color: var(--teal-dark); font-size: 11px; }
+.krm-pillar-shortcuts a strong { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; font-weight: 500; }
+.krm-services-catalogue { scroll-margin-top: 90px; }
+.krm-service-detail { scroll-margin-top: 92px; }
+.krm-service-detail .eyebrow { margin: 0 0 8px; }
+.krm-service-detail h2 { margin-top: 0; }
+.krm-service-detail ul { padding-left: 20px; }
+.krm-service-detail li { margin: 0 0 8px; color: var(--muted); font-size: 13px; line-height: 1.65; }
+.krm-deliverables { margin: 18px 0 20px; padding: 15px 18px; background: var(--teal-tint); color: var(--ink); font-size: 13px; line-height: 1.7; }
+.krm-services-close { max-width: 760px; }
+.krm-services-close h2 { margin: 0 0 12px; font-size: clamp(34px, 4vw, 46px); }
+.krm-services-close p { color: var(--muted); font-size: 14px; line-height: 1.75; }
+.krm-final-cta .hero-actions { flex-wrap: wrap; }
+@media (max-width: 800px) {
+  .krm-pillars-grid { grid-template-columns: 1fr; }
+  .krm-pillar-card { padding: 24px; }
+  .krm-resource-preview { grid-template-columns: 1fr; }
+  .krm-pillar-shortcuts { grid-template-columns: 1fr; margin-bottom: 36px; }
+  .krm-featured-assessment { grid-template-columns: 1fr; gap: 22px; }
+}
+@media (max-width: 520px) {
+  .krm-home-hero .hero-content h1 { font-size: 42px; line-height: 1.02; }
+  .krm-home-hero .hero-actions { align-items: stretch; }
+  .krm-home-hero .hero-actions .button { width: 100%; }
+  .krm-services-intro-cta { align-items: stretch; flex-direction: column; }
+  .krm-services-intro-cta .button { width: 100%; }
+  .krm-final-cta .hero-actions { align-items: stretch; flex-direction: column; }
+  .krm-final-cta .hero-actions .button { width: 100%; }
+}
