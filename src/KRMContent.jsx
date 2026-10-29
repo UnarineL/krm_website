@@ -1,210 +1,217 @@
 import { Link } from 'react-router-dom';
 
-const bookingHref = 'mailto:info@krmhcs.co.za?subject=Free%2020-minute%20HR%20check-in';
+const assessmentHref = 'mailto:info@krmhcs.co.za?subject=Book%20a%20KRM%20Compliance%20Assessment';
+const consultationHref = 'mailto:info@krmhcs.co.za?subject=Request%20a%20Free%20KRM%20Consultation';
 
-const serviceGroups = [
-  {
-    number: '01',
-    title: 'Hiring',
-    intro: 'So new colleagues start strong and leave on good terms.',
-    items: [
-      'Clear job descriptions and role profiles that attract the right people',
-      'Full support through hiring, from shortlisting to offer',
-      'Onboarding that helps new employees settle in and understand your culture',
-      'Respectful offboarding, including exit interviews that give you honest feedback',
-    ],
-  },
-  {
-    number: '02',
-    title: 'Growing and Keeping Your People',
-    intro: 'Because people stay where they can learn and grow.',
-    items: [
-      'Training needs assessments and coaching or development recommendations',
-      'Practical training for managers on handling conflict and building good working relationships',
-      'Skills development planning and reporting (WSP/ATR) that also supports your B-BBEE goals',
-      'Employee surveys, recognition, and wellbeing programmes that show people they’re valued',
-    ],
-  },
-  {
-    number: '03',
-    title: 'Benefits and Fair Treatment',
-    intro: 'So employees understand what they earn and trust how decisions are made.',
-    items: [
-      'Help with employee benefits questions and payroll queries',
-      'Employment contracts, policies, and procedures that are clear, fair, and legally sound',
-      'Guidance on disciplinary, grievance, and other labour relations matters',
-    ],
-  },
-  {
-    number: '04',
-    title: 'Staying Compliant, Stress-Free',
-    intro: 'So you can focus on running your business, not chasing deadlines.',
-    items: [
-      'HR compliance health checks: we show you what’s in place, what’s missing, and how to fix it',
-      'COIDA and UIF registration and annual submissions, including Return of Earnings',
-      'Employment Equity, B-BBEE, and Skills Development compliance',
-      'POPIA support for employee data',
-    ],
-  },
-  {
-    number: '05',
-    title: 'Smarter HR for Growing Teams',
-    intro: 'So decisions about people are based on facts, not guesswork.',
-    items: [
-      'HR strategy and planning that fits where your business is heading',
-      'HR technology that cuts admin and saves time',
-      'Simple workforce reports and insights that show trends, risks, and opportunities',
-    ],
-  },
-];
-
-const reasons = [
-  ['People first, always.', 'Fair processes, clear expectations, and a workplace people want to stay in.'],
-  ['Compliance without the headache.', 'We handle the paperwork and deadlines.'],
-  ['Practical, not theoretical.', 'Over 15 years of hands-on HR experience across media, mining, IT and other working environments.'],
-  ['Fair, transparent pricing.', 'You’ll know what you’re paying and what you’re getting.'],
-];
-
-const steps = [
-  ['01', 'Talk to us.', 'A relaxed conversation about your team and challenges.'],
-  ['02', 'We assess.', 'A quick review of what’s working and what needs attention.'],
-  ['03', 'We recommend.', 'A clear, prioritised plan with transparent pricing.'],
-  ['04', 'We support.', 'Once-off projects or ongoing support, whichever suits you.'],
-];
-
-function BookingButton({ children = 'Book a free 20-minute HR check-in', light = false }) {
-  return <a className={`button ${light ? 'button-light' : ''}`} href={bookingHref}>{children}</a>;
+function BookingLink({ href = assessmentHref, children, light = false }) {
+  return <a className={`button ${light ? 'button-light' : ''}`} href={href}>{children}</a>;
 }
 
 function SectionTitle({ eyebrow, title, text }) {
-  return (
-    <div className="section-heading">
-      {eyebrow && <span className="eyebrow">{eyebrow}</span>}
-      <h2 className="serif">{title}</h2>
-      {text && <p>{text}</p>}
-    </div>
-  );
+  return <div className="section-heading">
+    {eyebrow && <span className="eyebrow">{eyebrow}</span>}
+    <h2 className="serif">{title}</h2>
+    {text && <p>{text}</p>}
+  </div>;
 }
 
+const pillars = [
+  {
+    number: '01',
+    name: 'Compliance',
+    summary: 'Protect your business with practical employment compliance support.',
+    services: ['UIF and COIDA support', 'Labour-law compliance reviews', 'HR and employee-file audits', 'Employment contracts and policies'],
+    href: '/services#compliance',
+    className: 'compliance',
+  },
+  {
+    number: '02',
+    name: 'Capability',
+    summary: 'Give your people and managers the structure to perform.',
+    services: ['Affordable SME recruitment', 'Performance management', 'KPIs, KPAs and SMART goals', 'Leadership and manager support'],
+    href: '/services#capability',
+    className: 'capability',
+  },
+  {
+    number: '03',
+    name: 'Culture',
+    summary: 'Build healthier workplaces and guide teams through change.',
+    services: ['Employee and labour relations', 'Organisational design', 'Change management', 'Employee engagement'],
+    href: '/services#culture',
+    className: 'culture',
+  },
+];
+
+const serviceSections = [
+  {
+    id: 'compliance',
+    number: '01',
+    pillar: 'Compliance',
+    title: 'Employment Compliance',
+    intro: 'Understand where your business stands, identify employment risks, and get a clear plan for what to address first.',
+    items: ['UIF registration and maintenance', 'COIDA registration and Return of Earnings', 'Letter of Good Standing support', 'Employment Equity support where applicable', 'Labour-law compliance audits and BCEA reviews', 'HR file and employee record audits'],
+    deliverables: 'Compliance report, risk assessment, prioritised action plan and compliance tracking.',
+  },
+  {
+    id: 'documentation',
+    number: '02',
+    pillar: 'Compliance',
+    title: 'Contracts, Policies & HR Documentation',
+    intro: 'Create clearer, more consistent employment documentation tailored to your workplace and reviewed for relevant requirements.',
+    items: ['Permanent, fixed-term and executive contracts', 'Independent contractor agreements and probation clauses', 'Leave, disciplinary, grievance and remote-work policies', 'POPIA-related employee policies, harassment and whistleblowing policies', 'Job descriptions, offer letters, promotion letters and warning templates', 'Employee handbooks and HR starter packs'],
+    deliverables: 'A tailored HR starter pack, employee handbook or policy manual based on your needs.',
+  },
+  {
+    id: 'recruitment',
+    number: '03',
+    pillar: 'Capability',
+    title: 'Affordable SME Recruitment',
+    intro: 'Recruitment support designed around small and growing businesses, not just filling a vacancy.',
+    items: ['Job profiling and role requirements', 'Recruitment advertising and candidate screening', 'Interviews and reference checks', 'Competency-based interview guides', 'Onboarding support', 'Recruitment Process Outsourcing (RPO) options'],
+    deliverables: 'A clearer recruitment process, structured candidate assessment and onboarding support.',
+  },
+  {
+    id: 'performance',
+    number: '04',
+    pillar: 'Capability',
+    title: 'Performance Management',
+    intro: 'Help people understand what good performance looks like and give managers a fair, structured way to support it.',
+    items: ['KPI, KPA and SMART goal development', 'Performance review templates and frameworks', 'Probation management', 'Manager coaching', 'Performance Improvement Plans (PIPs)'],
+    deliverables: 'Individual or departmental scorecards and a practical quarterly review framework.',
+  },
+  {
+    id: 'employee-relations',
+    number: '05',
+    pillar: 'Culture',
+    title: 'Employee & Labour Relations',
+    intro: 'Practical guidance through sensitive workplace matters, with fair processes and appropriate documentation.',
+    items: ['Disciplinary processes and hearing chairing', 'Grievance investigations', 'Poor-performance and incapacity processes', 'Retrenchment process support', 'CCMA preparation'],
+    deliverables: 'Process guidance and documentation shaped to the matter and the applicable requirements.',
+  },
+  {
+    id: 'organisation-change',
+    number: '06',
+    pillar: 'Culture',
+    title: 'Organisational Development & Change',
+    intro: 'Support organisations as roles, structures, systems and working practices evolve.',
+    items: ['Organisational structure reviews and role clarification', 'Workforce planning and job evaluation', 'Restructuring and merger support', 'New-system implementation and culture change', 'Stakeholder analysis and change-impact assessment'],
+    deliverables: 'Depending on project scope: communication plan, readiness survey and change roadmap.',
+  },
+  {
+    id: 'outsourced-hr',
+    number: '07',
+    pillar: 'All three pillars',
+    title: 'Outsourced HR Support',
+    intro: 'Access ongoing HR support without the cost of building a full in-house department.',
+    items: ['Monthly HR support retainers', 'Tailored packages for defined business needs', 'Compliance follow-ups and HR administration', 'Manager guidance and employee-process support'],
+    deliverables: 'Agreed scope, service boundaries and support rhythm defined with each client.',
+  },
+];
+
 export function KRMHome() {
-  return (
-    <>
-      <section className="home-hero krm-home-hero">
-        <div className="home-hero-mark"><span className="logo-mark logo-mark-dark">KRM</span></div>
-        <div className="content hero-content">
-          <span className="eyebrow eyebrow-light">KRM Human Capital Solutions</span>
-          <h1 className="serif">Build a better workplace. Protect your business.</h1>
-          <p>We help South African SMEs build workplaces where people are hired well, treated fairly, and supported to grow, while keeping the business compliant and protected.</p>
-          <div className="hero-actions">
-            <BookingButton light />
-            <Link className="text-link text-link-light" to="/services">Explore our HR services</Link>
-          </div>
+  return <>
+    <section className="home-hero krm-home-hero">
+      <div className="home-hero-mark"><span className="logo-mark logo-mark-dark">KRM</span></div>
+      <div className="content hero-content">
+        <span className="eyebrow eyebrow-light">The SME Employment Compliance and People Partner</span>
+        <h1 className="serif">HR Compliance and People Solutions for Growing South African SMEs</h1>
+        <p>We help SMEs stay compliant, reduce employment risk, and build productive workplaces through practical HR solutions, without the cost of a full-time HR department.</p>
+        <div className="hero-actions">
+          <BookingLink light>Book a Compliance Assessment</BookingLink>
+          <BookingLink href={consultationHref} light>Request a Free Consultation</BookingLink>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section className="band band-tint">
-        <div className="content split">
-          <div>
-            <span className="eyebrow">Why KRM Human Capital Solutions</span>
-            <h2 className="serif">People first. Practical support. Clear direction.</h2>
-          </div>
-          <p>Good HR should help people do their best work while giving business owners confidence that important workplace responsibilities are being handled fairly and carefully.</p>
-        </div>
-        <div className="content krm-reasons">
-          {reasons.map(([title, text]) => (
-            <article className="krm-reason" key={title}>
-              <span className="krm-check">✓</span>
-              <div><h3>{title}</h3><p>{text}</p></div>
-            </article>
-          ))}
-        </div>
-      </section>
+    <section className="band band-tint">
+      <div className="content split">
+        <div><span className="eyebrow">A practical partner for SMEs</span><h2 className="serif">Clear advice. Less uncertainty. Stronger workplaces.</h2></div>
+        <p>KRM Human Capital Solutions helps South African businesses make sense of employment responsibilities, manage workplace risk and put practical people processes in place. Get the support you need without employing a full-time HR department.</p>
+      </div>
+    </section>
 
-      <section className="content section-pad">
-        <SectionTitle eyebrow="How we can help" title="Practical HR support at every stage." text="From bringing the right people into your business to keeping workplace processes clear and compliant, KRM helps you focus on running and growing your team." />
-        <div className="krm-service-cards">
-          {serviceGroups.map((service) => (
-            <Link className="krm-service-card" to="/services" key={service.number}>
-              <span>{service.number}</span>
-              <h3 className="serif">{service.title}</h3>
-              <p>{service.intro}</p>
-              <small>Explore services ↗</small>
-            </Link>
-          ))}
-        </div>
-        <div className="krm-inline-cta"><BookingButton>Not sure where to start? Book a free HR check-in →</BookingButton></div>
-      </section>
+    <section className="content section-pad">
+      <SectionTitle eyebrow="The KRM approach" title="Three pillars. One practical partner." text="Every KRM service sits within Compliance, Capability or Culture, helping you find the right support for your business." />
+      <div className="krm-pillars-grid">
+        {pillars.map((pillar) => <article className={`krm-pillar-card ${pillar.className}`} key={pillar.name}>
+          <span className="krm-pillar-number">{pillar.number}</span>
+          <h3 className="serif">{pillar.name}</h3>
+          <p>{pillar.summary}</p>
+          <ul>{pillar.services.map((service) => <li key={service}>{service}</li>)}</ul>
+          <Link className="text-link" to={pillar.href}>Explore {pillar.name} →</Link>
+        </article>)}
+      </div>
+    </section>
 
-      <section className="band band-teal">
-        <div className="content centered krm-how-heading">
-          <span className="eyebrow eyebrow-light">How it works</span>
-          <h2 className="serif">A clear way forward, together.</h2>
-          <p>Start with a conversation. Leave with a better understanding of what your business needs next.</p>
-        </div>
-        <div className="content krm-steps">
-          {steps.map(([number, title, text]) => (
-            <article className="krm-step" key={number}>
-              <span>{number}</span><h3>{title}</h3><p>{text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+    <section className="band band-teal">
+      <div className="content split krm-featured-assessment">
+        <div><span className="eyebrow eyebrow-light">Start with compliance</span><h2 className="serif">Know what needs attention first.</h2></div>
+        <div><p>A KRM Compliance Assessment helps identify gaps, highlight potential risks and map practical next steps. The scope is tailored to your business and the requirements that apply to it.</p><BookingLink href={assessmentHref} light>Book a Compliance Assessment</BookingLink></div>
+      </div>
+    </section>
 
-      <section className="content section-pad krm-industries">
-        <div>
-          <SectionTitle eyebrow="Who we work with" title="HR support that fits your business." text="We support businesses in construction, mining, IT, and logistics, from owner-managed SMEs to growing teams that don’t yet have an in-house HR department." />
-          <BookingButton />
-        </div>
-        <div className="krm-industry-list" aria-label="Industries served">
-          {['Construction', 'Mining', 'IT', 'Logistics'].map((industry, index) => (
-            <div key={industry}><span>0{index + 1}</span><strong>{industry}</strong></div>
-          ))}
-        </div>
-      </section>
+    <section className="content section-pad">
+      <SectionTitle eyebrow="How it works" title="A clear way forward, together." text="Start with a conversation and leave with a better understanding of what your business needs next." />
+      <div className="krm-steps">
+        {[
+          ['01', 'Talk to us', 'Tell us about your business and what you need help with.'],
+          ['02', 'We assess', 'Review the situation and identify the areas that need attention.'],
+          ['03', 'We recommend', 'Receive a practical way forward and a clear quotation.'],
+          ['04', 'We support', 'Choose the once-off service or ongoing support that fits.'],
+        ].map(([number, title, text]) => <article className="krm-step" key={number}><span>{number}</span><h3>{title}</h3><p>{text}</p></article>)}
+      </div>
+    </section>
 
-      <section className="cta krm-final-cta">
-        <div className="content">
-          <span className="eyebrow">Start with a conversation</span>
-          <h2 className="serif">Let’s make your next HR decision clearer.</h2>
-          <p>Book a free 20-minute HR check-in to talk through your team, your challenges, and where KRM can help.</p>
-          <BookingButton />
-        </div>
-      </section>
-    </>
-  );
+    <section className="band band-tint">
+      <div className="content split">
+        <div><span className="eyebrow">Flexible HR support</span><h2 className="serif">Your HR Department, Your Way.</h2></div>
+        <div><p>Choose monthly retainer support or a tailored package around your business needs. We agree the scope and deliverables with you, so you know what is included.</p><BookingLink href={consultationHref}>Request a Free Consultation</BookingLink></div>
+      </div>
+    </section>
+
+    <section className="content section-pad">
+      <SectionTitle eyebrow="Resources" title="Practical guidance for everyday HR." text="We are building a resource library with useful articles, checklists and guides for South African SMEs." />
+      <div className="krm-resource-preview">
+        {['How to Register for COIDA', 'Employee Contracts Every SME Needs', 'Common UIF Mistakes Employers Make'].map((title, index) => <article key={title}><span>0{index + 1}</span><h3 className="serif">{title}</h3><p>Coming soon. Practical guidance for employers and growing teams.</p></article>)}
+      </div>
+      <Link className="text-link" to="/hr-templates">Explore HR Resources →</Link>
+    </section>
+
+    <section className="cta krm-final-cta">
+      <div className="content"><span className="eyebrow">Start with a conversation</span><h2 className="serif">Let's make your next HR decision clearer.</h2><p>Tell us what your business needs. We will discuss the right next step and provide a quotation where appropriate.</p><div className="hero-actions"><BookingLink>Book a Compliance Assessment</BookingLink><BookingLink href={consultationHref}>Request a Free Consultation</BookingLink></div></div>
+    </section>
+  </>;
 }
 
 export function KRMServices() {
-  return (
-    <>
-      <section className="page-intro">
-        <div className="content">
-          <span className="eyebrow">Human Capital Solutions</span>
-          <h1 className="serif">Practical HR support for growing businesses.</h1>
-          <p>From hiring and development to fair workplace processes and compliance, KRM helps South African SMEs support their people and protect their business.</p>
-          <div className="krm-services-intro-cta"><BookingButton /></div>
-        </div>
-      </section>
-      <section className="content section-pad krm-service-details">
-        {serviceGroups.map((service) => (
-          <article className="krm-service-detail" key={service.number}>
-            <div className="krm-service-detail-number">{service.number}</div>
-            <div>
-              <h2 className="serif">{service.title}</h2>
-              <p className="krm-service-intro">{service.intro}</p>
-              <ul>{service.items.map((item) => <li key={item}>{item}</li>)}</ul>
-            </div>
-          </article>
-        ))}
-      </section>
-      <section className="band band-tint">
-        <div className="content centered krm-services-close">
-          <span className="eyebrow">Not sure where to start?</span>
-          <h2 className="serif">Let’s talk through what your business needs.</h2>
-          <p>A free 20-minute HR check-in is a simple first step. We’ll discuss your situation and help identify what may need attention.</p>
-          <BookingButton />
-        </div>
-      </section>
-    </>
-  );
+  return <>
+    <section className="page-intro">
+      <div className="content">
+        <span className="eyebrow">KRM Services</span>
+        <h1 className="serif">Employment compliance and people support for SMEs.</h1>
+        <p>Explore our services across Compliance, Capability and Culture. We will help you understand the options and request a quote for the support you need.</p>
+        <div className="krm-services-intro-cta"><BookingLink>Book a Compliance Assessment</BookingLink><BookingLink href={consultationHref}>Request a Free Consultation</BookingLink></div>
+      </div>
+    </section>
+    <section className="content section-pad">
+      <SectionTitle eyebrow="Our service pillars" title="Find the support your business needs." />
+      <div className="krm-pillar-shortcuts">{pillars.map((pillar) => <a key={pillar.name} href={pillar.href}><span>{pillar.number}</span><strong>{pillar.name}</strong><small>Explore pillar ↓</small></a>)}</div>
+      <div className="krm-services-catalogue">
+        {serviceSections.map((service) => <article className="krm-service-detail" id={service.id} key={service.id}>
+          <div className="krm-service-detail-number">{service.number}</div>
+          <div>
+            <span className="eyebrow">{service.pillar}</span>
+            <h2 className="serif">{service.title}</h2>
+            <p className="krm-service-intro">{service.intro}</p>
+            <ul>{service.items.map((item) => <li key={item}>{item}</li>)}</ul>
+            <p className="krm-deliverables"><strong>Possible deliverables:</strong> {service.deliverables}</p>
+            <BookingLink href={consultationHref}>Request a Quote</BookingLink>
+          </div>
+        </article>)}
+      </div>
+    </section>
+    <section className="band band-tint">
+      <div className="content centered krm-services-close"><span className="eyebrow">Not sure where to start?</span><h2 className="serif">Let's talk through what your business needs.</h2><p>Request a free consultation. We can discuss your situation, identify the relevant service and outline the next steps.</p><BookingLink href={consultationHref}>Request a Free Consultation</BookingLink></div>
+    </section>
+  </>;
 }
