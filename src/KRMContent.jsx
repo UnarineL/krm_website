@@ -29,7 +29,7 @@ const pillars = [
     name: 'Capability',
     summary: 'Give your people and managers the structure to perform.',
     services: ['Affordable SME recruitment', 'Performance management', 'KPIs, KPAs and SMART goals', 'Leadership and manager support'],
-    href: '/services#capability',
+    href: '/services#recruitment',
     className: 'capability',
   },
   {
@@ -37,7 +37,7 @@ const pillars = [
     name: 'Culture',
     summary: 'Build healthier workplaces and guide teams through change.',
     services: ['Employee and labour relations', 'Organisational design', 'Change management', 'Employee engagement'],
-    href: '/services#culture',
+    href: '/services#employee-relations',
     className: 'culture',
   },
 ];
