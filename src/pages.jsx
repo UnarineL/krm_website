@@ -140,27 +140,27 @@ export function Legacy() {
   return (
     <>
       <PageIntro
-        eyebrow="Legacy"
-        title="The story behind KRM."
-        text="A considered look at the experience, principles and evolution behind the organisation."
+        eyebrow="About KRM"
+        title="The SME Employment Compliance and People Partner."
+        text="KRM Human Capital Solutions helps South African SMEs stay compliant, manage employment risk and build productive workplaces through practical people solutions."
       />
       <section className="content section-pad">
         <div className="editorial">
           <div>
             <span className="eyebrow">01 · The foundation</span>
-            <h2 className="serif">Built around people, practical thinking and long-term value.</h2>
+            <h2 className="serif">Practical HR support for growing businesses.</h2>
           </div>
-          <p>Client-approved history and company milestones can live here. We have deliberately left this section ready for the confirmed KRM story rather than inventing a corporate history.</p>
+          <p>KRM focuses on the employment and people challenges that growing businesses need to manage. The company’s confirmed history, experience and milestones can be added here when supplied.</p>
         </div>
         <div className="editorial editorial-reverse">
           <div>
             <span className="eyebrow">02 · The approach</span>
-            <h2 className="serif">Experience should make the next decision clearer.</h2>
+            <h2 className="serif">SME-focused, practical and people-centred.</h2>
           </div>
-          <p>KRM’s legacy section is designed as an editorial story rather than a conventional list of dates, awards or generic claims.</p>
+          <p>Our approach is to help businesses understand their obligations, address workplace risks and put workable HR processes in place without the cost of a full-time HR department.</p>
         </div>
       </section>
-      <CTA title="Bring the next chapter into focus." />
+      <CTA title="Let’s discuss your people and compliance needs." text="Contact KRM to discuss practical HR support for your business." />
     </>
   );
 }
@@ -197,7 +197,7 @@ export function Services() {
 export function HRTemplates() {
   return (
     <>
-      <PageIntro eyebrow="HR Templates" title="Useful documents for everyday HR work." text="A focused resource library for practical workplace administration and people management." />
+      <PageIntro eyebrow="Resources" title="Practical HR guidance for South African SMEs." text="Explore useful guidance and resources to help your business manage employment responsibilities and everyday people matters." />
       <section className="content section-pad">
         <div className="resource-grid">
           {templates.map((template, index) => (
@@ -209,7 +209,7 @@ export function HRTemplates() {
             </article>
           ))}
         </div>
-        <p className="small-note">Template catalogue, pricing and access rules can be connected here once the KRM resource list is confirmed.</p>
+        <p className="small-note">Articles and free downloads will be added in stages as KRM’s content is confirmed. Planned resources include an HR Compliance Checklist, New Employee Onboarding Checklist and Small Business HR Starter Guide.</p>
       </section>
     </>
   );
@@ -229,7 +229,7 @@ export function WorkplaceRiskCheck() {
 
   return (
     <>
-      <PageIntro eyebrow="HR Compliance & Workplace Risk Check" title="See where your workplace may need attention." text="Answer a short set of practical questions to identify areas worth reviewing. This is an initial screening tool, not legal advice." />
+      <PageIntro eyebrow="Employment Compliance Check" title="Identify areas of employment compliance that may need attention." text="Answer practical questions about your workplace processes and records. This initial screening can help identify topics to review, but it is not a formal compliance assessment or legal advice." />
       <section className="content section-pad">
         <div className="risk-intro">
           <div><span className="eyebrow">Assessment</span><h2 className="serif">Work through the questions at your own pace.</h2></div>
@@ -253,7 +253,7 @@ export function WorkplaceRiskCheck() {
           <div className="risk-result" role="status">
             <span className="eyebrow">Initial result</span>
             <h2 className="serif">{score} areas marked yes out of {answered} answered.</h2>
-            <p>This screening highlights topics to review. A KRM consultation can provide context and determine the appropriate next step.</p>
+            <p>This screening highlights topics to review. A KRM Compliance Assessment can help examine relevant requirements, identify potential risks and agree practical next steps.</p>
             <Link className="button" to="/contact">Talk to KRM</Link>
           </div>
         )}
@@ -326,19 +326,19 @@ export function DigitalSolutions() {
 export function Contact() {
   return (
     <>
-      <PageIntro eyebrow="Contact" title="Let's talk about what you need." text="Tell KRM a little about your organisation, your challenge or the work you would like to discuss." />
+      <PageIntro eyebrow="Contact" title="Let’s talk about your HR and compliance needs." text="Contact KRM to discuss an Employment Compliance Assessment, a free consultation or practical HR support for your business." />
       <section className="content section-pad contact-grid">
         <form className="contact-form" onSubmit={(event) => event.preventDefault()}>
           <label>Name<input name="name" placeholder="Your name" required /></label>
           <label>Email<input type="email" name="email" placeholder="you@example.com" required /></label>
           <label>Organisation<input name="organisation" placeholder="Organisation" /></label>
-          <label>What can we help with?<textarea name="message" rows="7" placeholder="Tell us a little about what you need." required /></label>
+          <label>What can we help with?<textarea name="message" rows="7" placeholder="For example, employment compliance, HR documentation, recruitment, performance management or employee relations." required /></label>
           <button className="button" type="submit">Send enquiry</button>
         </form>
         <aside className="contact-side">
           <span className="eyebrow">Direct contact</span>
           <a href="mailto:info@krmhcs.co.za">info@krmhcs.co.za</a>
-          <p>Phone and social details can be added here once confirmed.</p>
+          <p>For a compliance assessment, consultation or service enquiry, email KRM directly.</p>
         </aside>
       </section>
     </>
