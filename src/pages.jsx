@@ -326,19 +326,19 @@ export function DigitalSolutions() {
 export function Contact() {
   return (
     <>
-      <PageIntro eyebrow="Contact" title="Let’s talk about your HR and compliance needs." text="Contact KRM to discuss an Employment Compliance Assessment, a free consultation or practical HR support for your business." />
+      <PageIntro eyebrow="Contact KRM" title="Let’s talk about your HR and compliance needs." text="Book a Compliance Assessment, request a free consultation or tell us about the HR support your business needs." />
       <section className="content section-pad contact-grid">
         <form className="contact-form" onSubmit={(event) => event.preventDefault()}>
           <label>Name<input name="name" placeholder="Your name" required /></label>
           <label>Email<input type="email" name="email" placeholder="you@example.com" required /></label>
           <label>Organisation<input name="organisation" placeholder="Organisation" /></label>
-          <label>What can we help with?<textarea name="message" rows="7" placeholder="For example, employment compliance, HR documentation, recruitment, performance management or employee relations." required /></label>
+          <label>What can we help with?<textarea name="message" rows="7" placeholder="Tell us whether you need a Compliance Assessment, a consultation or support with recruitment, HR documentation, performance management or employee relations." required /></label>
           <button className="button" type="submit">Send enquiry</button>
         </form>
         <aside className="contact-side">
           <span className="eyebrow">Direct contact</span>
           <a href="mailto:info@krmhcs.co.za">info@krmhcs.co.za</a>
-          <p>For a compliance assessment, consultation or service enquiry, email KRM directly.</p>
+          <p>Email KRM to discuss a Compliance Assessment, request a free consultation or ask about the services available to your business.</p>
         </aside>
       </section>
     </>
