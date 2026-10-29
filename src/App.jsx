@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import SiteLayout from './components/SiteLayout';
 import Vacancies from './Vacancies';
-import { KRMHome, KRMServices } from './KRMContent';
+import { KRMHome, KRMServices, KRMServicePage } from './KRMContent';
 import {
   Legacy,
   HRTemplates,
@@ -17,6 +17,7 @@ export default function App() {
         <Route path="/" element={<KRMHome />} />
         <Route path="/legacy" element={<Legacy />} />
         <Route path="/services" element={<KRMServices />} />
+        <Route path="/services/:slug" element={<KRMServicePage />} />
         <Route path="/hr-templates" element={<HRTemplates />} />
         <Route path="/workplace-risk-check" element={<WorkplaceRiskCheck />} />
         <Route path="/vacancies" element={<Vacancies />} />
