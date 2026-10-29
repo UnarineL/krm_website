@@ -4,7 +4,7 @@ const assessmentHref = 'mailto:info@krmhcs.co.za?subject=Book%20a%20KRM%20Compli
 const consultationHref = 'mailto:info@krmhcs.co.za?subject=Request%20a%20Free%20KRM%20Consultation';
 
 function BookingLink({ href = assessmentHref, children, light = false }) {
-  return <a className={`button ${light ? 'button-outline' : ''}`} href={href}>{children}</a>;
+  return <a className={`button ${light ? 'button-light' : ''}`} href={href}>{children}</a>;
 }
 
 function SectionTitle({ eyebrow, title, text }) {
@@ -111,12 +111,13 @@ const serviceSections = [
 export function KRMHome() {
   return <>
     <section className="home-hero krm-home-hero">
+      <div className="home-hero-mark"><span className="logo-mark logo-mark-dark">KRM</span></div>
       <div className="content hero-content">
-        <span className="eyebrow">The SME Employment Compliance and People Partner</span>
+        <span className="eyebrow eyebrow-light">The SME Employment Compliance and People Partner</span>
         <h1 className="serif">HR Compliance and People Solutions for Growing South African SMEs</h1>
         <p>We help SMEs stay compliant, reduce employment risk, and build productive workplaces through practical HR solutions, without the cost of a full-time HR department.</p>
         <div className="hero-actions">
-          <BookingLink>Book a Compliance Assessment</BookingLink>
+          <BookingLink light>Book a Compliance Assessment</BookingLink>
           <BookingLink href={consultationHref} light>Request a Free Consultation</BookingLink>
         </div>
       </div>
@@ -142,10 +143,10 @@ export function KRMHome() {
       </div>
     </section>
 
-    <section className="band band-teal krm-light-band">
+    <section className="band band-teal">
       <div className="content split krm-featured-assessment">
-        <div><span className="eyebrow">Start with compliance</span><h2 className="serif">Know what needs attention first.</h2></div>
-        <div><p>A KRM Compliance Assessment helps identify gaps, highlight potential risks and map practical next steps. The scope is tailored to your business and the requirements that apply to it.</p><BookingLink href={assessmentHref}>Book a Compliance Assessment</BookingLink></div>
+        <div><span className="eyebrow eyebrow-light">Start with compliance</span><h2 className="serif">Know what needs attention first.</h2></div>
+        <div><p>A KRM Compliance Assessment helps identify gaps, highlight potential risks and map practical next steps. The scope is tailored to your business and the requirements that apply to it.</p><BookingLink href={assessmentHref} light>Book a Compliance Assessment</BookingLink></div>
       </div>
     </section>
 
