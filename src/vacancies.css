@@ -79,3 +79,22 @@
   .vacancy-card { grid-template-columns: 28px minmax(0, 1fr) 18px; gap: 12px; }
   .vacancies-contact-inner { align-items: flex-start; flex-direction: column; }
 }
+
+
+/* Match the shared light page-intro and container system */
+.vacancies-hero {
+  padding: clamp(48px, 6vw, 70px) 0 clamp(42px, 5vw, 58px);
+  background: var(--teal-tint);
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+.vacancies-hero-inner { width: min(calc(100% - 56px), var(--container)); max-width: var(--container); margin-inline: auto; }
+.vacancies-hero .eyebrow-light { color: var(--teal-dark); }
+.vacancies-hero h1 { color: var(--ink); font-size: clamp(36px, 5vw, 56px); line-height: 1.04; }
+.vacancies-hero p { color: var(--muted); }
+.vacancies-contact .eyebrow-light { color: var(--teal-dark); }
+@media (max-width: 760px) {
+  .vacancies-hero { padding: 42px 0 38px; }
+  .vacancies-hero-inner { width: min(calc(100% - 36px), var(--container)); }
+  .vacancies-hero h1 { font-size: clamp(34px, 8vw, 46px); }
+}
