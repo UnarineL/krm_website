@@ -44,10 +44,10 @@ const riskQuestions = [
 ];
 
 const templates = [
-  { title: 'HR policies and procedures', text: 'Practical documents for structuring consistent workplace processes.' },
-  { title: 'Employment documentation', text: 'Templates supporting key employee lifecycle activities.' },
-  { title: 'Performance management', text: 'Documents to help managers approach performance matters consistently.' },
-  { title: 'Workplace relations', text: 'Resources for day-to-day employee relations and workplace administration.' },
+  { title: 'How to Register for COIDA', text: 'A practical guide to understanding the COIDA registration process.' },
+  { title: 'Employee Contracts Every SME Needs', text: 'An overview of key employment agreements and documentation for small businesses.' },
+  { title: 'Common UIF Mistakes Employers Make', text: 'Issues employers should look out for when managing UIF responsibilities.' },
+  { title: 'What Inspectors Look For During Labour Audits', text: 'A guide to records and workplace practices that may be reviewed during an inspection.' },
 ];
 
 function PageIntro({ eyebrow, title, text, dark = false }) {
@@ -205,7 +205,7 @@ export function HRTemplates() {
               <span className="resource-index">0{index + 1}</span>
               <h2 className="serif">{template.title}</h2>
               <p>{template.text}</p>
-              <button className="text-button" type="button">View resource →</button>
+              <span className="text-button">Coming soon</span>
             </article>
           ))}
         </div>
