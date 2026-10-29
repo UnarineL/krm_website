@@ -3,10 +3,9 @@ import { Link, NavLink } from 'react-router-dom';
 
 const navItems = [
   ['/', 'Home'],
-  ['/legacy', 'Legacy'],
+  ['/legacy', 'About'],
   ['/services', 'Services'],
-  ['/hr-templates', 'HR Templates'],
-  ['/workplace-risk-check', 'Risk Check'],
+  ['/hr-templates', 'Resources'],
   ['/vacancies', 'Vacancies'],
   ['/digital-solutions', 'Digital Solutions'],
   ['/contact', 'Contact'],
