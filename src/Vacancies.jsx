@@ -4,21 +4,9 @@ import './vacancies.css';
 const vacancyPlaceholders = [
   {
     number: '01',
-    title: 'Previous vacancy',
-    status: 'Details to be confirmed',
-    text: 'KRM will add the role title, advert, requirements and application details for this past vacancy.',
-  },
-  {
-    number: '02',
-    title: 'Previous vacancy',
-    status: 'Details to be confirmed',
-    text: 'This listing is a review placeholder. Confirmed vacancy information will replace it before publication.',
-  },
-  {
-    number: '03',
-    title: 'Previous vacancy',
-    status: 'Details to be confirmed',
-    text: 'Additional historical vacancies can be included here once the final list and supporting information are supplied.',
+    title: 'Current vacancies',
+    status: 'Listings added when opportunities are confirmed',
+    text: 'KRM will publish available roles here with the job description, requirements, closing date and application instructions.',
   },
 ];
 
@@ -28,8 +16,8 @@ export default function Vacancies() {
       <section className="vacancies-hero">
         <div className="content vacancies-hero-inner">
           <span className="eyebrow eyebrow-light">Careers at KRM</span>
-          <h1 className="serif">Find your next opportunity.</h1>
-          <p>Explore vacancy announcements shared by KRM Human Capital Solutions. This page is being prepared for the previous vacancies and further details KRM would like to publish.</p>
+          <h1 className="serif">Explore opportunities with KRM.</h1>
+          <p>KRM Human Capital Solutions shares recruitment opportunities here when vacancy details are confirmed and ready for publication.</p>
         </div>
       </section>
 
@@ -37,9 +25,9 @@ export default function Vacancies() {
         <div className="vacancies-heading">
           <div>
             <span className="eyebrow">Vacancies</span>
-            <h2 className="serif">Previous opportunities</h2>
+            <h2 className="serif">Current vacancies</h2>
           </div>
-          <p>Past advertisements will be organised here so visitors can review each opportunity and its relevant application information.</p>
+          <p>Each listing will include the role details, requirements, closing date and instructions for applying.</p>
         </div>
 
         <div className="vacancy-list">
@@ -56,15 +44,15 @@ export default function Vacancies() {
           ))}
         </div>
 
-        <p className="vacancies-review-note">Review draft: these are layout placeholders, not live job adverts. Vacancy titles, closing dates, requirements and application instructions should be confirmed by KRM before this page is published.</p>
+        <p className="vacancies-review-note">No specific vacancy details have been supplied for publication yet. Confirmed job adverts and application instructions should be added here before candidates are invited to apply.</p>
       </section>
 
       <section className="vacancies-contact">
         <div className="content vacancies-contact-inner">
           <div>
             <span className="eyebrow eyebrow-light">Stay connected</span>
-            <h2 className="serif">Have a question about an opportunity?</h2>
-            <p>Contact KRM for assistance with vacancy information.</p>
+            <h2 className="serif">Need more information about a vacancy?</h2>
+            <p>Contact KRM with questions about a published opportunity or its application process.</p>
           </div>
           <Link className="button button-light" to="/contact">Contact KRM</Link>
         </div>
