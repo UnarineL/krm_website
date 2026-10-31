@@ -668,3 +668,26 @@ p { margin-top: 0; }
   .ds-service-card { min-height: 0; padding: 24px; }
   .ds-service-card h2 { font-size: 28px; }
 }
+
+
+/* Home hero: subtle oversized circle behind the headline */
+.krm-home-hero::before {
+  content: '';
+  position: absolute;
+  width: 860px;
+  height: 860px;
+  left: -90px;
+  top: -170px;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+@media (max-width: 760px) {
+  .krm-home-hero::before {
+    width: 620px;
+    height: 620px;
+    left: -300px;
+    top: 10px;
+  }
+}
