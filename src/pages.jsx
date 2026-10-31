@@ -94,7 +94,7 @@ export function Home() {
           <h1 className="serif">People, practice and progress.</h1>
           <p>Practical human capital support, workplace resources and digital solutions for organisations ready to move forward.</p>
           <div className="hero-actions">
-            <Link className="button button-light" to="/services">Explore services</Link>
+            <Link className="button button-light" to="/contact">Explore services</Link>
             <Link className="text-link text-link-light" to="/legacy">Discover KRM</Link>
           </div>
         </div>
@@ -122,7 +122,7 @@ export function Home() {
           <span className="eyebrow eyebrow-light">Digital Solutions</span>
           <h2 className="serif">Collaborate with the World's Best</h2>
           <p>in design & development</p>
-          <Link className="button button-light" to="/digital-solutions">Explore Digital Solutions</Link>
+          <Link className="button button-light" to="/contact">Explore Digital Solutions</Link>
         </div>
       </section>
 
