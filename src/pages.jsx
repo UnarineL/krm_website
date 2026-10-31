@@ -332,9 +332,10 @@ export function Contact() {
 
   async function handleSubmit(event) {
     event.preventDefault();
+    const form = event.currentTarget;
     setFormStatus({ state: 'sending', message: '' });
 
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(form);
     const payload = Object.fromEntries(formData.entries());
 
     try {
@@ -349,7 +350,7 @@ export function Contact() {
         throw new Error(result.error || 'Your enquiry could not be sent. Please try again.');
       }
 
-      event.currentTarget.reset();
+      form.reset();
       setFormStatus({ state: 'success', message: 'Thank you. Your enquiry has been sent to KRM.' });
     } catch (error) {
       setFormStatus({
