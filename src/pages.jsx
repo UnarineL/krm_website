@@ -50,9 +50,9 @@ const templates = [
   { title: 'What Inspectors Look For During Labour Audits', text: 'A guide to records and workplace practices that may be reviewed during an inspection.' },
 ];
 
-function PageIntro({ eyebrow, title, text, dark = false }) {
+function PageIntro({ eyebrow, title, text, dark = false, tone = '' }) {
   return (
-    <section className={`page-intro ${dark ? 'page-intro-dark' : ''}`}>
+    <section className={`page-intro ${dark ? 'page-intro-dark' : ''} ${tone ? `page-intro-${tone}` : ''}`}>
       <div className="content">
         <span className="eyebrow">{eyebrow}</span>
         <h1 className="serif">{title}</h1>
@@ -141,6 +141,7 @@ export function Legacy() {
     <>
       <PageIntro
         eyebrow="About KRM"
+        tone="about"
         title="The SME Employment Compliance and People Partner."
         text="KRM Human Capital Solutions helps South African SMEs stay compliant, manage employment risk and build productive workplaces through practical people solutions."
       />
