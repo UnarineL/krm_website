@@ -3,8 +3,8 @@ import { Link, useParams } from 'react-router-dom';
 const assessmentHref = 'mailto:info@krmhcs.co.za?subject=Book%20a%20KRM%20Compliance%20Assessment';
 const consultationHref = 'mailto:info@krmhcs.co.za?subject=Request%20a%20Free%20KRM%20Consultation';
 
-function BookingLink({ href = assessmentHref, children, light = false }) {
-  return <a className={`button ${light ? 'button-light' : ''}`} href={href}>{children}</a>;
+function BookingLink({ children, light = false }) {
+  return <Link className={`button ${light ? 'button-light' : ''}`} to="/contact">{children}</Link>;
 }
 
 function SectionTitle({ eyebrow, title, text }) {
