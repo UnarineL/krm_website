@@ -116,17 +116,6 @@ export function KRMHome() {
         <span className="eyebrow eyebrow-light">The SME Employment Compliance and People Partner</span>
         <h1 className="serif">HR Compliance and People Solutions for Growing South African SMEs</h1>
         <p>We help SMEs stay compliant, reduce employment risk, and build productive workplaces through practical HR solutions, without the cost of a full-time HR department.</p>
-        <div className="hero-actions">
-          <BookingLink light>Book a Compliance Assessment</BookingLink>
-          <BookingLink href={consultationHref} light>Request a Free Consultation</BookingLink>
-        </div>
-      </div>
-    </section>
-
-    <section className="band band-tint">
-      <div className="content split">
-        <div><span className="eyebrow">A practical partner for SMEs</span><h2 className="serif">Clear advice. Less uncertainty. Stronger workplaces.</h2></div>
-        <p>KRM Human Capital Solutions helps South African businesses make sense of employment responsibilities, manage workplace risk and put practical people processes in place. Get the support you need without employing a full-time HR department.</p>
       </div>
     </section>
 
