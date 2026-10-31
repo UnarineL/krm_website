@@ -145,7 +145,13 @@ export function Legacy() {
         title="The SME Employment Compliance and People Partner."
         text="KRM Human Capital Solutions helps South African SMEs stay compliant, manage employment risk and build productive workplaces through practical people solutions."
       />
-      
+      <section className="content section-pad narrow-copy">
+        <p>At KRM Human Capital Solutions, we understand that managing people isn't always easy, especially when you're focused on growing your business. That's why we partner with small and medium-sized businesses to simplify HR, strengthen compliance and create workplaces where people can do their best work.</p>
+        <p>We believe HR should be practical, not complicated. Whether you need support with compliance, contracts, policies, recruitment, performance management or workplace change, we provide tailored solutions that make sense for your business and its unique needs.</p>
+        <p>Our goal is simple: to help businesses build strong people foundations, reduce risk and create positive workplace experiences that support long-term success.</p>
+        <p><strong>Your trusted partner in Compliance, Capability and Culture.</strong></p>
+      </section>
+
       <CTA title="Let’s discuss your people and compliance needs." text="Contact KRM to discuss practical HR support for your business." />
     </>
   );
