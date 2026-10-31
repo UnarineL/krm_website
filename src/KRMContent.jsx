@@ -132,7 +132,7 @@ export function KRMHome() {
       </div>
     </section>
     
-    <section className="content section-pad">
+    <section className="content section-pad krm-how-it-works-section">
       <SectionTitle eyebrow="How it works" title="A clear way forward, together." text="Start with a conversation and leave with a better understanding of what your business needs next." />
       <div className="krm-steps">
         {[
