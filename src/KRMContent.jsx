@@ -172,7 +172,6 @@ export function KRMServices() {
         <span className="eyebrow">KRM Services</span>
         <h1 className="serif">Employment compliance and people support for SMEs.</h1>
         <p>Explore our services across Compliance, Capability and Culture. We will help you understand the options and request a quote for the support you need.</p>
-        <div className="krm-services-intro-cta"><BookingLink>Book a Compliance Assessment</BookingLink><BookingLink href={consultationHref}>Request a Free Consultation</BookingLink></div>
       </div>
     </section>
     <section className="content section-pad">
