@@ -212,7 +212,6 @@ export function KRMServicePage() {
         <span className="eyebrow">{service.pillar} · KRM Services</span>
         <h1 className="serif">{service.title}</h1>
         <p>{service.intro}</p>
-        <div className="krm-services-intro-cta"><Link className="button" to="/contact">Request a Quote</Link><Link className="button" to="/contact">Book a Compliance Assessment</Link></div>
       </div>
     </section>
     <section className="content section-pad krm-service-page-body">
