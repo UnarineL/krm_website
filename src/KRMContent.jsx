@@ -131,14 +131,7 @@ export function KRMHome() {
         </article>)}
       </div>
     </section>
-
-    <section className="band band-teal">
-      <div className="content split krm-featured-assessment">
-        <div><span className="eyebrow eyebrow-light">Start with compliance</span><h2 className="serif">Know what needs attention first.</h2></div>
-        <div><p>A KRM Compliance Assessment helps identify gaps, highlight potential risks and map practical next steps. The scope is tailored to your business and the requirements that apply to it.</p><BookingLink href={assessmentHref} light>Book a Compliance Assessment</BookingLink></div>
-      </div>
-    </section>
-
+    
     <section className="content section-pad">
       <SectionTitle eyebrow="How it works" title="A clear way forward, together." text="Start with a conversation and leave with a better understanding of what your business needs next." />
       <div className="krm-steps">
@@ -148,6 +141,13 @@ export function KRMHome() {
           ['03', 'We recommend', 'Receive a practical way forward and a clear quotation.'],
           ['04', 'We support', 'Choose the once-off service or ongoing support that fits.'],
         ].map(([number, title, text]) => <article className="krm-step" key={number}><span>{number}</span><h3>{title}</h3><p>{text}</p></article>)}
+      </div>
+    </section>
+    
+    <section className="band band-teal">
+      <div className="content split krm-featured-assessment">
+        <div><span className="eyebrow eyebrow-light">Start with compliance</span><h2 className="serif">Know what needs attention first.</h2></div>
+        <div><p>A KRM Compliance Assessment helps identify gaps, highlight potential risks and map practical next steps. The scope is tailored to your business and the requirements that apply to it.</p><BookingLink href={assessmentHref} light>Book a Compliance Assessment</BookingLink></div>
       </div>
     </section>
 
