@@ -151,13 +151,6 @@ export function KRMHome() {
       </div>
     </section>
 
-    <section className="band band-tint">
-      <div className="content split">
-        <div><span className="eyebrow">Flexible HR support</span><h2 className="serif">Your HR Department, Your Way.</h2></div>
-        <div><p>Choose monthly retainer support or a tailored package around your business needs. We agree the scope and deliverables with you, so you know what is included.</p><BookingLink href={consultationHref}>Request a Free Consultation</BookingLink></div>
-      </div>
-    </section>
-
     <section className="content section-pad">
       <SectionTitle eyebrow="Resources" title="Practical guidance for everyday HR." text="We are building a resource library with useful articles, checklists and guides for South African SMEs." />
       <div className="krm-resource-preview">
