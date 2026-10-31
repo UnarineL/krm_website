@@ -1,6 +1,6 @@
 .vacancies-hero {
   padding: clamp(70px, 9vw, 112px) 0;
-  background: linear-gradient(145deg, var(--photo), #163654 65%, #0c2138);
+  background: #1B7B7F;
   color: #fff;
 }
 .vacancies-hero-inner { max-width: 1080px; }
@@ -68,7 +68,7 @@
   font-size: 11px;
   line-height: 1.7;
 }
-.vacancies-contact { padding: 54px 0; background: var(--teal-dark); color: #fff; }
+.vacancies-contact { padding: 54px 0; background: #1B7B7F; color: #fff; }
 .vacancies-contact-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
 .vacancies-contact h2 { max-width: 600px; margin: 0 0 10px; font-size: clamp(32px, 4.5vw, 46px); line-height: 1; }
 .vacancies-contact p { margin: 0; color: #d9eeee; font-size: 13px; line-height: 1.7; }
