@@ -267,7 +267,7 @@ export function DigitalSolutions() {
         eyebrow="Digital Solutions"
         tone="digital"
         title="Collaborate with the World's Best"
-        text="in design &amp; development"
+        text="in design &amp; development to bring your ideas to life."
       />
 
       <section className="content section-pad ds-services">
@@ -309,11 +309,6 @@ export function DigitalSolutions() {
           <div><strong>Social & Email</strong><span>Integrations</span></div>
           <div><strong>1–8 Pages</strong><span>Scope</span></div>
         </div>
-      </section>
-
-      <section className="content ds-work">
-        <SectionHeading title="Recent Work" />
-        <div className="work-placeholder"><span>Projects will be added here</span></div>
       </section>
 
       <section className="content ds-faq">
