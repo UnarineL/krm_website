@@ -509,19 +509,19 @@ p { margin-top: 0; }
 
 /* About page intro: a softer, distinct identity from the home hero */
 .page-intro-about {
-  background: #9AC3B9;
-  border-bottom-color: #537B9D;
-  color: #2b2f33;
+  background: #1B7B7F;
+  border-bottom-color: #1B7B7F;
+  color: #fff;
 }
 
 .page-intro-about .eyebrow {
-  color: #0E5558;
+  color: #bfe9ea;
 }
 
 .page-intro-about h1 {
-  color: #203536;
+  color: #fff;
 }
 
 .page-intro-about p {
-  color: #344e4b;
+  color: #d9eeee;
 }
