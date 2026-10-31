@@ -463,3 +463,36 @@ p { margin-top: 0; }
     min-height: calc(100svh - 64px);
   }
 }
+
+/* Home page: tighten the transition into How It Works and clarify the step cards */
+.krm-how-it-works-section {
+  padding-top: clamp(36px, 5vw, 60px);
+}
+
+.krm-step {
+  min-height: 100%;
+  padding: 22px 20px;
+  border: 1px solid #b7d8d9;
+  border-top: 4px solid #537B9D;
+  background: #EAF7F7;
+}
+
+.krm-step > span {
+  color: #0E7377;
+  font-size: 12px;
+}
+
+.krm-step h3 {
+  margin: 15px 0 9px;
+  color: #2b2f33;
+}
+
+.krm-step p {
+  color: #5b6672;
+}
+
+@media (max-width: 500px) {
+  .krm-step {
+    padding: 20px;
+  }
+}
