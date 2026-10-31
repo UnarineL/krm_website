@@ -23,10 +23,18 @@ export default function SiteLayout({ children }) {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
+  function handleNavigation(to) {
+    setOpen(false);
+
+    if (location.pathname === to) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
   return (
     <div className="site">
       <header className="site-header">
-        <Link className="brand" to="/" onClick={() => setOpen(false)} aria-label="KRM home">
+        <Link className="brand" to="/" onClick={() => handleNavigation('/')} aria-label="KRM home">
           <Logo />
         </Link>
 
@@ -36,7 +44,7 @@ export default function SiteLayout({ children }) {
               key={to}
               to={to}
               end={to === '/'}
-              onClick={() => setOpen(false)}
+              onClick={() => handleNavigation(to)}
               className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
             >
               {label}
