@@ -507,6 +507,24 @@ p { margin-top: 0; }
 }
 
 
+/* Services page intro: match the home hero teal */
+.page-intro-services {
+  background: #1B7B7F;
+  border-bottom-color: #1B7B7F;
+}
+
+.page-intro-services .eyebrow {
+  color: #bfe9ea;
+}
+
+.page-intro-services h1 {
+  color: #fff;
+}
+
+.page-intro-services p {
+  color: #d9eeee;
+}
+
 /* About page intro: a softer, distinct identity from the home hero */
 .page-intro-about {
   background: #1B7B7F;
