@@ -584,3 +584,10 @@ p { margin-top: 0; }
     max-width: 560px;
   }
 }
+
+
+/* Resources page intro: match the solid home hero teal */
+.page-intro-resources {
+  background: #1B7B7F;
+  border-bottom-color: #1B7B7F;
+}
