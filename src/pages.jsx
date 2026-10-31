@@ -148,7 +148,7 @@ export function Legacy() {
       <section className="content section-pad about-story">
         <div className="about-story-heading">
           <span className="eyebrow">Who we are</span>
-          <h2 className="serif">People are at the heart of every business.</h2>
+          <h2 className="serif">Getting to Know KRM Human Capital Solutions.</h2>
         </div>
         <div className="about-story-copy">
           <p>At KRM Human Capital Solutions, we understand that managing people isn't always easy, especially when you're focused on growing your business. That's why we partner with small and medium-sized businesses to simplify HR, strengthen compliance and create workplaces where people can do their best work.</p>
