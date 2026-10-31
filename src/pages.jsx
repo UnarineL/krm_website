@@ -263,20 +263,31 @@ export function WorkplaceRiskCheck() {
 export function DigitalSolutions() {
   return (
     <>
-      <section className="ds-hero">
-        <div className="ds-logo-ring"><Logo dark /></div>
-        <h1 className="serif">Collaborate with the World's Best</h1>
-        <div className="ds-sub">in design &amp; development</div>
-      </section>
+      <PageIntro
+        eyebrow="Digital Solutions"
+        tone="digital"
+        title="Collaborate with the World's Best"
+        text="in design &amp; development"
+      />
 
-      {digitalServices.map((service, index) => (
-        <section className={`ds-band ${index % 2 ? 'teal' : 'tint'}`} key={service.title}>
-          <div className="feature">
-            <h2>{service.title}</h2>
-            <p className={index % 2 === 0 ? 'serif feature-serif' : ''}>{service.text}</p>
-          </div>
-        </section>
-      ))}
+      <section className="content section-pad ds-services">
+        <SectionHeading eyebrow="What we offer" title="Digital solutions designed around your business." />
+        <div className="ds-services-grid">
+          {digitalServices.map((service, index) => (
+            <article className="ds-service-card" key={service.title}>
+              <span className="ds-service-icon" aria-hidden="true">
+                {index === 0 && <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2" /><path d="M8 21h8M12 17v4" /></svg>}
+                {index === 1 && <svg viewBox="0 0 24 24"><path d="M4 8h16l-1.5 12h-13L4 8Z" /><path d="M9 9V6a3 3 0 0 1 6 0v3" /></svg>}
+                {index === 2 && <svg viewBox="0 0 24 24"><rect x="5" y="2.5" width="14" height="19" rx="2.5" /><path d="M9 6h6M10 18h4" /></svg>}
+                {index === 3 && <svg viewBox="0 0 24 24"><path d="M14.5 6.5a5 5 0 0 0-6.8 6.8L3 18l3 3 4.7-4.7a5 5 0 0 0 6.8-6.8L14 13l-3-3 3.5-3.5Z" /></svg>}
+              </span>
+              <span className="ds-service-number">0{index + 1}</span>
+              <h2>{service.title}</h2>
+              <p>{service.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <section className="ds-process content">
         <SectionHeading title="Our Process" />
