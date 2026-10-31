@@ -328,16 +328,51 @@ export function DigitalSolutions() {
 }
 
 export function Contact() {
+  const [formStatus, setFormStatus] = useState({ state: 'idle', message: '' });
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    setFormStatus({ state: 'sending', message: '' });
+
+    const formData = new FormData(event.currentTarget);
+    const payload = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Your enquiry could not be sent. Please try again.');
+      }
+
+      event.currentTarget.reset();
+      setFormStatus({ state: 'success', message: 'Thank you. Your enquiry has been sent to KRM.' });
+    } catch (error) {
+      setFormStatus({
+        state: 'error',
+        message: error.message || 'Something went wrong. Please email info@krmhcs.co.za directly.',
+      });
+    }
+  }
+
   return (
     <>
-      <PageIntro eyebrow="Contact KRM" title="Let’s talk about your HR and compliance needs." text="Book a Compliance Assessment, request a free consultation or tell us about the HR support your business needs." />
+      <PageIntro eyebrow="Contact KRM" tone="about" title="Let’s talk about your HR and compliance needs." text="Book a Compliance Assessment, request a free consultation or tell us about the HR support your business needs." />
       <section className="content section-pad contact-grid">
-        <form className="contact-form" onSubmit={(event) => event.preventDefault()}>
-          <label>Name<input name="name" placeholder="Your name" required /></label>
-          <label>Email<input type="email" name="email" placeholder="you@example.com" required /></label>
-          <label>Organisation<input name="organisation" placeholder="Organisation" /></label>
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <label>Name<input name="name" placeholder="Your name" autoComplete="name" required /></label>
+          <label>Email<input type="email" name="email" placeholder="you@example.com" autoComplete="email" required /></label>
+          <label>Organisation<input name="organisation" placeholder="Organisation" autoComplete="organization" /></label>
           <label>What can we help with?<textarea name="message" rows="7" placeholder="Tell us whether you need a Compliance Assessment, a consultation or support with recruitment, HR documentation, performance management or employee relations." required /></label>
-          <button className="button" type="submit">Send enquiry</button>
+          <input name="website" type="text" tabIndex="-1" autoComplete="off" aria-hidden="true" style={{ display: 'none' }} />
+          <button className="button" type="submit" disabled={formStatus.state === 'sending'}>
+            {formStatus.state === 'sending' ? 'Sending…' : 'Send enquiry'}
+          </button>
+          {formStatus.message && <p className={`contact-form-status ${formStatus.state}`} role="status">{formStatus.message}</p>}
         </form>
         <aside className="contact-side">
           <span className="eyebrow">Direct contact</span>
