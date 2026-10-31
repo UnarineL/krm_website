@@ -591,3 +591,80 @@ p { margin-top: 0; }
   background: #1B7B7F;
   border-bottom-color: #1B7B7F;
 }
+
+
+/* Digital Solutions page: shared hero treatment and consistent service cards */
+.page-intro-digital {
+  background: #1B7B7F;
+  border-bottom-color: #1B7B7F;
+}
+.page-intro-digital .eyebrow { color: #bfe9ea; }
+.page-intro-digital h1 { color: #fff; }
+.page-intro-digital p { color: #d9eeee; }
+
+.ds-services .section-heading {
+  max-width: 680px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+.ds-services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.ds-service-card {
+  position: relative;
+  min-height: 230px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-top: 3px solid #537B9D;
+  background: #fff;
+}
+.ds-service-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 22px;
+  border-radius: 50%;
+  background: var(--teal-tint);
+  color: var(--teal-dark);
+}
+.ds-service-icon svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ds-service-number {
+  position: absolute;
+  top: 30px;
+  right: 28px;
+  color: #8a9aa4;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.ds-service-card h2 {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.05;
+}
+.ds-service-card p {
+  max-width: 470px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+@media (max-width: 600px) {
+  .ds-services-grid { grid-template-columns: 1fr; }
+  .ds-service-card { min-height: 0; padding: 24px; }
+  .ds-service-card h2 { font-size: 28px; }
+}
