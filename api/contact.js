@@ -4,7 +4,15 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed.' });
   }
 
-  const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
+  let body = req.body || {};
+  try {
+    if (typeof body === 'string') body = JSON.parse(body || '{}');
+  } catch {
+    return res.status(400).json({ error: 'Please submit the form again.' });
+  }
+  if (!body || typeof body !== 'object' || Array.isArray(body)) {
+    return res.status(400).json({ error: 'Please submit the form again.' });
+  }
   const name = String(body.name || '').trim();
   const email = String(body.email || '').trim();
   const organisation = String(body.organisation || '').trim();
