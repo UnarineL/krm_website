@@ -505,3 +505,23 @@ p { margin-top: 0; }
 .krm-final-cta .hero-actions {
   justify-content: center;
 }
+
+
+/* About page intro: a softer, distinct identity from the home hero */
+.page-intro-about {
+  background: #9AC3B9;
+  border-bottom-color: #537B9D;
+  color: #2b2f33;
+}
+
+.page-intro-about .eyebrow {
+  color: #0E5558;
+}
+
+.page-intro-about h1 {
+  color: #203536;
+}
+
+.page-intro-about p {
+  color: #344e4b;
+}
