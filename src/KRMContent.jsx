@@ -167,7 +167,7 @@ export function KRMHome() {
 
 export function KRMServices() {
   return <>
-    <section className="page-intro">
+    <section className="page-intro page-intro-services">
       <div className="content">
         <span className="eyebrow">KRM Services</span>
         <h1 className="serif">Employment compliance and people support for SMEs.</h1>
