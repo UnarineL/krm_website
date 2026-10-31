@@ -67,7 +67,6 @@ export default function SiteLayout({ children }) {
           </div>
           <div className="footer-meta">
             <div>© {new Date().getFullYear()} KRM Human Capital Solutions (Pty) Ltd</div>
-            <div>Registration: 2022/835367/07</div>
           </div>
         </div>
       </footer>
