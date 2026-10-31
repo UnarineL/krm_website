@@ -195,7 +195,7 @@ export function Services() {
 export function HRTemplates() {
   return (
     <>
-      <PageIntro eyebrow="Resources" title="Practical HR guidance for South African SMEs." text="Explore useful guidance and resources to help your business manage employment responsibilities and everyday people matters." />
+      <PageIntro eyebrow="Resources" tone="resources" title="Practical HR guidance for South African SMEs." text="Explore useful guidance and resources to help your business manage employment responsibilities and everyday people matters." />
       <section className="content section-pad">
         <div className="resource-grid">
           {templates.map((template, index) => (
