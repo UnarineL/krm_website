@@ -160,7 +160,7 @@ export function KRMHome() {
     </section>
 
     <section className="cta krm-final-cta">
-      <div className="content"><span className="eyebrow">Start with a conversation</span><h2 className="serif">Let's make your next HR decision clearer.</h2><p>Tell us what your business needs. We will discuss the right next step and provide a quotation where appropriate.</p><div className="hero-actions"><BookingLink>Book a Compliance Assessment</BookingLink><BookingLink href={consultationHref}>Request a Free Consultation</BookingLink></div></div>
+      <div className="content"><span className="eyebrow">Start with a conversation</span><h2 className="serif">Let's make your next HR decision clearer.</h2><p>Tell us what your business needs. We will discuss the right next step and provide a quotation where appropriate.</p><div className="hero-actions"><BookingLink>Book a Compliance Assessment</BookingLink><Link className="button" to="/contact">Request a Free Consultation</Link></div></div>
     </section>
   </>;
 }
@@ -176,7 +176,7 @@ export function KRMServices() {
     </section>
     <section className="content section-pad">
       <SectionTitle eyebrow="Our service pillars" title="Find the support your business needs." />
-      <div className="krm-pillar-shortcuts">{pillars.map((pillar) => <a key={pillar.name} href={pillar.href}><span>{pillar.number}</span><strong>{pillar.name}</strong><small>Explore pillar ↓</small></a>)}</div>
+      <div className="krm-pillar-shortcuts">{pillars.map((pillar) => <Link key={pillar.name} to={pillar.href}><span>{pillar.number}</span><strong>{pillar.name}</strong><small>Explore pillar ↓</small></Link>)}</div>
       <div className="krm-services-catalogue">
         {serviceSections.map((service) => <article className="krm-service-detail" id={service.id} key={service.id}>
           <div className="krm-service-detail-number">{service.number}</div>
@@ -186,7 +186,7 @@ export function KRMServices() {
             <p className="krm-service-intro">{service.intro}</p>
             <ul>{service.items.map((item) => <li key={item}>{item}</li>)}</ul>
             <p className="krm-deliverables"><strong>Possible deliverables:</strong> {service.deliverables}</p>
-            <div className="krm-service-card-actions"><Link className="text-link" to={`/services/${service.id}`}>View service details →</Link><BookingLink href={consultationHref}>Request a Quote</BookingLink></div>
+            <div className="krm-service-card-actions"><Link className="text-link" to={`/services/${service.id}`}>View service details →</Link><Link className="button" to="/contact">Request a Quote</Link></div>
           </div>
         </article>)}
       </div>
@@ -207,12 +207,12 @@ export function KRMServicePage() {
   }
 
   return <>
-    <section className="page-intro">
+    <section className="page-intro page-intro-services">
       <div className="content">
         <span className="eyebrow">{service.pillar} · KRM Services</span>
         <h1 className="serif">{service.title}</h1>
         <p>{service.intro}</p>
-        <div className="krm-services-intro-cta"><BookingLink href={consultationHref}>Request a Quote</BookingLink><BookingLink href={assessmentHref}>Book a Compliance Assessment</BookingLink></div>
+        <div className="krm-services-intro-cta"><Link className="button" to="/contact">Request a Quote</Link><Link className="button" to="/contact">Book a Compliance Assessment</Link></div>
       </div>
     </section>
     <section className="content section-pad krm-service-page-body">
@@ -229,7 +229,7 @@ export function KRMServicePage() {
       </div>
     </section>
     <section className="band band-tint">
-      <div className="content centered krm-services-close"><span className="eyebrow">Next step</span><h2 className="serif">Let's discuss what your business needs.</h2><p>Tell us about your requirements and we will discuss the most appropriate next step.</p><BookingLink href={consultationHref}>Request a Quote or Consultation</BookingLink><p><Link className="text-link" to="/services">← Back to all services</Link></p></div>
+      <div className="content centered krm-services-close"><span className="eyebrow">Next step</span><h2 className="serif">Let's discuss what your business needs.</h2><p>Tell us about your requirements and we will discuss the most appropriate next step.</p><Link className="button" to="/contact">Request a Quote or Consultation</Link><p><Link className="text-link" to="/services">← Back to all services</Link></p></div>
     </section>
   </>;
 }
