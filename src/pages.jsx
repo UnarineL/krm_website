@@ -362,7 +362,12 @@ export function Contact() {
 
   return (
     <>
-      <PageIntro eyebrow="Contact KRM" tone="about" title="Let’s talk about your HR and compliance needs." text="Book a Compliance Assessment, request a free consultation or tell us about the HR support your business needs." />
+      <PageIntro
+        eyebrow="Contact KRM"
+        tone="about"
+        title="Let’s start a conversation."
+        text="Tell us what your business needs. Whether you’re looking for a Compliance Assessment, a consultation or practical HR support, the KRM team is here to help."
+      />
       <section className="content section-pad contact-grid">
         <form className="contact-form" onSubmit={handleSubmit}>
           <label>Name<input name="name" placeholder="Your name" autoComplete="name" required /></label>
