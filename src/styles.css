@@ -525,3 +525,34 @@ p { margin-top: 0; }
 .page-intro-about p {
   color: #d9eeee;
 }
+
+/* About page: align the story with the site's main content grid */
+.about-story {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  gap: clamp(36px, 7vw, 90px);
+  align-items: start;
+  border-bottom: 1px solid var(--line);
+}
+
+.about-story-heading h2 {
+  max-width: 440px;
+  margin: 0;
+  color: var(--teal-dark);
+  font-size: clamp(34px, 4.5vw, 50px);
+  line-height: 1.05;
+}
+
+.about-story-copy p {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.about-story-copy .about-story-signoff {
+  margin: 28px 0 0;
+  color: var(--teal-dark);
+  font-size: 15px;
+}
+
