@@ -315,7 +315,7 @@ export function DigitalSolutions() {
         <SectionHeading title="FAQ" />
         {[
           ['How long does a project take?', '7–17 days, depending on scope.'],
-          ['What platform is the site built on?', 'WordPress CMS.'],
+          ['Will my website work on mobile devices?', 'Yes. We design responsive websites that adapt to phones, tablets and desktop screens.'],
           ['Do you support the site after launch?', 'Yes, dedicated post-launch support keeps the site secure, updated and aligned with your goals.'],
           ['Can you integrate social media and email?', 'Yes, social media and email integration is included.'],
         ].map(([q, a]) => <details className="faq-item" key={q}><summary>{q}</summary><p>{a}</p></details>)}
