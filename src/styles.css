@@ -880,3 +880,192 @@ p { margin-top: 0; }
   .digital-hero-headline { animation: none; }
   .digital-hero-indicators button { transition: none; }
 }
+
+
+/* Digital Solutions: Gaegane-inspired typography and large-screen composition */
+.digital-hero {
+  min-height: calc(100vh - 82px);
+  min-height: calc(100svh - 82px);
+  padding: clamp(72px, 8vh, 112px) 0;
+}
+.digital-hero-inner {
+  width: min(calc(100% - 9vw), 1480px);
+}
+.digital-hero-copy {
+  max-width: 1180px;
+}
+.digital-hero h1,
+.digital-hero h1.serif {
+  max-width: 1120px;
+  min-height: 2.1em;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: clamp(58px, 6.4vw, 108px);
+  font-weight: 500;
+  letter-spacing: -.055em;
+  line-height: 1.02;
+}
+.digital-hero-headline {
+  animation-duration: 1.15s;
+}
+.ds-services.content,
+.ds-faq.content {
+  width: min(calc(100% - 9vw), 1480px);
+  max-width: 1480px;
+}
+.ds-services {
+  padding-block: clamp(76px, 8vw, 116px);
+}
+.ds-services .section-heading {
+  max-width: 900px;
+  margin-bottom: clamp(38px, 4vw, 58px);
+}
+.ds-services .section-heading h2,
+.ds-process .section-heading h2,
+.ds-spec .section-heading h2,
+.ds-faq .section-heading h2 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: -.045em;
+}
+.ds-services-grid {
+  gap: clamp(18px, 2vw, 30px);
+}
+.ds-service-card {
+  min-height: 280px;
+  padding: clamp(28px, 3vw, 44px);
+  border-radius: 3px;
+  box-shadow: 0 8px 26px rgba(15, 45, 48, .045);
+  transition: transform .32s cubic-bezier(.2,.7,.2,1), box-shadow .32s ease, border-color .32s ease, filter .32s ease;
+  will-change: transform;
+}
+.ds-service-card h2 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: clamp(25px, 2vw, 34px);
+  font-weight: 500;
+  letter-spacing: -.045em;
+  line-height: 1.12;
+}
+.ds-service-card p {
+  font-size: clamp(14px, 1vw, 16px);
+  line-height: 1.75;
+}
+.ds-service-number {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: clamp(20px, 1.7vw, 28px);
+  font-weight: 600;
+  letter-spacing: -.05em;
+}
+.ds-service-icon {
+  transition: transform .32s ease, background .32s ease, color .32s ease;
+}
+.ds-service-card:hover,
+.ds-service-card:focus-within {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 48px rgba(15, 45, 48, .12);
+  border-color: rgba(14, 115, 119, .35);
+  filter: saturate(1.08);
+}
+.ds-service-card:hover .ds-service-icon,
+.ds-service-card:focus-within .ds-service-icon {
+  transform: translateY(-3px) scale(1.08);
+  background: #fff;
+}
+.ds-service-card:hover .ds-service-number,
+.ds-service-card:focus-within .ds-service-number {
+  transform: translateY(-2px);
+}
+.ds-service-number {
+  transition: transform .32s ease;
+}
+.ds-process.content {
+  width: min(calc(100% - 9vw), 1480px);
+  max-width: 1480px;
+  grid-template-columns: minmax(300px, .85fr) minmax(0, 1.15fr);
+  gap: clamp(56px, 9vw, 160px);
+  padding-block: clamp(76px, 8vw, 116px);
+}
+.process-step {
+  padding: 17px 18px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  transition: background .28s ease, border-color .28s ease, transform .28s ease, box-shadow .28s ease;
+}
+.process-step:hover {
+  transform: translateX(8px);
+  border-color: #d7e8e8;
+  background: #f3f8f8;
+  box-shadow: 0 8px 24px rgba(15, 45, 48, .06);
+}
+.process-number {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  transition: transform .28s ease, background .28s ease, color .28s ease;
+}
+.process-step:hover .process-number {
+  transform: scale(1.1);
+  background: #0E7377;
+  color: #fff;
+}
+.ds-spec {
+  padding-block: clamp(56px, 6vw, 88px);
+}
+.spec-grid > div {
+  transition: transform .28s ease, box-shadow .28s ease, background .28s ease;
+}
+.spec-grid > div:hover {
+  transform: translateY(-5px);
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(15, 45, 48, .08);
+}
+.ds-faq {
+  padding-top: clamp(54px, 6vw, 86px);
+  padding-bottom: clamp(54px, 6vw, 86px);
+}
+.faq-item {
+  transition: padding .25s ease, background .25s ease;
+}
+.faq-item[open] {
+  padding-inline: 16px;
+  background: #f5f9f9;
+}
+@media (min-width: 1800px) {
+  .digital-hero-inner,
+  .ds-services.content,
+  .ds-process.content,
+  .ds-faq.content {
+    width: min(calc(100% - 12vw), 1600px);
+    max-width: 1600px;
+  }
+  .digital-hero h1 { max-width: 1300px; font-size: clamp(90px, 5.7vw, 118px); }
+}
+@media (max-width: 760px) {
+  .digital-hero {
+    min-height: calc(100svh - 64px);
+    padding-block: 60px;
+  }
+  .digital-hero-inner,
+  .ds-services.content,
+  .ds-process.content,
+  .ds-faq.content {
+    width: min(calc(100% - 40px), 1480px);
+  }
+  .digital-hero h1,
+  .digital-hero h1.serif {
+    min-height: 0;
+    font-size: clamp(43px, 10vw, 64px);
+    letter-spacing: -.05em;
+  }
+  .ds-service-card { min-height: 0; }
+  .process-step:hover { transform: translateY(-3px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .digital-hero-headline { animation: none; }
+  .ds-service-card, .ds-service-icon, .ds-service-number,
+  .process-step, .process-number, .spec-grid > div, .faq-item {
+    transition: none;
+  }
+  .ds-service-card:hover, .process-step:hover, .spec-grid > div:hover {
+    transform: none;
+  }
+}
