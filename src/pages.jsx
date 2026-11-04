@@ -269,12 +269,18 @@ const digitalHeadlines = [
 export function DigitalSolutions() {
   const [activeHeadline, setActiveHeadline] = useState(0);
   const [typedHeadline, setTypedHeadline] = useState('');
+  const [headlineReset, setHeadlineReset] = useState(0);
 
   useEffect(() => {
     let timeoutId;
     let characterIndex = 0;
     let deleting = false;
     const headline = digitalHeadlines[activeHeadline];
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setTypedHeadline(headline);
+      return undefined;
+    }
 
     const eraseHeadline = () => {
       characterIndex -= 1;
@@ -305,7 +311,7 @@ export function DigitalSolutions() {
 
     timeoutId = window.setTimeout(typeHeadline, 350);
     return () => window.clearTimeout(timeoutId);
-  }, [activeHeadline]);
+  }, [activeHeadline, headlineReset]);
 
   return (
     <>
@@ -325,7 +331,7 @@ export function DigitalSolutions() {
                   className={activeHeadline === index ? 'active' : ''}
                   aria-label={`Show headline ${index + 1}`}
                   aria-pressed={activeHeadline === index}
-                  onClick={() => { setTypedHeadline(''); setActiveHeadline(index); }}
+                  onClick={() => { setTypedHeadline(''); setActiveHeadline(index); setHeadlineReset((value) => value + 1); }}
                 />
               ))}
             </div>
