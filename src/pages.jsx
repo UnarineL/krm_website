@@ -261,14 +261,46 @@ export function WorkplaceRiskCheck() {
 }
 
 export function DigitalSolutions() {
+  const [activeHeadline, setActiveHeadline] = useState(0);
+  const digitalHeadlines = [
+    'Websites that work as hard as your business.',
+    'A stronger digital presence starts here.',
+    'Turn your ideas into useful digital experiences.',
+  ];
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveHeadline((current) => (current + 1) % digitalHeadlines.length);
+    }, 4800);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
   return (
     <>
-      <PageIntro
-        eyebrow="Digital Solutions"
-        tone="digital"
-        title="Collaborate with the World's Best"
-        text="in design &amp; development to bring your ideas to life."
-      />
+      <section className="digital-hero">
+        <div className="content digital-hero-inner">
+          <div className="digital-hero-copy">
+            <span className="eyebrow eyebrow-light">Digital Solutions</span>
+            <h1 className="serif" aria-live="polite" aria-atomic="true">
+              <span key={activeHeadline} className="digital-hero-headline">{digitalHeadlines[activeHeadline]}</span>
+            </h1>
+            <p>Thoughtful design and practical development to bring your business ideas to life.</p>
+            <div className="digital-hero-indicators" role="group" aria-label="Choose a headline">
+              {digitalHeadlines.map((headline, index) => (
+                <button
+                  key={headline}
+                  type="button"
+                  className={activeHeadline === index ? 'active' : ''}
+                  aria-label={`Show headline ${index + 1}`}
+                  aria-pressed={activeHeadline === index}
+                  onClick={() => setActiveHeadline(index)}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="content section-pad ds-services">
         <SectionHeading eyebrow="What we offer" title="Digital solutions designed around your business." />
