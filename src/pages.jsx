@@ -260,13 +260,14 @@ export function WorkplaceRiskCheck() {
   );
 }
 
+const digitalHeadlines = [
+  'Websites that work as hard as your business.',
+  'A stronger digital presence starts here.',
+  'Turn your ideas into useful digital experiences.',
+];
+
 export function DigitalSolutions() {
   const [activeHeadline, setActiveHeadline] = useState(0);
-  const digitalHeadlines = [
-    'Websites that work as hard as your business.',
-    'A stronger digital presence starts here.',
-    'Turn your ideas into useful digital experiences.',
-  ];
 
   useEffect(() => {
     const timer = window.setInterval(() => {
