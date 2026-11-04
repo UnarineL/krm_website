@@ -268,14 +268,44 @@ const digitalHeadlines = [
 
 export function DigitalSolutions() {
   const [activeHeadline, setActiveHeadline] = useState(0);
+  const [typedHeadline, setTypedHeadline] = useState('');
 
   useEffect(() => {
-    const timer = window.setInterval(() => {
-      setActiveHeadline((current) => (current + 1) % digitalHeadlines.length);
-    }, 8500);
+    let timeoutId;
+    let characterIndex = 0;
+    let deleting = false;
+    const headline = digitalHeadlines[activeHeadline];
 
-    return () => window.clearInterval(timer);
-  }, []);
+    const eraseHeadline = () => {
+      characterIndex -= 1;
+      setTypedHeadline(headline.slice(0, characterIndex));
+
+      if (characterIndex > 0) {
+        timeoutId = window.setTimeout(eraseHeadline, 28);
+      } else {
+        setActiveHeadline((current) => (current + 1) % digitalHeadlines.length);
+      }
+    };
+
+    const typeHeadline = () => {
+      if (deleting) return;
+
+      setTypedHeadline(headline.slice(0, characterIndex));
+      characterIndex += 1;
+
+      if (characterIndex <= headline.length) {
+        timeoutId = window.setTimeout(typeHeadline, 58);
+      } else {
+        timeoutId = window.setTimeout(() => {
+          deleting = true;
+          eraseHeadline();
+        }, 2600);
+      }
+    };
+
+    timeoutId = window.setTimeout(typeHeadline, 350);
+    return () => window.clearTimeout(timeoutId);
+  }, [activeHeadline]);
 
   return (
     <>
@@ -283,8 +313,8 @@ export function DigitalSolutions() {
         <div className="content digital-hero-inner">
           <div className="digital-hero-copy">
             <span className="eyebrow eyebrow-light">Digital Solutions</span>
-            <h1 className="serif" aria-live="polite" aria-atomic="true">
-              <span key={activeHeadline} className="digital-hero-headline">{digitalHeadlines[activeHeadline]}</span>
+            <h1 className="serif" aria-label={digitalHeadlines[activeHeadline]}>
+              <span className="digital-hero-headline" aria-hidden="true">{typedHeadline}</span>
             </h1>
             <p>Thoughtful design and practical development to bring your business ideas to life.</p>
             <div className="digital-hero-indicators" role="group" aria-label="Choose a headline">
@@ -295,7 +325,7 @@ export function DigitalSolutions() {
                   className={activeHeadline === index ? 'active' : ''}
                   aria-label={`Show headline ${index + 1}`}
                   aria-pressed={activeHeadline === index}
-                  onClick={() => setActiveHeadline(index)}
+                  onClick={() => { setTypedHeadline(''); setActiveHeadline(index); }}
                 />
               ))}
             </div>
