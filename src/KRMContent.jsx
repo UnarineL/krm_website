@@ -111,56 +111,67 @@ const serviceSections = [
 export function KRMHome() {
   return <>
     <section className="home-hero krm-home-hero">
-      <div className="home-hero-mark"><span className="logo-mark logo-mark-dark">KRM</span></div>
+      <div className="home-hero-mark" aria-hidden="true"><span className="logo-mark logo-mark-dark">KRM</span></div>
       <div className="content hero-content">
         <span className="eyebrow eyebrow-light">The SME Employment Compliance and People Partner</span>
         <h1 className="serif">HR Compliance and People Solutions for Growing South African SMEs</h1>
         <p>We help SMEs stay compliant, reduce employment risk, and build productive workplaces through practical HR solutions, without the cost of a full-time HR department.</p>
+        <div className="hero-actions">
+          <Link className="button button-light" to="/services">Explore KRM Services</Link>
+          <Link className="text-link text-link-light" to="/contact">Talk to KRM</Link>
+        </div>
       </div>
     </section>
 
-    <section className="content section-pad">
-      <SectionTitle eyebrow="The KRM approach" title="Three pillars. One practical partner." text="Every KRM service sits within Compliance, Capability or Culture, helping you find the right support for your business." />
-      <div className="krm-pillars-grid">
-        {pillars.map((pillar) => <article className={`krm-pillar-card ${pillar.className}`} key={pillar.name}>
-          <span className="krm-pillar-number">{pillar.number}</span>
-          <h3 className="serif">{pillar.name}</h3>
-          <p>{pillar.summary}</p>
-          <ul>{pillar.services.map((service) => <li key={service}>{service}</li>)}</ul>
-          <Link className="text-link" to={pillar.href}>Explore {pillar.name} →</Link>
-        </article>)}
+    <section className="content section-pad krm-home-intro">
+      <div className="krm-home-intro-heading">
+        <span className="eyebrow">The KRM approach</span>
+        <h2 className="serif">A practical partner for the work behind the work.</h2>
       </div>
-    </section>
-    
-    <section className="content section-pad krm-how-it-works-section">
-      <SectionTitle eyebrow="How it works" title="A clear way forward, together." text="Start with a conversation and leave with a better understanding of what your business needs next." />
-      <div className="krm-steps">
-        {[
-          ['01', 'Talk to us', 'Tell us about your business and what you need help with.'],
-          ['02', 'We assess', 'Review the situation and identify the areas that need attention.'],
-          ['03', 'We recommend', 'Receive a practical way forward and a clear quotation.'],
-          ['04', 'We support', 'Choose the once-off service or ongoing support that fits.'],
-        ].map(([number, title, text]) => <article className="krm-step" key={number}><span>{number}</span><h3>{title}</h3><p>{text}</p></article>)}
-      </div>
-    </section>
-    
-    <section className="band band-teal">
-      <div className="content split krm-featured-assessment">
-        <div><span className="eyebrow eyebrow-light">Start with compliance</span><h2 className="serif">Know what needs attention first.</h2></div>
-        <div><p>A KRM Compliance Assessment helps identify gaps, highlight potential risks and map practical next steps. The scope is tailored to your business and the requirements that apply to it.</p><BookingLink href={assessmentHref} light>Book a Compliance Assessment</BookingLink></div>
+      <div className="krm-home-intro-copy">
+        <p>KRM helps South African SMEs create stronger people foundations through three connected areas of support: Compliance, Capability and Culture.</p>
+        <p>Whether you are strengthening employment practices, supporting your managers or building a healthier workplace, we help you identify a practical next step.</p>
+        <div className="krm-pillar-tags" aria-label="KRM service pillars">
+          <span>Compliance</span>
+          <span>Capability</span>
+          <span>Culture</span>
+        </div>
       </div>
     </section>
 
-    <section className="content section-pad">
-      <SectionTitle eyebrow="Resources" title="Practical guidance for everyday HR." text="We are building a resource library with useful articles, checklists and guides for South African SMEs." />
-      <div className="krm-resource-preview">
-        {['How to Register for COIDA', 'Employee Contracts Every SME Needs', 'Common UIF Mistakes Employers Make'].map((title, index) => <article key={title}><span>0{index + 1}</span><h3 className="serif">{title}</h3><p>Coming soon. Practical guidance for employers and growing teams.</p></article>)}
+    <section className="content section-pad krm-home-services">
+      <SectionTitle
+        eyebrow="What KRM does"
+        title="Clear support for the people side of your business."
+        text="Explore the areas where KRM can help, from employment compliance to practical people support."
+      />
+      <div className="service-preview">
+        <Link to="/services#compliance" className="service-preview-item">
+          <span>01</span><strong>Employment Compliance</strong><small>Explore services</small>
+        </Link>
+        <Link to="/services#recruitment" className="service-preview-item">
+          <span>02</span><strong>People & Performance</strong><small>Explore services</small>
+        </Link>
+        <Link to="/services#employee-relations" className="service-preview-item">
+          <span>03</span><strong>Workplace Culture & Relations</strong><small>Explore services</small>
+        </Link>
+        <Link to="/digital-solutions" className="service-preview-item">
+          <span>04</span><strong>Digital Solutions</strong><small>Explore services</small>
+        </Link>
       </div>
-      <Link className="text-link" to="/hr-templates">Explore HR Resources →</Link>
+      <Link className="text-link" to="/services">View all KRM services →</Link>
     </section>
 
     <section className="cta krm-final-cta">
-      <div className="content"><span className="eyebrow">Start with a conversation</span><h2 className="serif">Let's make your next HR decision clearer.</h2><p>Tell us what your business needs. We will discuss the right next step and provide a quotation where appropriate.</p><div className="hero-actions"><BookingLink>Book a Compliance Assessment</BookingLink><Link className="button" to="/contact">Request a Free Consultation</Link></div></div>
+      <div className="content">
+        <span className="eyebrow">Start with a conversation</span>
+        <h2 className="serif">Let's make your next HR decision clearer.</h2>
+        <p>Tell us what your business needs. We will discuss the right next step and provide a quotation where appropriate.</p>
+        <div className="hero-actions">
+          <BookingLink>Book a Compliance Assessment</BookingLink>
+          <Link className="button" to="/contact">Request a Free Consultation</Link>
+        </div>
+      </div>
     </section>
   </>;
 }
