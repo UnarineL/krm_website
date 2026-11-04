@@ -691,3 +691,192 @@ p { margin-top: 0; }
     top: 10px;
   }
 }
+
+
+/* Digital Solutions refresh: wider desktop composition and animated headline */
+.digital-hero {
+  min-height: clamp(390px, 34vw, 560px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: clamp(64px, 7vw, 100px) 0;
+  background: #1B7B7F;
+  color: #fff;
+}
+.digital-hero-inner {
+  width: min(calc(100% - 72px), 1360px);
+}
+.digital-hero-copy { max-width: 1040px; }
+.digital-hero-copy .eyebrow { margin-bottom: 22px; }
+.digital-hero h1 {
+  min-height: 2.05em;
+  max-width: 1040px;
+  margin: 0 0 22px;
+  color: #fff;
+  font-size: clamp(54px, 6.2vw, 94px);
+  line-height: .98;
+  letter-spacing: -1.8px;
+}
+.digital-hero-headline {
+  display: inline-block;
+  animation: digital-headline-reveal .75s cubic-bezier(.2,.7,.2,1) both;
+}
+.digital-hero-copy > p {
+  max-width: 660px;
+  margin: 0;
+  color: #e0f1f0;
+  font-size: clamp(15px, 1.15vw, 18px);
+  line-height: 1.7;
+}
+.digital-hero-indicators {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-top: 34px;
+}
+.digital-hero-indicators button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,.45);
+  cursor: pointer;
+  transition: width .25s ease, background .25s ease;
+}
+.digital-hero-indicators button.active {
+  width: 30px;
+  border-radius: 10px;
+  background: #fff;
+}
+@keyframes digital-headline-reveal {
+  from { opacity: 0; clip-path: inset(0 100% 0 0); transform: translateY(10px); }
+  to { opacity: 1; clip-path: inset(0 0 0 0); transform: translateY(0); }
+}
+
+/* Larger, clearer KRM brand lockup in the navigation */
+.brand-lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 112px;
+}
+.brand-lockup .logo-mark {
+  width: 48px;
+  height: 48px;
+  font-size: 15px;
+}
+.brand-full-name {
+  color: var(--teal-dark);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .65px;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+.brand-lockup-dark .brand-full-name { color: #fff; }
+
+/* More generous content width on large screens without stretching copy */
+@media (min-width: 1440px) {
+  .ds-services.content,
+  .ds-faq.content {
+    width: min(calc(100% - 112px), 1360px);
+    max-width: 1360px;
+  }
+  .ds-services { padding-block: 76px; }
+  .ds-services .section-heading { margin-bottom: 42px; }
+  .ds-services-grid { gap: 22px; }
+  .ds-service-card { min-height: 250px; padding: 34px; }
+}
+
+/* Distinct soft card tones, richer typography and stronger number hierarchy */
+.ds-service-card:nth-child(1) { background: #eef6f4; border-top-color: #0E7377; }
+.ds-service-card:nth-child(2) { background: #eff3f7; border-top-color: #537B9D; }
+.ds-service-card:nth-child(3) { background: #f7f1e9; border-top-color: #B48C61; }
+.ds-service-card:nth-child(4) { background: #f1eff6; border-top-color: #81739a; }
+.ds-service-card h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(29px, 2.3vw, 36px);
+  letter-spacing: -.25px;
+}
+.ds-service-card p {
+  max-width: 520px;
+  color: #46535c;
+  font-size: 14px;
+  line-height: 1.75;
+}
+.ds-service-number {
+  top: 28px;
+  right: 30px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 23px;
+  font-weight: 600;
+  color: #0E7377;
+}
+.ds-service-card:nth-child(2) .ds-service-number { color: #537B9D; }
+.ds-service-card:nth-child(3) .ds-service-number { color: #9a7047; }
+.ds-service-card:nth-child(4) .ds-service-number { color: #75658f; }
+
+/* Rebalance the process section to use the available desktop width */
+.ds-process.content {
+  width: min(calc(100% - 112px), 1360px);
+  max-width: 1360px;
+  display: grid;
+  grid-template-columns: minmax(280px, .8fr) minmax(0, 1.2fr);
+  gap: clamp(48px, 8vw, 140px);
+  align-items: start;
+  padding-block: 72px;
+}
+.ds-process .section-heading {
+  margin: 0;
+  text-align: left;
+}
+.ds-process .section-heading h2 { font-size: clamp(40px, 4vw, 58px); }
+.process-list {
+  width: 100%;
+  max-width: 760px;
+  margin: 0;
+}
+.process-step { gap: 18px; padding: 12px 0; }
+.process-number {
+  width: 38px;
+  height: 38px;
+  flex-basis: 38px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 17px;
+  font-weight: 600;
+  background: #eef6f4;
+}
+.process-step h3 { font-size: 16px; }
+.process-step p { font-size: 14px; }
+
+@media (min-width: 1440px) {
+  .site-header { min-height: 82px; padding-block: 10px; }
+}
+@media (max-width: 760px) {
+  .digital-hero { min-height: 440px; padding-block: 66px; }
+  .digital-hero-inner { width: min(calc(100% - 40px), 1360px); }
+  .digital-hero h1 { min-height: 0; font-size: clamp(43px, 10vw, 62px); letter-spacing: -1px; }
+  .ds-process.content {
+    width: min(calc(100% - 40px), 1360px);
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-block: 52px;
+  }
+  .ds-process .section-heading { text-align: center; }
+  .process-list { margin-inline: auto; }
+}
+@media (max-width: 500px) {
+  .brand-lockup { min-width: 94px; }
+  .brand-lockup .logo-mark { width: 42px; height: 42px; }
+  .brand-full-name { font-size: 7px; }
+  .digital-hero h1 { font-size: 43px; }
+  .ds-service-number { top: 22px; right: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .digital-hero-headline { animation: none; }
+  .digital-hero-indicators button { transition: none; }
+}
