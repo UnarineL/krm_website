@@ -272,7 +272,7 @@ export function DigitalSolutions() {
   useEffect(() => {
     const timer = window.setInterval(() => {
       setActiveHeadline((current) => (current + 1) % digitalHeadlines.length);
-    }, 4800);
+    }, 8500);
 
     return () => window.clearInterval(timer);
   }, []);
