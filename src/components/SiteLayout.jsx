@@ -12,7 +12,12 @@ const navItems = [
 ];
 
 function Logo({ dark = false }) {
-  return <span className={`logo-mark ${dark ? 'logo-mark-dark' : ''}`}>KRM</span>;
+  return (
+    <span className={`brand-lockup ${dark ? 'brand-lockup-dark' : ''}`}>
+      <span className={`logo-mark ${dark ? 'logo-mark-dark' : ''}`}>KRM</span>
+      <span className="brand-full-name">Human Capital Solutions</span>
+    </span>
+  );
 }
 
 export default function SiteLayout({ children }) {
