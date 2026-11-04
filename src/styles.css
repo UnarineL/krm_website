@@ -1089,7 +1089,7 @@ p { margin-top: 0; }
 .digital-hero::after {
   content: 'KRM';
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   right: clamp(24px, 6vw, 88px);
   bottom: clamp(18px, 3vw, 42px);
   color: rgba(255,255,255,.055);
@@ -1099,6 +1099,10 @@ p { margin-top: 0; }
   letter-spacing: -.08em;
   line-height: .8;
   pointer-events: none;
+}
+ .digital-hero-inner {
+  position: relative;
+  z-index: 1;
 }
 .digital-hero-headline {
   min-height: 1em;
