@@ -119,48 +119,80 @@ export function KRMHome() {
       </div>
     </section>
 
+    <section className="content section-pad krm-home-intro">
+      <SectionTitle eyebrow="The KRM approach" title="Practical people support for growing businesses." text="From employment compliance to stronger teams and healthier workplace cultures, KRM helps South African SMEs understand what they need and take the next step with confidence." />
+      <div className="krm-home-links">
+        <Link className="button" to="/service-pillars">Explore our service pillars</Link>
+        <Link className="text-link" to="/how-we-work">See how we work →</Link>
+      </div>
+    </section>
+
+    <section className="band band-teal">
+      <div className="content split krm-featured-assessment">
+        <div><span className="eyebrow eyebrow-light">Start with compliance</span><h2 className="serif">Know what needs attention first.</h2></div>
+        <div><p>A KRM Compliance Assessment helps identify gaps, highlight potential risks and map practical next steps. The scope is tailored to your business and the requirements that apply to it.</p><BookingLink light>Book a Compliance Assessment</BookingLink></div>
+      </div>
+    </section>
+
+    <section className="cta krm-final-cta">
+      <div className="content"><span className="eyebrow">Start with a conversation</span><h2 className="serif">Let's make your next HR decision clearer.</h2><p>Tell us what your business needs. We will discuss the right next step and provide a quotation where appropriate.</p><div className="hero-actions"><BookingLink>Book a Compliance Assessment</BookingLink><Link className="button" to="/contact">Request a Free Consultation</Link></div></div>
+    </section>
+  </>;
+}
+
+export function PillarsPage() {
+  return <>
+    <section className="page-intro page-intro-services">
+      <div className="content">
+        <span className="eyebrow">The KRM approach</span>
+        <h1 className="serif">Three pillars. One practical partner.</h1>
+        <p>Every KRM service sits within Compliance, Capability or Culture, helping you find the right support for your business.</p>
+      </div>
+    </section>
     <section className="content section-pad">
-      <SectionTitle eyebrow="The KRM approach" title="Three pillars. One practical partner." text="Every KRM service sits within Compliance, Capability or Culture, helping you find the right support for your business." />
       <div className="krm-pillars-grid">
         {pillars.map((pillar) => <article className={`krm-pillar-card ${pillar.className}`} key={pillar.name}>
           <span className="krm-pillar-number">{pillar.number}</span>
-          <h3 className="serif">{pillar.name}</h3>
+          <h2 className="serif">{pillar.name}</h2>
           <p>{pillar.summary}</p>
           <ul>{pillar.services.map((service) => <li key={service}>{service}</li>)}</ul>
           <Link className="text-link" to={pillar.href}>Explore {pillar.name} →</Link>
         </article>)}
       </div>
+      <div className="krm-page-crosslinks">
+        <Link className="text-link" to="/services">View the full services catalogue →</Link>
+        <Link className="text-link" to="/how-we-work">See how we work →</Link>
+      </div>
     </section>
-    
-    <section className="content section-pad krm-how-it-works-section">
-      <SectionTitle eyebrow="How it works" title="A clear way forward, together." text="Start with a conversation and leave with a better understanding of what your business needs next." />
+    <section className="band band-tint">
+      <div className="content centered krm-services-close"><span className="eyebrow">Find the right support</span><h2 className="serif">Let's talk about what your business needs.</h2><p>We can help you identify the right starting point and agree practical next steps.</p><BookingLink>Request a Consultation</BookingLink></div>
+    </section>
+  </>;
+}
+
+export function HowWeWorkPage() {
+  const steps = [
+    ['01', 'Talk to us', 'Tell us about your business and what you need help with.'],
+    ['02', 'We assess', 'We review the situation and identify the areas that need attention.'],
+    ['03', 'We recommend', 'You receive a practical way forward and a clear quotation.'],
+    ['04', 'We support', 'Choose the once-off service or ongoing support that fits.'],
+  ];
+
+  return <>
+    <section className="page-intro page-intro-services">
+      <div className="content">
+        <span className="eyebrow">How we work</span>
+        <h1 className="serif">A clear way forward, together.</h1>
+        <p>Start with a conversation and leave with a better understanding of what your business needs next.</p>
+      </div>
+    </section>
+    <section className="content section-pad krm-how-page">
       <div className="krm-steps">
-        {[
-          ['01', 'Talk to us', 'Tell us about your business and what you need help with.'],
-          ['02', 'We assess', 'Review the situation and identify the areas that need attention.'],
-          ['03', 'We recommend', 'Receive a practical way forward and a clear quotation.'],
-          ['04', 'We support', 'Choose the once-off service or ongoing support that fits.'],
-        ].map(([number, title, text]) => <article className="krm-step" key={number}><span>{number}</span><h3>{title}</h3><p>{text}</p></article>)}
+        {steps.map(([number, title, text]) => <article className="krm-step" key={number}><span>{number}</span><h2>{title}</h2><p>{text}</p></article>)}
       </div>
     </section>
-    
-    <section className="band band-teal">
-      <div className="content split krm-featured-assessment">
-        <div><span className="eyebrow eyebrow-light">Start with compliance</span><h2 className="serif">Know what needs attention first.</h2></div>
-        <div><p>A KRM Compliance Assessment helps identify gaps, highlight potential risks and map practical next steps. The scope is tailored to your business and the requirements that apply to it.</p><BookingLink href={assessmentHref} light>Book a Compliance Assessment</BookingLink></div>
-      </div>
-    </section>
-
-    <section className="content section-pad">
-      <SectionTitle eyebrow="Resources" title="Practical guidance for everyday HR." text="We are building a resource library with useful articles, checklists and guides for South African SMEs." />
-      <div className="krm-resource-preview">
-        {['How to Register for COIDA', 'Employee Contracts Every SME Needs', 'Common UIF Mistakes Employers Make'].map((title, index) => <article key={title}><span>0{index + 1}</span><h3 className="serif">{title}</h3><p>Coming soon. Practical guidance for employers and growing teams.</p></article>)}
-      </div>
-      <Link className="text-link" to="/hr-templates">Explore HR Resources →</Link>
-    </section>
-
-    <section className="cta krm-final-cta">
-      <div className="content"><span className="eyebrow">Start with a conversation</span><h2 className="serif">Let's make your next HR decision clearer.</h2><p>Tell us what your business needs. We will discuss the right next step and provide a quotation where appropriate.</p><div className="hero-actions"><BookingLink>Book a Compliance Assessment</BookingLink><Link className="button" to="/contact">Request a Free Consultation</Link></div></div>
+    <section className="band band-tint">
+      <div className="content centered krm-services-close"><span className="eyebrow">Your next step</span><h2 className="serif">Let's start with a conversation.</h2><p>Tell us what is happening in your business and we will help you understand the next step.</p><BookingLink>Request a Free Consultation</BookingLink></div>
     </section>
   </>;
 }
