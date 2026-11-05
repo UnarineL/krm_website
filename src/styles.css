@@ -1408,53 +1408,41 @@ p { margin-top: 0; }
 }
 
 
-/* Decorative KRM ring used on page heroes, not the full logo lockup */
-.krm-home-hero {
-  position: relative;
-}
-.krm-home-hero::before {
-  content: 'KRM';
+/* Keep the original hero geometry intact and reuse the About-page KRM emblem. */
+.home-hero-mark,
+.page-intro-mark,
+.vacancies-hero-mark {
   position: absolute;
-  z-index: 0;
-  right: clamp(72px, 12vw, 170px);
-  bottom: 58px;
-  display: grid;
-  place-items: center;
-  width: clamp(118px, 14vw, 172px);
-  aspect-ratio: 1;
-  border: 1px solid rgba(255, 255, 255, .16);
-  border-radius: 50%;
-  color: rgba(255, 255, 255, .2);
-  font-family: Georgia, serif;
-  font-size: clamp(24px, 2.5vw, 32px);
-  pointer-events: none;
-}
-.page-intro-services {
-  position: relative;
-  overflow: hidden;
-}
-.page-intro-services::after {
-  content: 'KRM';
-  position: absolute;
-  right: clamp(72px, 12vw, 170px);
+  z-index: 1;
+  right: clamp(35px, 8vw, 110px);
   bottom: 42px;
-  display: grid;
-  place-items: center;
-  width: clamp(118px, 14vw, 172px);
-  aspect-ratio: 1;
-  border: 1px solid rgba(255, 255, 255, .16);
-  border-radius: 50%;
-  color: rgba(255, 255, 255, .2);
-  font-family: Georgia, serif;
-  font-size: clamp(24px, 2.5vw, 32px);
+  opacity: .2;
   pointer-events: none;
+}
+.home-hero-mark .logo-mark,
+.page-intro-mark .logo-mark,
+.vacancies-hero-mark .logo-mark {
+  width: 150px;
+  height: 150px;
+  font-size: 30px;
+}
+.home-hero-mark .brand-full-name,
+.page-intro-mark .brand-full-name,
+.vacancies-hero-mark .brand-full-name {
+  display: none;
 }
 @media (max-width: 760px) {
-  .krm-home-hero::before,
-  .page-intro-services::after {
-    right: 22px;
-    bottom: 20px;
+  .home-hero-mark,
+  .page-intro-mark,
+  .vacancies-hero-mark {
+    right: 20px;
+    bottom: 18px;
+  }
+  .home-hero-mark .logo-mark,
+  .page-intro-mark .logo-mark,
+  .vacancies-hero-mark .logo-mark {
     width: 92px;
-    font-size: 21px;
+    height: 92px;
+    font-size: 22px;
   }
 }
