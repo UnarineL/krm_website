@@ -289,7 +289,7 @@ export function DigitalSolutions() {
       setTypedHeadline(headline.slice(0, characterIndex));
 
       if (characterIndex > 0) {
-        timeoutId = window.setTimeout(eraseHeadline, 28);
+        timeoutId = window.setTimeout(eraseHeadline, 34);
       } else {
         setActiveHeadline((current) => (current + 1) % digitalHeadlines.length);
       }
@@ -302,12 +302,12 @@ export function DigitalSolutions() {
       characterIndex += 1;
 
       if (characterIndex <= headline.length) {
-        timeoutId = window.setTimeout(typeHeadline, 58);
+        timeoutId = window.setTimeout(typeHeadline, 70);
       } else {
         timeoutId = window.setTimeout(() => {
           deleting = true;
           eraseHeadline();
-        }, 2600);
+        }, 3000);
       }
     };
 
