@@ -50,10 +50,10 @@ const templates = [
   { title: 'What Inspectors Look For During Labour Audits', text: 'A guide to records and workplace practices that may be reviewed during an inspection.' },
 ];
 
-function PageIntro({ eyebrow, title, text, dark = false, tone = '' }) {
+function PageIntro({ eyebrow, title, text, dark = false, tone = '', showMark = true }) {
   return (
     <section className={`page-intro ${dark ? 'page-intro-dark' : ''} ${tone ? `page-intro-${tone}` : ''}`}>
-      <div className="page-intro-mark"><Logo dark /></div>
+      {showMark && <div className="page-intro-mark"><Logo dark /></div>}
       <div className="content">
         <span className="eyebrow">{eyebrow}</span>
         <h1 className="serif">{title}</h1>
@@ -167,7 +167,7 @@ export function Legacy() {
 export function Services() {
   return (
     <>
-      <PageIntro eyebrow="Services" title="Practical support across the employee lifecycle." text="A structured home for KRM’s human capital and consulting services." />
+      <PageIntro eyebrow="Services" tone="services" showMark={false} title="Practical support across the employee lifecycle." text="A structured home for KRM’s human capital and consulting services." />
       <section className="content section-pad">
         <div className="service-list">
           <article className="service-detail">
