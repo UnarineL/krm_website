@@ -262,9 +262,10 @@ export function WorkplaceRiskCheck() {
 }
 
 const digitalHeadlines = [
-  'Websites that work as hard as your business.',
   'A stronger digital presence starts here.',
   'Turn your ideas into useful digital experiences.',
+  'Websites that work as hard as your business.',
+  "We don't just build websites — we craft digital experiences that inspire confidence, strengthen your brand, and drive business growth.",
 ];
 
 export function DigitalSolutions() {
@@ -372,7 +373,6 @@ export function DigitalSolutions() {
         </div>
       </section>
 
-      <section className="ds-promise"><p>“We don't just build websites — we craft digital experiences that inspire confidence, strengthen your brand, and drive business growth.”</p></section>
       <CTA title="Let's Build Something Great Together" text="Reach out and let's talk about your business goals, your timeline, and how we can help you get there." />
     </>
   );
