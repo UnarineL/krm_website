@@ -1290,6 +1290,7 @@ p { margin-top: 0; }
 .page-intro p {
   color: #d9eeee;
 }
+.krm-home-hero::after,
 .page-intro::after,
 .digital-hero::after {
   content: 'KRM';
