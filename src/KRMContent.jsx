@@ -112,6 +112,7 @@ const serviceSections = [
 export function KRMHome() {
   return <>
     <section className="home-hero krm-home-hero">
+      <div className="home-hero-mark"><Logo dark /></div>
       <div className="content hero-content">
         <span className="eyebrow eyebrow-light">The SME Employment Compliance and People Partner</span>
         <h1 className="serif">HR Compliance and People Solutions for Growing South African SMEs</h1>
