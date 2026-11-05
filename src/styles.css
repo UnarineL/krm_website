@@ -1225,14 +1225,7 @@ p { margin-top: 0; }
   background: #EDF3F0;
   box-shadow: 0 14px 30px rgba(14, 115, 119, .10);
 }
-.krm-service-tile-number {
-  align-self: flex-start;
-  margin-bottom: 18px;
-  color: #0E7377;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
+
 .krm-service-tile .eyebrow {
   margin-bottom: 10px;
   font-size: 9px;
@@ -1258,9 +1251,9 @@ p { margin-top: 0; }
   padding: 12px 20px;
   border: 0;
   border-radius: 0;
-  background: #9B5053;
+  background: var(--teal);
   color: #fff;
-  box-shadow: 0 4px 8px rgba(70, 35, 36, .22);
+  box-shadow: 0 4px 8px rgba(12, 65, 67, .20);
   font-size: 12px;
   font-weight: 600;
   line-height: 1.2;
@@ -1271,9 +1264,9 @@ p { margin-top: 0; }
 }
 .krm-service-learn-more:hover,
 .krm-service-learn-more:focus-visible {
-  background: #813f43;
+  background: var(--teal-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(70, 35, 36, .26);
+  box-shadow: 0 6px 12px rgba(12, 65, 67, .24);
 }
 .krm-service-learn-more:focus-visible {
   outline: 3px solid rgba(155, 80, 83, .28);
