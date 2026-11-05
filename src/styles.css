@@ -1191,3 +1191,105 @@ p { margin-top: 0; }
   .krm-pillar-card, .krm-step { transition: none; }
   .krm-pillar-card:hover, .krm-step:hover { transform: none; }
 }
+
+
+/* Services catalogue: image-free cards with reference-style Learn More buttons */
+.krm-services-section > .section-heading {
+  max-width: 820px;
+  margin-bottom: clamp(34px, 4vw, 52px);
+}
+.krm-services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+.krm-service-tile {
+  min-width: 0;
+  min-height: 330px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 22px 26px;
+  border: 1px solid #e8e9e6;
+  border-radius: 4px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 5px 18px rgba(30, 48, 48, .035);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.krm-service-tile:hover,
+.krm-service-tile:focus-within {
+  transform: translateY(-5px);
+  border-color: #d7c2c0;
+  box-shadow: 0 14px 30px rgba(30, 48, 48, .09);
+}
+.krm-service-tile-number {
+  align-self: flex-start;
+  margin-bottom: 18px;
+  color: #0E7377;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.krm-service-tile .eyebrow {
+  margin-bottom: 10px;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+.krm-service-tile h2 {
+  margin: 0 0 14px;
+  color: #30363a;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: clamp(19px, 1.55vw, 23px);
+  font-weight: 600;
+  line-height: 1.2;
+}
+.krm-service-tile p {
+  margin: 0 0 24px;
+  color: #5b6672;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.krm-service-learn-more {
+  min-width: 138px;
+  margin-top: auto;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 0;
+  background: #9B5053;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(70, 35, 36, .22);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.krm-service-learn-more:hover,
+.krm-service-learn-more:focus-visible {
+  background: #813f43;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(70, 35, 36, .26);
+}
+.krm-service-learn-more:focus-visible {
+  outline: 3px solid rgba(155, 80, 83, .28);
+  outline-offset: 3px;
+}
+@media (max-width: 1050px) {
+  .krm-services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .krm-service-tile { min-height: 300px; }
+}
+@media (max-width: 560px) {
+  .krm-services-grid { grid-template-columns: 1fr; gap: 16px; }
+  .krm-service-tile { min-height: 0; padding: 26px 22px; }
+  .krm-service-tile p { max-width: 420px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .krm-service-tile,
+  .krm-service-learn-more { transition: none; }
+  .krm-service-tile:hover,
+  .krm-service-learn-more:hover { transform: none; }
+}
