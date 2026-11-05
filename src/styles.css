@@ -1406,3 +1406,55 @@ p { margin-top: 0; }
     transform: none;
   }
 }
+
+
+/* Decorative KRM ring used on page heroes, not the full logo lockup */
+.krm-home-hero {
+  position: relative;
+}
+.krm-home-hero::before {
+  content: 'KRM';
+  position: absolute;
+  z-index: 0;
+  right: clamp(72px, 12vw, 170px);
+  bottom: 58px;
+  display: grid;
+  place-items: center;
+  width: clamp(118px, 14vw, 172px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, .2);
+  font-family: Georgia, serif;
+  font-size: clamp(24px, 2.5vw, 32px);
+  pointer-events: none;
+}
+.page-intro-services {
+  position: relative;
+  overflow: hidden;
+}
+.page-intro-services::after {
+  content: 'KRM';
+  position: absolute;
+  right: clamp(72px, 12vw, 170px);
+  bottom: 42px;
+  display: grid;
+  place-items: center;
+  width: clamp(118px, 14vw, 172px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, .2);
+  font-family: Georgia, serif;
+  font-size: clamp(24px, 2.5vw, 32px);
+  pointer-events: none;
+}
+@media (max-width: 760px) {
+  .krm-home-hero::before,
+  .page-intro-services::after {
+    right: 22px;
+    bottom: 20px;
+    width: 92px;
+    font-size: 21px;
+  }
+}
