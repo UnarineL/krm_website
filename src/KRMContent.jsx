@@ -206,20 +206,15 @@ export function KRMServices() {
         <p>Explore our services across Compliance, Capability and Culture. We will help you understand the options and request a quote for the support you need.</p>
       </div>
     </section>
-    <section className="content section-pad">
-      <SectionTitle eyebrow="Our service pillars" title="Find the support your business needs." />
-      <div className="krm-pillar-shortcuts">{pillars.map((pillar) => <Link key={pillar.name} to={pillar.href}><span>{pillar.number}</span><strong>{pillar.name}</strong><small>Explore pillar ↓</small></Link>)}</div>
-      <div className="krm-services-catalogue">
-        {serviceSections.map((service) => <article className="krm-service-detail" id={service.id} key={service.id}>
-          <div className="krm-service-detail-number">{service.number}</div>
-          <div>
-            <span className="eyebrow">{service.pillar}</span>
-            <h2 className="serif">{service.title}</h2>
-            <p className="krm-service-intro">{service.intro}</p>
-            <ul>{service.items.map((item) => <li key={item}>{item}</li>)}</ul>
-            <p className="krm-deliverables"><strong>Possible deliverables:</strong> {service.deliverables}</p>
-            <div className="krm-service-card-actions"><Link className="text-link" to={`/services/${service.id}`}>View service details →</Link><Link className="button" to="/contact">Request a Quote</Link></div>
-          </div>
+    <section className="content section-pad krm-services-section">
+      <SectionTitle eyebrow="Our services" title="Practical support for every stage of your business." text="Explore the services that help your business stay compliant, strengthen its people practices and build a healthier workplace." />
+      <div className="krm-services-grid">
+        {serviceSections.map((service) => <article className="krm-service-tile" key={service.id}>
+          <span className="krm-service-tile-number">{service.number}</span>
+          <span className="eyebrow">{service.pillar}</span>
+          <h2>{service.title}</h2>
+          <p>{service.intro}</p>
+          <Link className="krm-service-learn-more" to={`/services/${service.id}`}>Learn More</Link>
         </article>)}
       </div>
     </section>
