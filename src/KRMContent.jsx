@@ -137,6 +137,7 @@ export function KRMHome() {
 export function PillarsPage() {
   return <>
     <section className="page-intro page-intro-services">
+      <div className="page-intro-mark"><Logo dark /></div>
       <div className="content">
         <span className="eyebrow">The KRM approach</span>
         <h1 className="serif">Three pillars. One practical partner.</h1>
@@ -174,6 +175,7 @@ export function HowWeWorkPage() {
 
   return <>
     <section className="page-intro page-intro-services">
+      <div className="page-intro-mark"><Logo dark /></div>
       <div className="content">
         <span className="eyebrow">How we work</span>
         <h1 className="serif">A clear way forward, together.</h1>
@@ -194,6 +196,7 @@ export function HowWeWorkPage() {
 export function KRMServices() {
   return <>
     <section className="page-intro page-intro-services">
+      <div className="page-intro-mark"><Logo dark /></div>
       <div className="content">
         <span className="eyebrow">KRM Services</span>
         <h1 className="serif">Employment compliance and people support for SMEs.</h1>
@@ -228,6 +231,7 @@ export function KRMServicePage() {
 
   return <>
     <section className="page-intro page-intro-services">
+      <div className="page-intro-mark"><Logo dark /></div>
       <div className="content">
         <span className="eyebrow">{service.pillar} · KRM Services</span>
         <h1 className="serif">{service.title}</h1>
