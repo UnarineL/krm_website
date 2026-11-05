@@ -210,11 +210,10 @@ export function KRMServices() {
       <SectionTitle eyebrow="Our services" title="Practical support for every stage of your business." text="Explore the services that help your business stay compliant, strengthen its people practices and build a healthier workplace." />
       <div className="krm-services-grid">
         {serviceSections.map((service) => <article className="krm-service-tile" key={service.id}>
-          <span className="krm-service-tile-number">{service.number}</span>
           <span className="eyebrow">{service.pillar}</span>
           <h2>{service.title}</h2>
           <p>{service.intro}</p>
-          <Link className="krm-service-learn-more" to={`/services/${service.id}`}>Learn More</Link>
+          <Link className="button" to={`/services/${service.id}`}>Learn More</Link>
         </article>)}
       </div>
     </section>
