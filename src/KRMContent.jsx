@@ -1,4 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
+import { Logo } from './components/SiteLayout';
 
 const assessmentHref = 'mailto:info@krmhcs.co.za?subject=Book%20a%20KRM%20Compliance%20Assessment';
 const consultationHref = 'mailto:info@krmhcs.co.za?subject=Request%20a%20Free%20KRM%20Consultation';
