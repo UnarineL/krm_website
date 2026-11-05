@@ -11,7 +11,7 @@ const navItems = [
   ['/contact', 'Contact'],
 ];
 
-function Logo({ dark = false }) {
+export function Logo({ dark = false }) {
   return (
     <span className={`brand-lockup ${dark ? 'brand-lockup-dark' : ''}`}>
       <span className={`logo-mark ${dark ? 'logo-mark-dark' : ''}`}>KRM</span>
