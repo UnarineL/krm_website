@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Logo } from './components/SiteLayout';
 import './vacancies.css';
 
 const vacancyPlaceholders = [
@@ -14,6 +15,7 @@ export default function Vacancies() {
   return (
     <>
       <section className="vacancies-hero">
+        <div className="vacancies-hero-mark"><Logo dark /></div>
         <div className="content vacancies-hero-inner">
           <span className="eyebrow eyebrow-light">Careers at KRM</span>
           <h1 className="serif">Explore opportunities with KRM.</h1>
