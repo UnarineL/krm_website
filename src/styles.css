@@ -1883,3 +1883,222 @@ p { margin-top: 0; }
 @media (prefers-reduced-motion: reduce) {
   .digital-hero-headline { animation: none; }
 }
+
+
+/* Final shared KRM hero system: one alignment, fixed height and original circle artwork. */
+:root {
+  --krm-page-hero-height: 458px;
+}
+
+.home-hero.krm-home-hero,
+.page-intro,
+.digital-hero,
+.vacancies-hero {
+  position: relative;
+  isolation: isolate;
+  height: var(--krm-page-hero-height);
+  min-height: var(--krm-page-hero-height);
+  padding-block: 0;
+  overflow: hidden;
+  background: #1B7B7F;
+  color: #fff;
+}
+
+/* Preserve the Home hero's original oversized left circle. */
+.home-hero.krm-home-hero::before,
+.page-intro::before,
+.digital-hero::before,
+.vacancies-hero::before {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  width: 860px;
+  height: 860px;
+  left: -520px;
+  top: -170px;
+  border: 1px solid var(--krm-hero-ring);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* The upper-right ring sits higher to leave clear space above the KRM emblem. */
+.home-hero.krm-home-hero::after,
+.page-intro::after,
+.digital-hero::after,
+.vacancies-hero::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  width: 420px;
+  height: 420px;
+  right: -150px;
+  top: -205px;
+  border: 1px solid var(--krm-hero-ring);
+  border-radius: 50%;
+  background: transparent;
+  pointer-events: none;
+}
+
+/* All hero copy starts on the same content edge as the Home page. */
+.home-hero.krm-home-hero .hero-content,
+.page-intro .content,
+.digital-hero-inner,
+.vacancies-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: min(calc(100% - 56px), var(--container));
+  max-width: var(--container);
+  margin-inline: auto;
+}
+
+.page-intro,
+.digital-hero,
+.vacancies-hero {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.page-intro .content {
+  max-width: var(--container);
+}
+
+.page-intro h1 {
+  max-width: 880px;
+  margin: 0 0 16px;
+  color: #fff;
+  font-size: clamp(42px, 6.5vw, 72px);
+  line-height: .98;
+  letter-spacing: -.8px;
+}
+.page-intro p {
+  max-width: 700px;
+  margin: 0;
+  color: #d9eeee;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.page-intro .eyebrow { color: #bfe9ea; }
+
+/* Restore the real circular KRM mark. It is not a replacement logo watermark. */
+.home-hero-mark,
+.page-intro-mark,
+.digital-hero-mark,
+.vacancies-hero-mark {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  right: clamp(35px, 8vw, 110px);
+  bottom: 30px;
+  opacity: .2;
+  pointer-events: none;
+}
+.home-hero-mark .logo-mark,
+.page-intro-mark .logo-mark,
+.digital-hero-mark .logo-mark,
+.vacancies-hero-mark .logo-mark {
+  width: 150px;
+  height: 150px;
+  font-size: 30px;
+}
+.home-hero-mark .brand-full-name,
+.page-intro-mark .brand-full-name,
+.digital-hero-mark .brand-full-name,
+.vacancies-hero-mark .brand-full-name {
+  display: none;
+}
+
+/* Digital Solutions keeps a fixed headline area, regardless of slide length. */
+.digital-hero {
+  padding: 0;
+}
+.digital-hero-inner {
+  max-width: var(--container);
+}
+.digital-hero-copy {
+  width: 100%;
+  max-width: 880px;
+}
+.digital-hero-copy .eyebrow { margin-bottom: 16px; }
+.digital-hero h1,
+.digital-hero h1.serif {
+  display: block;
+  width: 100%;
+  max-width: 880px;
+  height: 4.2em;
+  min-height: 4.2em;
+  max-height: 4.2em;
+  margin: 0 0 16px;
+  overflow: hidden;
+  color: #fff;
+  font-size: clamp(36px, 4.2vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -.035em;
+}
+.digital-hero-headline {
+  display: block;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  white-space: normal;
+  overflow-wrap: normal;
+}
+.digital-hero-copy > p { max-width: 700px; }
+.digital-hero-indicators { margin-top: 24px; }
+
+@media (max-width: 760px) {
+  :root { --krm-page-hero-height: 420px; }
+
+  .home-hero.krm-home-hero::before,
+  .page-intro::before,
+  .digital-hero::before,
+  .vacancies-hero::before {
+    width: 620px;
+    height: 620px;
+    left: -300px;
+    top: 10px;
+  }
+  .home-hero.krm-home-hero::after,
+  .page-intro::after,
+  .digital-hero::after,
+  .vacancies-hero::after {
+    width: 300px;
+    height: 300px;
+    right: -130px;
+    top: -120px;
+  }
+  .home-hero.krm-home-hero .hero-content,
+  .page-intro .content,
+  .digital-hero-inner,
+  .vacancies-hero-inner {
+    width: min(calc(100% - 40px), var(--container));
+  }
+  .home-hero-mark,
+  .page-intro-mark,
+  .digital-hero-mark,
+  .vacancies-hero-mark {
+    right: 20px;
+    bottom: 18px;
+  }
+  .home-hero-mark .logo-mark,
+  .page-intro-mark .logo-mark,
+  .digital-hero-mark .logo-mark,
+  .vacancies-hero-mark .logo-mark {
+    width: 92px;
+    height: 92px;
+    font-size: 22px;
+  }
+  .page-intro h1 { font-size: clamp(40px, 8vw, 54px); }
+  .digital-hero h1,
+  .digital-hero h1.serif {
+    height: 5.2em;
+    min-height: 5.2em;
+    max-height: 5.2em;
+    font-size: clamp(26px, 7vw, 34px);
+    line-height: 1.06;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .digital-hero-headline { animation: none; }
+}
