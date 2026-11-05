@@ -1737,7 +1737,7 @@ p { margin-top: 0; }
   width: 420px;
   height: 420px;
   right: -150px;
-  top: -150px;
+  top: -190px;
   border: 1px solid var(--krm-hero-ring);
   border-radius: 50%;
   pointer-events: none;
