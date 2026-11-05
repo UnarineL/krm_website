@@ -1,5 +1,7 @@
 .vacancies-hero {
-  padding: clamp(70px, 9vw, 112px) 0;
+  padding: clamp(62px, 7.5vw, 88px) 0 clamp(54px, 6.5vw, 76px);
+  min-height: 458px;
+  box-sizing: border-box;
   background: #1B7B7F;
   color: #fff;
 }
@@ -81,20 +83,5 @@
 }
 
 
-.vacancies-hero {
-  position: relative;
-  overflow: hidden;
-}
-
-@media (max-width: 760px) {
-  .vacancies-hero::after {
-    right: 22px;
-    bottom: 20px;
-    width: 92px;
-    font-size: 21px;
-  }
-}
-
-.vacancies-hero-mark .logo-mark { width: 150px; height: 150px; font-size: 30px; }
-.vacancies-hero-mark .brand-full-name { display: none; }
-@media (max-width: 760px) { .vacancies-hero-mark .logo-mark { width: 92px; height: 92px; font-size: 22px; } }
+.vacancies-hero-inner { max-width: 1080px; }
+.vacancies-hero-mark { position: absolute; }
