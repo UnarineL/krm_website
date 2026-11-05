@@ -127,13 +127,6 @@ export function KRMHome() {
       </div>
     </section>
 
-    <section className="band band-teal">
-      <div className="content split krm-featured-assessment">
-        <div><span className="eyebrow eyebrow-light">Start with compliance</span><h2 className="serif">Know what needs attention first.</h2></div>
-        <div><p>A KRM Compliance Assessment helps identify gaps, highlight potential risks and map practical next steps. The scope is tailored to your business and the requirements that apply to it.</p><BookingLink light>Book a Compliance Assessment</BookingLink></div>
-      </div>
-    </section>
-
     <section className="cta krm-final-cta">
       <div className="content"><span className="eyebrow">Start with a conversation</span><h2 className="serif">Let's make your next HR decision clearer.</h2><p>Tell us what your business needs. We will discuss the right next step and provide a quotation where appropriate.</p><div className="hero-actions"><BookingLink>Book a Compliance Assessment</BookingLink><Link className="button" to="/contact">Request a Free Consultation</Link></div></div>
     </section>
