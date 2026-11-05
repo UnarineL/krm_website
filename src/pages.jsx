@@ -340,7 +340,7 @@ export function DigitalSolutions() {
       </section>
 
       <section className="content section-pad ds-services">
-        <SectionHeading eyebrow="What we offer" title="Digital solutions designed around your business." />
+        <SectionHeading eyebrow="Our digital services" title="What We Offer" text="Digital solutions designed around your business." />
         <div className="ds-services-grid">
           {digitalServices.map((service, index) => (
             <article className="ds-service-card" key={service.title}>
@@ -359,7 +359,7 @@ export function DigitalSolutions() {
       </section>
 
       <section className="ds-process content">
-        <SectionHeading title="Our Process" />
+        <SectionHeading eyebrow="How we work" title="Our Process" text="A clear, collaborative journey from the first conversation to launch and ongoing support." />
         <div className="process-list">
           {process.map(([number, title, text]) => (
             <div className="process-step" key={number}>
@@ -368,26 +368,6 @@ export function DigitalSolutions() {
             </div>
           ))}
         </div>
-      </section>
-
-      <section className="ds-spec">
-        <SectionHeading title="Launch Your Project" />
-        <div className="spec-grid">
-          <div><strong>7–17 Days</strong><span>Turnaround</span></div>
-          <div><strong>WordPress</strong><span>CMS</span></div>
-          <div><strong>Social & Email</strong><span>Integrations</span></div>
-          <div><strong>1–8 Pages</strong><span>Scope</span></div>
-        </div>
-      </section>
-
-      <section className="content ds-faq">
-        <SectionHeading title="FAQ" />
-        {[
-          ['How long does a project take?', '7–17 days, depending on scope.'],
-          ['Will my website work on mobile devices?', 'Yes. We design responsive websites that adapt to phones, tablets and desktop screens.'],
-          ['Do you support the site after launch?', 'Yes, dedicated post-launch support keeps the site secure, updated and aligned with your goals.'],
-          ['Can you integrate social media and email?', 'Yes, social media and email integration is included.'],
-        ].map(([q, a]) => <details className="faq-item" key={q}><summary>{q}</summary><p>{a}</p></details>)}
       </section>
 
       <section className="ds-promise"><p>“We don't just build websites — we craft digital experiences that inspire confidence, strengthen your brand, and drive business growth.”</p></section>
