@@ -53,6 +53,7 @@ const templates = [
 function PageIntro({ eyebrow, title, text, dark = false, tone = '' }) {
   return (
     <section className={`page-intro ${dark ? 'page-intro-dark' : ''} ${tone ? `page-intro-${tone}` : ''}`}>
+      <div className="page-intro-mark"><Logo dark /></div>
       <div className="content">
         <span className="eyebrow">{eyebrow}</span>
         <h1 className="serif">{title}</h1>
@@ -316,6 +317,7 @@ export function DigitalSolutions() {
   return (
     <>
       <section className="digital-hero">
+        <div className="digital-hero-mark"><Logo dark /></div>
         <div className="content digital-hero-inner">
           <div className="digital-hero-copy">
             <span className="eyebrow eyebrow-light">Digital Solutions</span>
