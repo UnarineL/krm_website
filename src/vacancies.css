@@ -79,3 +79,33 @@
   .vacancy-card { grid-template-columns: 28px minmax(0, 1fr) 18px; gap: 12px; }
   .vacancies-contact-inner { align-items: flex-start; flex-direction: column; }
 }
+
+
+.vacancies-hero {
+  position: relative;
+  overflow: hidden;
+}
+.vacancies-hero::after {
+  content: 'KRM';
+  position: absolute;
+  right: clamp(72px, 12vw, 170px);
+  bottom: 42px;
+  display: grid;
+  place-items: center;
+  width: clamp(118px, 14vw, 172px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, .2);
+  font-family: Georgia, serif;
+  font-size: clamp(24px, 2.5vw, 32px);
+  pointer-events: none;
+}
+@media (max-width: 760px) {
+  .vacancies-hero::after {
+    right: 22px;
+    bottom: 20px;
+    width: 92px;
+    font-size: 21px;
+  }
+}
