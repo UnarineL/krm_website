@@ -1874,9 +1874,9 @@ p { margin-top: 0; }
 .digital-hero h1,
 .digital-hero h1.serif {
   width: 100%;
-  max-width: 1180px;
+  max-width: 1200px;
   min-height: 4.2em;
-  font-size: clamp(36px, 4.2vw, 54px);
+  font-size: clamp(36px, 4.2vw, 48px);
   line-height: 1.05;
   letter-spacing: -.035em;
 }
