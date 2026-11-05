@@ -2008,7 +2008,7 @@ p { margin-top: 0; }
   display: none;
 }
 
-/* Digital Solutions keeps a fixed headline area, regardless of slide length. */
+/* Digital Solutions uses the full hero width and reserves exactly three desktop text lines. */
 .digital-hero {
   padding: 0;
 }
@@ -2017,21 +2017,21 @@ p { margin-top: 0; }
 }
 .digital-hero-copy {
   width: 100%;
-  max-width: 880px;
+  max-width: var(--container);
 }
 .digital-hero-copy .eyebrow { margin-bottom: 16px; }
 .digital-hero h1,
 .digital-hero h1.serif {
   display: block;
   width: 100%;
-  max-width: 880px;
-  height: 4.2em;
-  min-height: 4.2em;
-  max-height: 4.2em;
+  max-width: 100%;
+  height: 3.2em;
+  min-height: 3.2em;
+  max-height: 3.2em;
   margin: 0 0 16px;
   overflow: hidden;
   color: #fff;
-  font-size: clamp(36px, 4.2vw, 48px);
+  font-size: clamp(36px, 3.7vw, 48px);
   line-height: 1.05;
   letter-spacing: -.035em;
 }
@@ -2091,10 +2091,10 @@ p { margin-top: 0; }
   .page-intro h1 { font-size: clamp(40px, 8vw, 54px); }
   .digital-hero h1,
   .digital-hero h1.serif {
-    height: 5.2em;
-    min-height: 5.2em;
-    max-height: 5.2em;
-    font-size: clamp(26px, 7vw, 34px);
+    height: 4.8em;
+    min-height: 4.8em;
+    max-height: 4.8em;
+    font-size: clamp(24px, 6.5vw, 32px);
     line-height: 1.06;
   }
 }
