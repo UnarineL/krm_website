@@ -1262,5 +1262,8 @@ p { margin-top: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   .krm-service-tile,
-  .krm-service-tile:hover,
+  .krm-service-tile:hover {
+    transition: none;
+    transform: none;
+  }
 }
