@@ -1290,27 +1290,24 @@ p { margin-top: 0; }
 .page-intro p {
   color: #d9eeee;
 }
-.krm-home-hero::after,
-.page-intro::after,
-.digital-hero::after {
-  content: 'KRM';
+.page-intro-mark,
+.digital-hero-mark {
   position: absolute;
   z-index: 0;
-  right: clamp(28px, 7vw, 104px);
-  bottom: clamp(22px, 4vw, 52px);
-  display: grid;
-  place-items: center;
-  width: clamp(112px, 15vw, 190px);
-  aspect-ratio: 1;
-  border: 2px solid rgba(255, 255, 255, .12);
-  border-radius: 50%;
-  color: rgba(255, 255, 255, .12);
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: clamp(25px, 3.2vw, 42px);
-  font-weight: 500;
-  letter-spacing: -.07em;
-  line-height: 1;
+  right: clamp(35px, 8vw, 110px);
+  bottom: 42px;
+  opacity: .2;
   pointer-events: none;
+}
+.page-intro-mark .logo-mark,
+.digital-hero-mark .logo-mark {
+  width: 150px;
+  height: 150px;
+  font-size: 30px;
+}
+.page-intro-mark .brand-full-name,
+.digital-hero-mark .brand-full-name {
+  display: none;
 }
 .home-hero .hero-content {
   position: relative;
@@ -1396,13 +1393,16 @@ p { margin-top: 0; }
 }
 @media (max-width: 760px) {
   .page-intro { padding-block: 58px 48px; }
-  .page-intro::after,
-  .digital-hero::after {
+  .page-intro-mark,
+  .digital-hero-mark {
     right: 20px;
     bottom: 18px;
-    width: 104px;
-    font-size: 25px;
-    border-width: 1px;
+  }
+  .page-intro-mark .logo-mark,
+  .digital-hero-mark .logo-mark {
+    width: 88px;
+    height: 88px;
+    font-size: 22px;
   }
   .ds-services .section-heading h2 {
     font-size: clamp(42px, 10vw, 58px);
