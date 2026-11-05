@@ -87,4 +87,3 @@ export default function SiteLayout({ children }) {
   );
 }
 
-export { Logo };
