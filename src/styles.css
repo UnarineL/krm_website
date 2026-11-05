@@ -1834,3 +1834,99 @@ p { margin-top: 0; }
     font-size: clamp(40px, 9vw, 54px);
   }
 }
+
+
+/* Approved KRM hero system: preserve the Home circle artwork at the About Us height. */
+:root {
+  --krm-page-hero-height: 458px;
+}
+.home-hero.krm-home-hero,
+.page-intro,
+.digital-hero,
+.vacancies-hero {
+  height: var(--krm-page-hero-height);
+  min-height: var(--krm-page-hero-height);
+  box-sizing: border-box;
+  padding-block: 54px;
+}
+.home-hero.krm-home-hero::before,
+.page-intro::before,
+.digital-hero::before,
+.vacancies-hero::before {
+  width: 860px;
+  height: 860px;
+  left: -520px;
+  top: -170px;
+  border-color: rgba(255, 255, 255, .14);
+}
+.home-hero.krm-home-hero::after,
+.page-intro::after,
+.digital-hero::after,
+.vacancies-hero::after {
+  width: 420px;
+  height: 420px;
+  right: -150px;
+  top: -150px;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 50%;
+  background: transparent;
+}
+.digital-hero h1,
+.digital-hero h1.serif {
+  width: 100%;
+  max-width: 1180px;
+  min-height: 4.2em;
+  font-size: clamp(36px, 4.2vw, 54px);
+  line-height: 1.05;
+  letter-spacing: -.035em;
+}
+.digital-hero-copy {
+  width: 100%;
+  max-width: 1180px;
+}
+.digital-hero-headline {
+  display: block;
+  min-height: 4.2em;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 760px) {
+  .home-hero.krm-home-hero,
+  .page-intro,
+  .digital-hero,
+  .vacancies-hero {
+    height: 420px;
+    min-height: 420px;
+    padding-block: 42px;
+  }
+  .home-hero.krm-home-hero::before,
+  .page-intro::before,
+  .digital-hero::before,
+  .vacancies-hero::before {
+    width: 620px;
+    height: 620px;
+    left: -300px;
+    top: 10px;
+  }
+  .home-hero.krm-home-hero::after,
+  .page-intro::after,
+  .digital-hero::after,
+  .vacancies-hero::after {
+    width: 300px;
+    height: 300px;
+    right: -130px;
+    top: -120px;
+  }
+  .digital-hero h1,
+  .digital-hero h1.serif {
+    min-height: 4.2em;
+    font-size: clamp(27px, 7vw, 38px);
+    line-height: 1.06;
+  }
+  .digital-hero-headline {
+    min-height: 4.2em;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .digital-hero-headline { animation: none; }
+}
