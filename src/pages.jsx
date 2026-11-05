@@ -265,7 +265,7 @@ const digitalHeadlines = [
   'A stronger digital presence starts here.',
   'Turn your ideas into useful digital experiences.',
   'Websites that work as hard as your business.',
-  "We don't just build websites — we craft digital experiences that inspire confidence, strengthen your brand, and drive business growth.",
+  "We don't just build websites. We create digital experiences that move your business forward.",
 ];
 
 export function DigitalSolutions() {
