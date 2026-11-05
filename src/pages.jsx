@@ -167,7 +167,7 @@ export function Legacy() {
 export function Services() {
   return (
     <>
-      <PageIntro eyebrow="Services" tone="services" title="Practical support across the employee lifecycle." text="A structured home for KRM’s human capital and consulting services." />
+      <PageIntro eyebrow="Services" tone="services" showMark={true} title="Practical support across the employee lifecycle." text="A structured home for KRM’s human capital and consulting services." />
       <section className="content section-pad">
         <div className="service-list">
           <article className="service-detail">
