@@ -416,8 +416,8 @@ export function Contact() {
       <PageIntro
         eyebrow="Contact KRM"
         tone="about"
-        title="Let’s start a conversation."
-        text="Tell us what your business needs. Whether you’re looking for a Compliance Assessment, a consultation or practical HR support, the KRM team is here to help."
+        title="Tell us what your business needs."
+        text="Whether you’re looking for a Compliance Assessment, a consultation or practical HR support, the KRM team is here to help."
       />
       <section className="content section-pad contact-grid">
         <form className="contact-form" onSubmit={handleSubmit}>
