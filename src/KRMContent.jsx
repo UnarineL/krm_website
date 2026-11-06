@@ -69,7 +69,7 @@ const serviceSections = [
     number: '03',
     pillar: 'Capability',
     title: 'Affordable SME Recruitment',
-    heroLines: ['Recruitment Support', 'for Growing SMEs'],
+    heroLines: ['SME Recruitment', 'and Hiring'],
     intro: 'Recruitment support designed around small and growing businesses, not just filling a vacancy.',
     items: ['Job profiling and role requirements', 'Recruitment advertising and candidate screening', 'Interviews and reference checks', 'Competency-based interview guides', 'Onboarding support', 'Recruitment Process Outsourcing (RPO) options'],
     deliverables: 'A clearer recruitment process, structured candidate assessment and onboarding support.',
