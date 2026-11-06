@@ -2212,3 +2212,33 @@ p { margin-top: 0; }
     line-height: .96;
   }
 }
+
+/* Founder-approved Home hero motion: replay the entrance whenever Home is opened,
+   then keep the existing circle artwork gently alive without changing its geometry. */
+.krm-home-hero .hero-content .eyebrow,
+.krm-home-hero .hero-content h1,
+.krm-home-hero .hero-content p {
+  animation: krm-home-hero-enter .9s cubic-bezier(.2,.7,.2,1) both;
+}
+.krm-home-hero .hero-content h1 { animation-delay: .14s; }
+.krm-home-hero .hero-content p { animation-delay: .28s; }
+
+.krm-home-hero::before,
+.krm-home-hero::after {
+  animation: krm-home-ring-breathe 8s ease-in-out infinite alternate;
+}
+
+@keyframes krm-home-ring-breathe {
+  from { border-color: rgba(255,255,255,.10); }
+  to { border-color: rgba(255,255,255,.23); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .krm-home-hero .hero-content .eyebrow,
+  .krm-home-hero .hero-content h1,
+  .krm-home-hero .hero-content p,
+  .krm-home-hero::before,
+  .krm-home-hero::after {
+    animation: none;
+  }
+}
