@@ -125,6 +125,8 @@ export function KRMHome() {
       return undefined;
     }
 
+    document.documentElement.classList.add('krm-motion-enabled');
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         entry.target.classList.toggle('is-visible', entry.isIntersecting);
@@ -132,7 +134,10 @@ export function KRMHome() {
     }, { threshold: 0.2 });
 
     sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      document.documentElement.classList.remove('krm-motion-enabled');
+    };
   }, []);
 
   return <>
