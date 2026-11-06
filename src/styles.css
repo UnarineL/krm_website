@@ -2213,40 +2213,48 @@ p { margin-top: 0; }
   }
 }
 
-/* Home hero motion: continuous movement without fading or changing hero geometry. */
-.krm-home-hero .hero-content .eyebrow,
-.krm-home-hero .hero-content h1,
-.krm-home-hero .hero-content p {
-  animation: krm-home-text-float 5s ease-in-out infinite;
+/* Home hero prototype: subtle orbital ring movement and headline-only motion.
+   Transforms preserve the existing hero dimensions, colors, typography and layout. */
+.krm-home-hero::before {
+  transform-origin: center;
+  animation: krm-home-left-orbit 24s ease-in-out infinite;
   will-change: transform;
 }
-
-.krm-home-hero .hero-content .eyebrow { animation-delay: 0s; }
-.krm-home-hero .hero-content h1 { animation-delay: .35s; }
-.krm-home-hero .hero-content p { animation-delay: .7s; }
 
 .krm-home-hero::after {
   transform-origin: center;
-  animation: krm-home-ring-drift 9s ease-in-out infinite alternate;
+  animation: krm-home-right-orbit 19s ease-in-out infinite;
   will-change: transform;
 }
 
-@keyframes krm-home-text-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
+.krm-home-hero .hero-content h1 {
+  animation: krm-home-headline-float 7s ease-in-out infinite;
+  will-change: transform;
 }
 
-@keyframes krm-home-ring-drift {
-  0% { transform: translate3d(0, 0, 0) rotate(0deg); }
-  50% { transform: translate3d(-18px, 12px, 0) rotate(3deg); }
-  100% { transform: translate3d(12px, 22px, 0) rotate(-2deg); }
+@keyframes krm-home-left-orbit {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  25% { transform: translate3d(9px, -5px, 0); }
+  50% { transform: translate3d(14px, 4px, 0); }
+  75% { transform: translate3d(5px, 8px, 0); }
+}
+
+@keyframes krm-home-right-orbit {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  25% { transform: translate3d(-7px, 5px, 0); }
+  50% { transform: translate3d(-12px, 1px, 0); }
+  75% { transform: translate3d(-4px, -6px, 0); }
+}
+
+@keyframes krm-home-headline-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .krm-home-hero .hero-content .eyebrow,
-  .krm-home-hero .hero-content h1,
-  .krm-home-hero .hero-content p,
-  .krm-home-hero::after {
+  .krm-home-hero::before,
+  .krm-home-hero::after,
+  .krm-home-hero .hero-content h1 {
     animation: none;
     will-change: auto;
     transform: none;
