@@ -119,21 +119,21 @@ const serviceSections = [
 
 export function KRMHome() {
   useEffect(() => {
-    const sections = document.querySelectorAll('.krm-motion-section');
+    const hero = document.querySelector('.krm-home-hero');
+    if (!hero) return undefined;
+
     if (!('IntersectionObserver' in window)) {
-      sections.forEach((section) => section.classList.add('is-visible'));
+      hero.classList.add('is-visible');
       return undefined;
     }
 
     document.documentElement.classList.add('krm-motion-enabled');
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        entry.target.classList.toggle('is-visible', entry.isIntersecting);
-      });
+    const observer = new IntersectionObserver(([entry]) => {
+      hero.classList.toggle('is-visible', entry.isIntersecting);
     }, { threshold: 0.2 });
 
-    sections.forEach((section) => observer.observe(section));
+    observer.observe(hero);
     return () => {
       observer.disconnect();
       document.documentElement.classList.remove('krm-motion-enabled');
@@ -150,7 +150,7 @@ export function KRMHome() {
       </div>
     </section>
 
-    <section className="content section-pad krm-home-intro krm-motion-section">
+    <section className="content section-pad krm-home-intro">
       <SectionTitle eyebrow="The KRM approach" title="Practical people support for growing businesses." text="From employment compliance to stronger teams and healthier workplace cultures, KRM helps South African SMEs understand what they need and take the next step with confidence." />
       <div className="krm-home-links">
         <Link className="button" to="/service-pillars">Explore our service pillars</Link>
@@ -158,7 +158,7 @@ export function KRMHome() {
       </div>
     </section>
 
-    <section className="cta krm-final-cta krm-motion-section">
+    <section className="cta krm-final-cta">
       <div className="content"><span className="eyebrow">Start with a conversation</span><h2 className="serif">Let's make your next HR decision clearer.</h2><p>Tell us what your business needs. We will discuss the right next step and provide a quotation where appropriate.</p><div className="hero-actions"><BookingLink>Book a Compliance Assessment</BookingLink><Link className="button" to="/contact">Request a Free Consultation</Link></div></div>
     </section>
   </>;
