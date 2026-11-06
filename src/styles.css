@@ -2206,3 +2206,21 @@ p { margin-top: 0; }
   }
 }
 
+/* Individual service detail heroes: two deliberate headline lines, matching Contact's
+   oversized serif treatment while keeping every service page's hero geometry consistent. */
+.krm-service-page-hero h1 {
+  max-width: 100%;
+  font-size: clamp(52px, 6.5vw, 72px);
+  line-height: .92;
+}
+
+.krm-service-page-hero h1 span {
+  display: block;
+}
+
+@media (max-width: 760px) {
+  .krm-service-page-hero h1 {
+    font-size: clamp(36px, 8vw, 50px);
+    line-height: .96;
+  }
+}
