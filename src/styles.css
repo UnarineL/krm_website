@@ -2103,3 +2103,65 @@ p { margin-top: 0; }
 .vacancies-hero::after {
   top: -230px;
 }
+
+
+/* Shared hero text position and entrance motion across KRM pages.
+   Digital Solutions keeps its independent typewriter sequence untouched. */
+.home-hero.krm-home-hero,
+.page-intro,
+.digital-hero,
+.vacancies-hero {
+  display: flex;
+  align-items: flex-start;
+}
+
+.home-hero.krm-home-hero .hero-content,
+.page-intro .content,
+.digital-hero-inner,
+.vacancies-hero-inner {
+  margin-top: 64px;
+}
+
+.page-intro .eyebrow,
+.page-intro h1,
+.page-intro p,
+.vacancies-hero-inner > .eyebrow,
+.vacancies-hero-inner > h1,
+.vacancies-hero-inner > p {
+  animation: krm-home-enter .8s cubic-bezier(.2,.7,.2,1) both;
+}
+
+.page-intro h1,
+.vacancies-hero-inner > h1 {
+  animation-delay: .12s;
+}
+
+.page-intro p,
+.vacancies-hero-inner > p {
+  animation-delay: .24s;
+}
+
+/* Keep the typewriter headline and its timing fully independent. */
+.digital-hero-inner {
+  animation: none;
+}
+
+@media (max-width: 760px) {
+  .home-hero.krm-home-hero .hero-content,
+  .page-intro .content,
+  .digital-hero-inner,
+  .vacancies-hero-inner {
+    margin-top: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-intro .eyebrow,
+  .page-intro h1,
+  .page-intro p,
+  .vacancies-hero-inner > .eyebrow,
+  .vacancies-hero-inner > h1,
+  .vacancies-hero-inner > p {
+    animation: none;
+  }
+}
