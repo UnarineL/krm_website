@@ -1563,38 +1563,7 @@ p { margin-top: 0; }
   }
 }
 
-/* Make the About-style circular KRM emblem explicit on the Services hero only */
-.page-intro-services {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-}
-.page-intro-services .page-intro-mark {
-  display: block;
-  right: clamp(35px, 8vw, 110px);
-  bottom: 42px;
-  opacity: .2;
-}
-.page-intro-services .page-intro-mark .logo-mark {
-  width: 150px;
-  height: 150px;
-  font-size: 30px;
-}
-.page-intro-services .page-intro-mark .brand-full-name {
-  display: none;
-}
-@media (max-width: 760px) {
-  .page-intro-services .page-intro-mark {
-    right: 20px;
-    bottom: 18px;
-  }
-  .page-intro-services .page-intro-mark .logo-mark {
-    width: 92px;
-    height: 92px;
-    font-size: 22px;
-  }
-}
-
+/* Services hero uses the same shared background artwork and mark visibility as About. */
 
 /* Digital Solutions process: stack the introduction above a full-width step row */
 .ds-process.content {
@@ -2124,5 +2093,17 @@ p { margin-top: 0; }
     max-width: 100%;
     font-size: clamp(38px, 8vw, 54px);
     line-height: .98;
+  }
+}
+
+/* Keep Services hero content aligned to the same About hero content column. */
+.page-intro-services .content {
+  width: min(calc(100% - 56px), 900px);
+  max-width: 900px;
+  margin-inline: auto;
+}
+@media (max-width: 760px) {
+  .page-intro-services .content {
+    width: min(calc(100% - 40px), 900px);
   }
 }
