@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Logo } from './components/SiteLayout';
 
@@ -117,17 +118,34 @@ const serviceSections = [
 ];
 
 export function KRMHome() {
+  useEffect(() => {
+    const sections = document.querySelectorAll('.krm-motion-section');
+    if (!('IntersectionObserver' in window)) {
+      sections.forEach((section) => section.classList.add('is-visible'));
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle('is-visible', entry.isIntersecting);
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
   return <>
-    <section className="home-hero krm-home-hero">
+    <section className="home-hero krm-home-hero krm-motion-section">
       <div className="home-hero-mark"><Logo dark /></div>
       <div className="content hero-content">
         <span className="eyebrow eyebrow-light">The SME Employment Compliance and People Partner</span>
-        <h1 className="serif">HR Compliance and People Solutions for Growing South African SMEs</h1>
+        <h1 className="serif"><span>HR Compliance and</span><span>People Solutions for</span><span>Growing South African SMEs</span></h1>
         <p>We help SMEs stay compliant, reduce employment risk, and build productive workplaces through practical HR solutions, without the cost of a full-time HR department.</p>
       </div>
     </section>
 
-    <section className="content section-pad krm-home-intro">
+    <section className="content section-pad krm-home-intro krm-motion-section">
       <SectionTitle eyebrow="The KRM approach" title="Practical people support for growing businesses." text="From employment compliance to stronger teams and healthier workplace cultures, KRM helps South African SMEs understand what they need and take the next step with confidence." />
       <div className="krm-home-links">
         <Link className="button" to="/service-pillars">Explore our service pillars</Link>
@@ -135,7 +153,7 @@ export function KRMHome() {
       </div>
     </section>
 
-    <section className="cta krm-final-cta">
+    <section className="cta krm-final-cta krm-motion-section">
       <div className="content"><span className="eyebrow">Start with a conversation</span><h2 className="serif">Let's make your next HR decision clearer.</h2><p>Tell us what your business needs. We will discuss the right next step and provide a quotation where appropriate.</p><div className="hero-actions"><BookingLink>Book a Compliance Assessment</BookingLink><Link className="button" to="/contact">Request a Free Consultation</Link></div></div>
     </section>
   </>;
