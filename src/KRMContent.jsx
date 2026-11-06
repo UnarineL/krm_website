@@ -238,14 +238,9 @@ export function KRMServicePage() {
         <p>{service.intro}</p>
       </div>
     </section>
-    <section className="content section-pad krm-service-page-body">
-      <div className="krm-service-page-copy">
-        <span className="eyebrow">How we can help</span>
-        <h2 className="serif">Practical support, shaped around your business.</h2>
-        <p>We start by understanding your organisation, the issue you need to address and the requirements that apply. KRM then discusses an appropriate scope of support and provides a quotation before work begins.</p>
-      </div>
+    <section className="content section-pad krm-service-page-body krm-service-page-body-single">
       <div className="krm-service-page-list">
-        <h2 className="serif">Services may include</h2>
+        <h2 className="serif">Services</h2>
         <ul>{service.items.map((item) => <li key={item}>{item}</li>)}</ul>
         <div className="krm-deliverables"><strong>Possible deliverables:</strong> {service.deliverables}</div>
         <p className="small-note">The exact service scope and deliverables depend on your organisation's needs and the agreed quotation. KRM support is not a guarantee of a particular legal or regulatory outcome.</p>
