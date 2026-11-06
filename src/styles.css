@@ -2179,8 +2179,8 @@ p { margin-top: 0; }
    The introductory side panel and the phrase "may include" are intentionally removed. */
 .krm-service-page-body-single {
   display: block;
-  width: min(calc(100% - 56px), 900px);
-  max-width: 900px;
+  width: min(calc(100% - 56px), var(--container));
+  max-width: var(--container);
   margin-inline: auto;
 }
 
