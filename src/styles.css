@@ -2096,18 +2096,6 @@ p { margin-top: 0; }
   }
 }
 
-/* Keep Services hero content aligned to the same About hero content column. */
-.page-intro-services .content {
-  width: min(calc(100% - 56px), 900px);
-  max-width: 900px;
-  margin-inline: auto;
-}
-@media (max-width: 760px) {
-  .page-intro-services .content {
-    width: min(calc(100% - 40px), 900px);
-  }
-}
-
 /* Founder-approved shared hero circle position: lift the upper-right ring consistently. */
 .home-hero.krm-home-hero::after,
 .page-intro::after,
