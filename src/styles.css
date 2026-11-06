@@ -2165,3 +2165,44 @@ p { margin-top: 0; }
     animation: none;
   }
 }
+
+/* Client revision: remove only the small KRM watermark circles from page heroes.
+   Keep the large decorative background rings and the primary header logo intact. */
+.home-hero-mark,
+.page-intro-mark,
+.digital-hero-mark,
+.vacancies-hero-mark {
+  display: none !important;
+}
+
+/* Client revision: service detail pages use one aligned service list column.
+   The introductory side panel and the phrase "may include" are intentionally removed. */
+.krm-service-page-body-single {
+  display: block;
+  width: min(calc(100% - 56px), 900px);
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.krm-service-page-body-single .krm-service-page-list {
+  width: 100%;
+  border-top: 0;
+  padding-top: 0;
+}
+
+.krm-service-page-body-single .krm-service-page-list h2 {
+  margin: 0 0 22px;
+  text-align: left;
+  font-size: clamp(36px, 4.5vw, 52px);
+}
+
+.krm-service-page-body-single .krm-service-page-list ul {
+  max-width: 820px;
+}
+
+@media (max-width: 760px) {
+  .krm-service-page-body-single {
+    width: min(calc(100% - 40px), 900px);
+  }
+}
+
