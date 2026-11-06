@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Logo } from './components/SiteLayout';
 
@@ -118,30 +117,8 @@ const serviceSections = [
 ];
 
 export function KRMHome() {
-  useEffect(() => {
-    const hero = document.querySelector('.krm-home-hero');
-    if (!hero) return undefined;
-
-    if (!('IntersectionObserver' in window)) {
-      hero.classList.add('is-visible');
-      return undefined;
-    }
-
-    document.documentElement.classList.add('krm-motion-enabled');
-
-    const observer = new IntersectionObserver(([entry]) => {
-      hero.classList.toggle('is-visible', entry.isIntersecting);
-    }, { threshold: 0.2 });
-
-    observer.observe(hero);
-    return () => {
-      observer.disconnect();
-      document.documentElement.classList.remove('krm-motion-enabled');
-    };
-  }, []);
-
   return <>
-    <section className="home-hero krm-home-hero krm-motion-section">
+    <section className="home-hero krm-home-hero">
       <div className="home-hero-mark"><Logo dark /></div>
       <div className="content hero-content">
         <span className="eyebrow eyebrow-light">The SME Employment Compliance and People Partner</span>
