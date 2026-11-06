@@ -2107,3 +2107,11 @@ p { margin-top: 0; }
     width: min(calc(100% - 40px), 900px);
   }
 }
+
+/* Founder-approved shared hero circle position: lift the upper-right ring consistently. */
+.home-hero.krm-home-hero::after,
+.page-intro::after,
+.digital-hero::after,
+.vacancies-hero::after {
+  top: -230px;
+}
