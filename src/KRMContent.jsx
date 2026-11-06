@@ -49,6 +49,7 @@ const serviceSections = [
     number: '01',
     pillar: 'Compliance',
     title: 'Employment Compliance',
+    heroLines: ['Employment', 'Compliance'],
     intro: 'Understand where your business stands, identify employment risks, and get a clear plan for what to address first.',
     items: ['UIF registration and maintenance', 'COIDA registration and Return of Earnings', 'Letter of Good Standing support', 'Employment Equity support where applicable', 'Labour-law compliance audits and BCEA reviews', 'HR file and employee record audits'],
     deliverables: 'Compliance report, risk assessment, prioritised action plan and compliance tracking.',
@@ -58,6 +59,7 @@ const serviceSections = [
     number: '02',
     pillar: 'Compliance',
     title: 'Contracts, Policies & HR Documentation',
+    heroLines: ['Contracts, Policies &', 'HR Documentation'],
     intro: 'Create clearer, more consistent employment documentation tailored to your workplace and reviewed for relevant requirements.',
     items: ['Permanent, fixed-term and executive contracts', 'Independent contractor agreements and probation clauses', 'Leave, disciplinary, grievance and remote-work policies', 'POPIA-related employee policies, harassment and whistleblowing policies', 'Job descriptions, offer letters, promotion letters and warning templates', 'Employee handbooks and HR starter packs'],
     deliverables: 'A tailored HR starter pack, employee handbook or policy manual based on your needs.',
@@ -67,6 +69,7 @@ const serviceSections = [
     number: '03',
     pillar: 'Capability',
     title: 'Affordable SME Recruitment',
+    heroLines: ['Affordable SME', 'Recruitment'],
     intro: 'Recruitment support designed around small and growing businesses, not just filling a vacancy.',
     items: ['Job profiling and role requirements', 'Recruitment advertising and candidate screening', 'Interviews and reference checks', 'Competency-based interview guides', 'Onboarding support', 'Recruitment Process Outsourcing (RPO) options'],
     deliverables: 'A clearer recruitment process, structured candidate assessment and onboarding support.',
@@ -76,6 +79,7 @@ const serviceSections = [
     number: '04',
     pillar: 'Capability',
     title: 'Performance Management',
+    heroLines: ['Performance', 'Management'],
     intro: 'Help people understand what good performance looks like and give managers a fair, structured way to support it.',
     items: ['KPI, KPA and SMART goal development', 'Performance review templates and frameworks', 'Probation management', 'Manager coaching', 'Performance Improvement Plans (PIPs)'],
     deliverables: 'Individual or departmental scorecards and a practical quarterly review framework.',
@@ -85,6 +89,7 @@ const serviceSections = [
     number: '05',
     pillar: 'Culture',
     title: 'Employee & Labour Relations',
+    heroLines: ['Employee & Labour', 'Relations'],
     intro: 'Practical guidance through sensitive workplace matters, with fair processes and appropriate documentation.',
     items: ['Disciplinary processes and hearing chairing', 'Grievance investigations', 'Poor-performance and incapacity processes', 'Retrenchment process support', 'CCMA preparation'],
     deliverables: 'Process guidance and documentation shaped to the matter and the applicable requirements.',
@@ -94,6 +99,7 @@ const serviceSections = [
     number: '06',
     pillar: 'Culture',
     title: 'Organisational Development & Change',
+    heroLines: ['Organisational', 'Development & Change'],
     intro: 'Support organisations as roles, structures, systems and working practices evolve.',
     items: ['Organisational structure reviews and role clarification', 'Workforce planning and job evaluation', 'Restructuring and merger support', 'New-system implementation and culture change', 'Stakeholder analysis and change-impact assessment'],
     deliverables: 'Depending on project scope: communication plan, readiness survey and change roadmap.',
@@ -103,6 +109,7 @@ const serviceSections = [
     number: '07',
     pillar: 'All three pillars',
     title: 'Outsourced HR Support',
+    heroLines: ['Outsourced HR', 'Support'],
     intro: 'Access ongoing HR support without the cost of building a full in-house department.',
     items: ['Monthly HR support retainers', 'Tailored packages for defined business needs', 'Compliance follow-ups and HR administration', 'Manager guidance and employee-process support'],
     deliverables: 'Agreed scope, service boundaries and support rhythm defined with each client.',
@@ -230,11 +237,11 @@ export function KRMServicePage() {
   }
 
   return <>
-    <section className="page-intro page-intro-services">
+    <section className="page-intro page-intro-services krm-service-page-hero">
       <div className="page-intro-mark"><Logo dark /></div>
       <div className="content">
         <span className="eyebrow">{service.pillar} · KRM Services</span>
-        <h1 className="serif">{service.title}</h1>
+        <h1 className="serif">{service.heroLines.map((line) => <span key={line}>{line}</span>)}</h1>
         <p>{service.intro}</p>
       </div>
     </section>
