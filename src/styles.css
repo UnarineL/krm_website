@@ -2213,32 +2213,57 @@ p { margin-top: 0; }
   }
 }
 
-/* Founder-approved Home hero motion: replay the entrance whenever Home is opened,
-   then keep the existing circle artwork gently alive without changing its geometry. */
+/* Home hero motion: visible text entrance plus a continuous pulse on the existing ring.
+   No hero geometry, text sizing, or circle positioning is changed. */
 .krm-home-hero .hero-content .eyebrow,
 .krm-home-hero .hero-content h1,
 .krm-home-hero .hero-content p {
-  animation: krm-home-hero-enter .9s cubic-bezier(.2,.7,.2,1) both;
+  opacity: 0;
+  animation: krm-home-hero-enter 1.15s cubic-bezier(.2,.7,.2,1) forwards;
 }
-.krm-home-hero .hero-content h1 { animation-delay: .14s; }
-.krm-home-hero .hero-content p { animation-delay: .28s; }
+.krm-home-hero .hero-content .eyebrow { animation-delay: .12s; }
+.krm-home-hero .hero-content h1 { animation-delay: .38s; }
+.krm-home-hero .hero-content p { animation-delay: .68s; }
 
-.krm-home-hero::before,
 .krm-home-hero::after {
-  animation: krm-home-ring-breathe 8s ease-in-out infinite alternate;
+  transform-origin: center;
+  animation: krm-home-ring-pulse 6s ease-in-out infinite alternate;
 }
 
-@keyframes krm-home-ring-breathe {
-  from { border-color: rgba(255,255,255,.10); }
-  to { border-color: rgba(255,255,255,.23); }
+@keyframes krm-home-hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes krm-home-ring-pulse {
+  from {
+    opacity: .45;
+    border-color: rgba(23,169,174,.22);
+    transform: scale(.96);
+  }
+  to {
+    opacity: 1;
+    border-color: rgba(23,169,174,.8);
+    transform: scale(1.04);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .krm-home-hero .hero-content .eyebrow,
   .krm-home-hero .hero-content h1,
   .krm-home-hero .hero-content p,
-  .krm-home-hero::before,
   .krm-home-hero::after {
+    opacity: 1;
     animation: none;
+    filter: none;
+    transform: none;
   }
 }
