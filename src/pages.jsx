@@ -262,10 +262,10 @@ export function WorkplaceRiskCheck() {
 }
 
 const digitalHeadlines = [
-  'A stronger digital presence starts here.',
-  'Turn your ideas into useful digital experiences.',
-  'Websites that work as hard as your business.',
-  "We don't just build websites. We create digital experiences that move your business forward.",
+  'A stronger digital\npresence starts here.',
+  'Turn your ideas into\nmeaningful digital experiences.',
+  'Websites built to support\nyour business growth.',
+  "We don't just build websites.\nWe create digital experiences.",
 ];
 
 export function DigitalSolutions() {
@@ -322,7 +322,7 @@ export function DigitalSolutions() {
         <div className="content digital-hero-inner">
           <div className="digital-hero-copy">
             <span className="eyebrow eyebrow-light">Digital Solutions</span>
-            <h1 className="serif" aria-label={digitalHeadlines[activeHeadline]}>
+            <h1 className="serif" aria-label={digitalHeadlines[activeHeadline].replace('\n', ' ')}>
               <span className="digital-hero-headline" aria-hidden="true">{typedHeadline}</span>
             </h1>
             <p>Thoughtful design and practical development to bring your business ideas to life.</p>
