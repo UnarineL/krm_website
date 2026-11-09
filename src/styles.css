@@ -2351,4 +2351,53 @@ p { margin-top: 0; }
   }
 }
 
+/* Final usability and accessibility refinements. */
+:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 3px;
+}
 
+.contact-form-status {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.contact-form-status.error {
+  color: #a32d2d;
+}
+
+.krm-not-found {
+  min-height: 52vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.krm-not-found h1 {
+  margin: 0 0 14px;
+  color: var(--teal-dark);
+  font-size: clamp(42px, 6vw, 64px);
+  line-height: .98;
+}
+
+.krm-not-found p {
+  max-width: 620px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.krm-not-found .hero-actions {
+  flex-wrap: wrap;
+}
+
+@media (max-width: 560px) {
+  .krm-not-found .hero-actions {
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
