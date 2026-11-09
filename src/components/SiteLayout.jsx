@@ -39,6 +39,51 @@ export default function SiteLayout({ children }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    const serviceSlug = location.pathname.split('/')[2];
+    const serviceTitles = {
+      compliance: ['Employment Compliance Support for SMEs | KRM', 'Employment compliance reviews, UIF and COIDA support, labour-law guidance and employee-file audits for South African SMEs.'],
+      documentation: ['Employment Contracts, Policies & HR Documentation | KRM', 'Employment contracts, workplace policies, employee handbooks and practical HR documentation for South African businesses.'],
+      recruitment: ['Affordable SME Recruitment Services | KRM', 'Practical recruitment support for SMEs, including job profiling, candidate screening, interviews and onboarding.'],
+      performance: ['Performance Management Support | KRM', 'Performance reviews, KPIs, probation management and practical performance improvement support for SMEs.'],
+      'employee-relations': ['Employee & Labour Relations Support | KRM', 'Practical guidance for disciplinary processes, grievances, poor performance, retrenchment and CCMA preparation.'],
+      'organisation-change': ['Organisational Development & Change | KRM', 'Workforce planning, organisational structure reviews, restructuring and change-management support.'],
+      'outsourced-hr': ['Outsourced HR Support for SMEs | KRM', 'Flexible ongoing HR support for small and growing businesses without a full in-house HR department.'],
+    };
+
+    const metadata = pageMetadata.find((page) => page.path === location.pathname);
+    const serviceMeta = serviceTitles[serviceSlug];
+    const title = metadata?.title || (serviceMeta ? serviceMeta[0] : 'Page Not Found | KRM Human Capital Solutions');
+    const description = metadata?.description || (serviceMeta ? serviceMeta[1] : 'Explore KRM Human Capital Solutions for practical employment compliance and people support for South African SMEs.');
+    const canonicalUrl = `https://krmhcs.co.za${location.pathname}`;
+    const isProductionHost = window.location.hostname === 'krmhcs.co.za' || window.location.hostname === 'www.krmhcs.co.za';
+
+    document.title = title;
+
+    function setMeta(selector, attribute, value, create) {
+      let element = document.head.querySelector(selector);
+      if (!element && create) {
+        element = document.createElement('meta');
+        Object.entries(create).forEach(([key, item]) => element.setAttribute(key, item));
+        document.head.appendChild(element);
+      }
+      if (element) element.setAttribute(attribute, value);
+    }
+
+    setMeta('meta[name="description"]', 'content', description, { name: 'description' });
+    setMeta('meta[name="robots"]', 'content', isProductionHost ? 'index, follow' : 'noindex, nofollow', { name: 'robots' });
+    setMeta('meta[property="og:title"]', 'content', title, { property: 'og:title' });
+    setMeta('meta[property="og:description"]', 'content', description, { property: 'og:description' });
+    setMeta('meta[property="og:type"]', 'content', 'website', { property: 'og:type' });
+    setMeta('meta[property="og:url"]', 'content', canonicalUrl, { property: 'og:url' });
+
+    let canonical = document.head.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', canonicalUrl);
   }, [location.pathname]);
 
   function handleNavigation(to) {
