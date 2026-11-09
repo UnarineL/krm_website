@@ -2350,3 +2350,27 @@ p { margin-top: 0; }
     animation: none;
   }
 }
+
+
+.contact-preview-trigger {
+  align-self: flex-start;
+  margin-top: 2px;
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  color: var(--teal-dark);
+  font: inherit;
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.contact-preview-trigger:hover {
+  color: var(--teal);
+}
+
+.contact-preview-trigger:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 4px;
+}
