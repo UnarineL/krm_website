@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Logo } from './components/SiteLayout';
 
@@ -381,16 +381,46 @@ export function DigitalSolutions() {
 export function Contact() {
   const [formStatus, setFormStatus] = useState({ state: 'idle', message: '' });
   const [showThankYou, setShowThankYou] = useState(false);
+  const closeButtonRef = useRef(null);
+  const submitButtonRef = useRef(null);
 
   useEffect(() => {
     if (!showThankYou) return undefined;
 
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    closeButtonRef.current?.focus();
+
     function handleKeyDown(event) {
-      if (event.key === 'Escape') setShowThankYou(false);
+      if (event.key === 'Escape') {
+        setShowThankYou(false);
+        submitButtonRef.current?.focus();
+        return;
+      }
+
+      if (event.key === 'Tab') {
+        const modal = document.querySelector('.contact-success-modal');
+        const focusable = modal?.querySelectorAll('button:not([disabled]), a[href], input:not([disabled]), textarea:not([disabled])');
+        if (!focusable?.length) return;
+
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
     }
 
     document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', handleKeyDown);
+    };
   }, [showThankYou]);
 
   async function handleSubmit(event) {
@@ -433,15 +463,16 @@ export function Contact() {
         text="Whether you’re looking for a Compliance Assessment, a consultation or practical HR support, the KRM team is here to help."
       />
       <section className="content section-pad contact-grid">
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <label>Name<input name="name" placeholder="Your name" autoComplete="name" required /></label>
-          <label>Email<input type="email" name="email" placeholder="you@example.com" autoComplete="email" required /></label>
-          <label>Organisation<input name="organisation" placeholder="Organisation" autoComplete="organization" /></label>
-          <label>What can we help with?<textarea name="message" rows="7" placeholder="Tell us whether you need a Compliance Assessment, a consultation or support with recruitment, HR documentation, performance management or employee relations." required /></label>
+        <form className="contact-form" onSubmit={handleSubmit} aria-busy={formStatus.state === 'sending'}>
+          <label>Name<input name="name" placeholder="Your name" autoComplete="name" maxLength={120} required /></label>
+          <label>Email<input type="email" name="email" placeholder="you@example.com" autoComplete="email" maxLength={254} required /></label>
+          <label>Organisation<input name="organisation" placeholder="Organisation" autoComplete="organization" maxLength={160} /></label>
+          <label>What can we help with?<textarea name="message" rows="7" maxLength={5000} placeholder="Tell us whether you need a Compliance Assessment, a consultation or support with recruitment, HR documentation, performance management or employee relations." required /></label>
           <input name="website" type="text" tabIndex="-1" autoComplete="off" aria-hidden="true" style={{ display: 'none' }} />
-          <button className="button" type="submit" disabled={formStatus.state === 'sending'}>
+          <button ref={submitButtonRef} className="button" type="submit" disabled={formStatus.state === 'sending'}>
             {formStatus.state === 'sending' ? 'Sending…' : 'Send enquiry'}
           </button>
+          {formStatus.state === 'sending' && <p className="contact-form-status" role="status" aria-live="polite">Sending your enquiry…</p>}
           {formStatus.state === 'error' && formStatus.message && (
             <p className={`contact-form-status ${formStatus.state}`} role="alert">{formStatus.message}</p>
           )}
@@ -452,6 +483,7 @@ export function Contact() {
           }}>
             <section className="contact-success-modal" role="dialog" aria-modal="true" aria-labelledby="contact-success-title">
               <button
+                ref={closeButtonRef}
                 className="contact-success-close"
                 type="button"
                 aria-label="Close confirmation"
