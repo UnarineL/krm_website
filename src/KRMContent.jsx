@@ -249,8 +249,6 @@ export function KRMServicePage() {
       <div className="krm-service-page-list">
         <h2 className="serif">Services</h2>
         <ul>{service.items.map((item) => <li key={item}>{item}</li>)}</ul>
-        <div className="krm-deliverables"><strong>Possible deliverables:</strong> {service.deliverables}</div>
-        <p className="small-note">The exact service scope and deliverables depend on your organisation's needs and the agreed quotation. KRM support is not a guarantee of a particular legal or regulatory outcome.</p>
       </div>
     </section>
     <section className="band band-tint">
