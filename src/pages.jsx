@@ -471,7 +471,8 @@ export function Contact() {
               </button>
               <div className="contact-success-logo"><Logo /></div>
               <h2 id="contact-success-title" className="serif">Thank you.</h2>
-              <p>Your enquiry has been sent to KRM.</p>
+              <p>Your enquiry has been sent to KRM Human Capital Solutions.</p>
+              <p>Our team will review your message and get in touch with you as soon as possible.</p>
               <button className="button contact-success-button" type="button" onClick={() => setShowThankYou(false)}>
                 Close
               </button>
