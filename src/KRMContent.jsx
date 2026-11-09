@@ -132,24 +132,6 @@ export function KRMHome() {
       </div>
     </section>
 
-    <section className="content section-pad krm-digital-feature">
-      <div className="krm-digital-feature-copy">
-        <span className="eyebrow">Beyond human capital</span>
-        <h2 className="serif">Digital solutions for businesses ready to grow.</h2>
-        <p>KRM also helps businesses build their digital presence through custom website design, e-commerce, application design and ongoing website support.</p>
-        <div className="krm-home-links">
-          <Link className="button" to="/digital-solutions">Explore Digital Solutions</Link>
-          <Link className="text-link" to="/contact">Discuss a digital project →</Link>
-        </div>
-      </div>
-      <div className="krm-digital-feature-points">
-        <div><span>01</span><strong>Website Design</strong><p>Professional websites shaped around your brand and goals.</p></div>
-        <div><span>02</span><strong>E-Commerce</strong><p>Online stores designed for a smooth customer experience.</p></div>
-        <div><span>03</span><strong>Application Design</strong><p>Useful digital experiences for your business and customers.</p></div>
-        <div><span>04</span><strong>Website Support</strong><p>Ongoing updates, maintenance and practical support.</p></div>
-      </div>
-    </section>
-
     <section className="cta krm-final-cta">
       <div className="content"><span className="eyebrow">Start with a conversation</span><h2 className="serif">Let's make your next HR decision clearer.</h2><p>Tell us what your business needs. We will discuss the right next step and provide a quotation where appropriate.</p><div className="hero-actions"><BookingLink>Book a Compliance Assessment</BookingLink><Link className="button" to="/contact">Request a Free Consultation</Link></div></div>
     </section>
