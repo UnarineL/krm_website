@@ -380,6 +380,18 @@ export function DigitalSolutions() {
 
 export function Contact() {
   const [formStatus, setFormStatus] = useState({ state: 'idle', message: '' });
+  const [showThankYou, setShowThankYou] = useState(false);
+
+  useEffect(() => {
+    if (!showThankYou) return undefined;
+
+    function handleKeyDown(event) {
+      if (event.key === 'Escape') setShowThankYou(false);
+    }
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [showThankYou]);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -402,7 +414,8 @@ export function Contact() {
       }
 
       form.reset();
-      setFormStatus({ state: 'success', message: 'Thank you. Your enquiry has been sent to KRM.' });
+      setFormStatus({ state: 'success', message: '' });
+      setShowThankYou(true);
     } catch (error) {
       setFormStatus({
         state: 'error',
@@ -429,8 +442,32 @@ export function Contact() {
           <button className="button" type="submit" disabled={formStatus.state === 'sending'}>
             {formStatus.state === 'sending' ? 'Sending…' : 'Send enquiry'}
           </button>
-          {formStatus.message && <p className={`contact-form-status ${formStatus.state}`} role="status">{formStatus.message}</p>}
+          {formStatus.state === 'error' && formStatus.message && (
+            <p className={`contact-form-status ${formStatus.state}`} role="alert">{formStatus.message}</p>
+          )}
         </form>
+        {showThankYou && (
+          <div className="contact-success-overlay" role="presentation" onMouseDown={(event) => {
+            if (event.target === event.currentTarget) setShowThankYou(false);
+          }}>
+            <section className="contact-success-modal" role="dialog" aria-modal="true" aria-labelledby="contact-success-title">
+              <button
+                className="contact-success-close"
+                type="button"
+                aria-label="Close confirmation"
+                onClick={() => setShowThankYou(false)}
+              >
+                <span aria-hidden="true">×</span>
+              </button>
+              <div className="contact-success-logo"><Logo /></div>
+              <h2 id="contact-success-title" className="serif">Thank you.</h2>
+              <p>Your enquiry has been sent to KRM.</p>
+              <button className="button contact-success-button" type="button" onClick={() => setShowThankYou(false)}>
+                Close
+              </button>
+            </section>
+          </div>
+        )}
         <aside className="contact-side">
           <span className="eyebrow">Direct contact</span>
           <a href="mailto:info@krmhcs.co.za">info@krmhcs.co.za</a>
