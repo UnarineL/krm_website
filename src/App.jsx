@@ -38,7 +38,8 @@ export default function App() {
         <Route path="/workplace-risk-check" element={<WorkplaceRiskCheck />} />
         <Route path="/vacancies" element={<Vacancies />} />
         <Route path="/digital-solutions" element={<DigitalSolutions />} />
-        <Route path="/contact" element={<Contact />} />\n        <Route path="*" element={<NotFound />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </SiteLayout>
   );
