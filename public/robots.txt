@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://krmhcs.co.za/sitemap.xml
