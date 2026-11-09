@@ -2401,3 +2401,74 @@ p { margin-top: 0; }
     gap: 16px;
   }
 }
+
+/* Homepage feature for KRM Digital Solutions. */
+.krm-digital-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  align-items: center;
+  gap: clamp(36px, 6vw, 84px);
+  border-top: 1px solid rgba(14, 115, 119, .14);
+}
+
+.krm-digital-feature-copy h2 {
+  max-width: 620px;
+  margin: 12px 0 16px;
+  color: var(--teal-dark);
+  font-size: clamp(36px, 4.5vw, 54px);
+  line-height: 1.05;
+}
+
+.krm-digital-feature-copy > p {
+  max-width: 580px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.krm-digital-feature-points {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px 22px;
+}
+
+.krm-digital-feature-points > div {
+  padding-top: 13px;
+  border-top: 2px solid rgba(14, 115, 119, .28);
+}
+
+.krm-digital-feature-points span {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--teal);
+  font-size: 11px;
+  letter-spacing: .12em;
+}
+
+.krm-digital-feature-points strong {
+  display: block;
+  color: var(--ink, #24343a);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.krm-digital-feature-points p {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+@media (max-width: 760px) {
+  .krm-digital-feature {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 460px) {
+  .krm-digital-feature-points {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
