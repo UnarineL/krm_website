@@ -10,7 +10,7 @@ const pageMetadata = [
   { path: '/hr-templates', title: 'HR Resources for South African SMEs | KRM', description: 'Practical HR guidance and resources for South African small and medium-sized businesses.' },
   { path: '/workplace-risk-check', title: 'Workplace Compliance Check | KRM', description: 'Use KRM’s initial workplace screening to identify employment compliance topics to review.' },
   { path: '/vacancies', title: 'Careers & Vacancies | KRM Human Capital Solutions', description: 'Explore recruitment opportunities published by KRM Human Capital Solutions.' },
-  { path: '/digital-solutions', title: 'Digital Solutions | KRM Human Capital Solutions', description: 'Website design, application design and website support from KRM Digital Solutions.' },
+  { path: '/digital-solutions', title: 'Website Design, E-Commerce & Digital Solutions | KRM', description: 'KRM Digital Solutions helps businesses build their online presence with custom website design, e-commerce websites, application design, and ongoing website support and maintenance.' },
   { path: '/contact', title: 'Contact KRM | Request an HR Consultation', description: 'Contact KRM Human Capital Solutions about employment compliance, HR support or a consultation.' },
 ];
 
