@@ -31,5 +31,18 @@
       "source": "/(.*)",
       "destination": "/index.html"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.krmhcs.co.za"
+        }
+      ],
+      "destination": "https://krmhcs.co.za/:path*",
+      "permanent": true
+    }
   ]
 }
