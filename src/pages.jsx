@@ -479,7 +479,7 @@ export function Contact() {
         </form>
         {showThankYou && (
           <div className="contact-success-overlay" role="presentation" onMouseDown={(event) => {
-            if (event.target === event.currentTarget) setShowThankYou(false);
+            if (event.target === event.currentTarget) { setShowThankYou(false); submitButtonRef.current?.focus(); }
           }}>
             <section className="contact-success-modal" role="dialog" aria-modal="true" aria-labelledby="contact-success-title">
               <button
@@ -487,7 +487,7 @@ export function Contact() {
                 className="contact-success-close"
                 type="button"
                 aria-label="Close confirmation"
-                onClick={() => setShowThankYou(false)}
+                onClick={() => { setShowThankYou(false); submitButtonRef.current?.focus(); }}
               >
                 <span aria-hidden="true">×</span>
               </button>
