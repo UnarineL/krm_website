@@ -381,7 +381,6 @@ export function DigitalSolutions() {
 export function Contact() {
   const [formStatus, setFormStatus] = useState({ state: 'idle', message: '' });
   const [showThankYou, setShowThankYou] = useState(false);
-  const isPreviewDeployment = window.location.hostname === 'preview.krmhcs.co.za';
 
   useEffect(() => {
     if (!showThankYou) return undefined;
@@ -443,15 +442,6 @@ export function Contact() {
           <button className="button" type="submit" disabled={formStatus.state === 'sending'}>
             {formStatus.state === 'sending' ? 'Sending…' : 'Send enquiry'}
           </button>
-          {isPreviewDeployment && (
-            <button
-              className="contact-preview-trigger"
-              type="button"
-              onClick={() => setShowThankYou(true)}
-            >
-              Preview thank-you message
-            </button>
-          )}
           {formStatus.state === 'error' && formStatus.message && (
             <p className={`contact-form-status ${formStatus.state}`} role="alert">{formStatus.message}</p>
           )}
