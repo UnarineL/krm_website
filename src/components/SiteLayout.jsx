@@ -1,6 +1,19 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 
+const pageMetadata = [
+  { path: '/', title: 'KRM Human Capital Solutions | SME Employment Compliance & People Partner', description: 'Practical employment compliance and people solutions for South African SMEs.' },
+  { path: '/legacy', title: 'About KRM | Human Capital Solutions', description: 'Learn about KRM Human Capital Solutions and its practical approach to Compliance, Capability and Culture.' },
+  { path: '/services', title: 'HR & Employment Compliance Services | KRM', description: 'Explore employment compliance, HR documentation, recruitment, performance and employee relations support.' },
+  { path: '/service-pillars', title: 'Compliance, Capability & Culture | KRM', description: 'Explore the three pillars behind KRM Human Capital Solutions.' },
+  { path: '/how-we-work', title: 'How KRM Works | Human Capital Solutions', description: 'Discover how KRM assesses business needs and recommends practical HR support.' },
+  { path: '/hr-templates', title: 'HR Resources for South African SMEs | KRM', description: 'Practical HR guidance and resources for South African small and medium-sized businesses.' },
+  { path: '/workplace-risk-check', title: 'Workplace Compliance Check | KRM', description: 'Use KRM’s initial workplace screening to identify employment compliance topics to review.' },
+  { path: '/vacancies', title: 'Careers & Vacancies | KRM Human Capital Solutions', description: 'Explore recruitment opportunities published by KRM Human Capital Solutions.' },
+  { path: '/digital-solutions', title: 'Digital Solutions | KRM Human Capital Solutions', description: 'Website design, application design and website support from KRM Digital Solutions.' },
+  { path: '/contact', title: 'Contact KRM | Request an HR Consultation', description: 'Contact KRM Human Capital Solutions about employment compliance, HR support or a consultation.' },
+];
+
 const navItems = [
   ['/', 'Home'],
   ['/legacy', 'About Us'],
