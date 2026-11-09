@@ -1,9 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { Logo } from './components/SiteLayout';
 
-const assessmentHref = 'mailto:info@krmhcs.co.za?subject=Book%20a%20KRM%20Compliance%20Assessment';
-const consultationHref = 'mailto:info@krmhcs.co.za?subject=Request%20a%20Free%20KRM%20Consultation';
-
 function BookingLink({ children, light = false }) {
   return <Link className={`button ${light ? 'button-light' : ''}`} to="/contact">{children}</Link>;
 }
@@ -222,7 +219,7 @@ export function KRMServices() {
       </div>
     </section>
     <section className="band band-tint">
-      <div className="content centered krm-services-close"><span className="eyebrow">Not sure where to start?</span><h2 className="serif">Let's talk through what your business needs.</h2><p>Request a free consultation. We can discuss your situation, identify the relevant service and outline the next steps.</p><BookingLink href={consultationHref}>Request a Free Consultation</BookingLink></div>
+      <div className="content centered krm-services-close"><span className="eyebrow">Not sure where to start?</span><h2 className="serif">Let's talk through what your business needs.</h2><p>Request a free consultation. We can discuss your situation, identify the relevant service and outline the next steps.</p><BookingLink>Request a Free Consultation</BookingLink></div>
     </section>
   </>;
 }
