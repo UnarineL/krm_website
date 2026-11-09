@@ -56,7 +56,7 @@ export default function SiteLayout({ children }) {
     const title = metadata?.title || (serviceMeta ? serviceMeta[0] : 'Page Not Found | KRM Human Capital Solutions');
     const description = metadata?.description || (serviceMeta ? serviceMeta[1] : 'Explore KRM Human Capital Solutions for practical employment compliance and people support for South African SMEs.');
     const canonicalUrl = `https://krmhcs.co.za${location.pathname}`;
-    const isProductionHost = window.location.hostname === 'krmhcs.co.za' || window.location.hostname === 'www.krmhcs.co.za';
+    const isProductionHost = window.location.hostname === 'krmhcs.co.za';
 
     document.title = title;
 
